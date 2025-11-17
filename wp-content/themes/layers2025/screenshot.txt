@@ -1,0 +1,9 @@
+This is a placeholder for screenshot.png
+
+The screenshot should be:
+- 1200px x 900px
+- PNG format
+- Shows theme preview
+- Will be created later with actual theme design
+
+For now, theme will work without screenshot but won't show preview in WordPress admin.
