@@ -1,0 +1,536 @@
+/*
+Theme Name: Corporate Layers Child theme
+Theme URI: 
+Author: AUC
+Author URI: auc.com 
+Description: 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 
+Text Domain: thermalelectric
+
+Template:     layers2
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+.carousel-control {
+	width:10%;
+}
+
+@media screen and (min-width: 992px){
+	h3 {
+		color: #131F6B;
+		font-size:30px;
+		line-height:1.17;
+		font-weight:200;
+	}
+}
+
+
+.spaceTB30 {
+   margin:30px 0;
+}
+.hover-shadow {
+   display:inline-block;
+}
+.hover-shadow:hover {
+   transform: scale(1.02, 1.02);
+   box-shadow: 0px 0px 12px #999999;
+   -webkit-transition: transform 0.3s ease-in-out;
+}
+
+.home-banner {
+   height:305px;
+   margin-bottom: 30px;
+   background-color:#999;
+   background-size:cover, auto;
+   background-position:center;
+}
+.home-banner.bkg-corporate {
+   background-image:
+      url(/wp-content/uploads/img-corp-home-bnr.svg),
+      url(/wp-content/uploads/mobile-hero-corporate-min.jpg);
+   background-repeat: no-repeat, no-repeat;
+   background-size:400px, auto;
+   background-position:center bottom 5px, center;
+}
+.home-banner h1 {
+   font-weight:300;
+   font-size:35px;
+   text-align:center;
+   line-height:1;
+   color:#fff;
+   margin-bottom:30px;
+        font-style: italic;
+  text-shadow: 0 2px 5px #00000080;    
+}
+.home-banner p {
+   font-weight:300;
+   font-size:18px;
+   line-height:1.3;
+   text-align:center;
+   color:#fff;
+   padding:0 15%;
+  text-shadow: 0 2px 5px #00000080;    
+}
+.home-banner .corp-home-bnr-diag {
+   width: 800px;
+   overflow: auto;
+   margin: 60px auto 30px auto;
+}
+
+.home-carousel-img {
+   background-size:cover;
+   background-position:center;
+   margin:0 auto 20px;
+	width:100%;
+	padding-bottom:75%;
+}
+@media(min-width:768px){
+	.home-banner {
+		height:550px;
+	}	
+	.home-banner.bkg-corporate {
+   background-image:
+      url(/wp-content/uploads/img-corp-home-bnr.svg),
+      url(/wp-content/uploads/hero-corp-home-rev.jpg);
+		background-size:800px, auto;
+		background-position:center bottom 45px, center;
+	}
+	.home-banner h1 {
+	   font-weight:100;
+	   font-size:75px;
+	   text-align:center;
+	   line-height:1;
+	   color:#fff;
+	   margin-bottom:30px;
+	}
+	.home-banner p {
+	   font-weight:300;
+	   font-size:26px;
+	   line-height:1.3;
+	   text-align:center;
+	   color:#fff;
+	   padding:0 15%;
+	}
+}
+@media(min-width:1200px){
+	.home-carousel-img {
+		padding-bottom:50%;
+	}
+}
+.home-slide-product {
+   font-size:26px;
+   line-height:30px;
+   text-align:center;
+   font-weight:100;
+   color:#000;
+   margin-top:0;
+}
+.home-slide-description {
+   font-size:13px;
+   line-height:20px;
+	min-height:40px;
+}
+a.home-slide-btn {
+   display:inline-block;
+   padding:7px; 10px;
+   border:1px solid #ddd;
+   font-size:16px;
+   color:blue;
+   text-decoration:none;
+}
+a.home-slide-btn:hover {
+   background-color:#0c214c;
+   color:white;
+}
+
+#news-feed .news-cat {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #666;
+    font-size: 11px;
+}
+#news-feed .news-title {
+    font-weight: 400;
+    color: black;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+#news-feed ul {
+    list-style: none;
+    padding-left: 0;
+}
+#news-feed ul li {
+}
+#news-feed ul li a {
+  display:block;
+  padding:7px;
+  text-decoration:none;
+}
+#news-feed ul li a:hover {
+  background-color:#e0e0e0;
+}
+#news-feed .news-cat {
+}
+#news-feed ul li a:hover .news-title {
+   color:#0c214c;
+}
+#news-feed .news-date {
+}
+#news-feed ul li:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+#myCarousel .carousel-inner {
+    border: none;
+  border-radius:3px;
+  box-shadow: 0px 0px 8px #999999;
+}
+#myCarousel .carousel-inner .item	{
+	padding:30px;
+
+}
+h3.home-block {
+ margin-bottom:30px;
+}
+p.no-indent {
+    margin-left: 0;
+}
+a.download-profile-resource {
+    display: inline-block;
+    padding-left: 55%;
+    padding-top: 30px;
+    padding-right: 2%;
+    padding-bottom: 30px;
+    background-color: #0c214c;
+    background-image: url(/wp-content/uploads/img-corporate-profile.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 5px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 600;
+    height: 100px;
+    border-radius: 9px;
+    color: #fff;
+    text-decoration:none;
+}
+a.download-profile-resource:hover {
+    background-color:#5D73A3;
+}
+
+/* styles from block */
+.corporate .page-header .background-product {
+        display:none !important;
+}
+
+body.corporate-ferrofluid .page-header,
+body.corporate-ferrofluidic-vacuum-seals .page-header,
+body.corporate-thermoelectric-modules .page-header,
+body.corporate-fabricated-quartzware .page-header,
+body.corporate-photovoltaic-manufacturing .page-header,
+body.corporate-silicon-carbide-parts-cvd-sic .page-header,
+body.corporate-advanced-ceramics .page-header,
+body.corporate-ceramics .page-header,
+body.corporate-silicon-wafers .page-header, 
+body.corporate-power-semiconductor-substrates .page-header,
+body.corporate-process-tool-parts-cleaning .page-header,
+body.corporate-electron-beam-evaporation-products .page-header,
+body.corporate-silicon-parts .page-header,
+body.corporate-contract-manufacturing .page-header,
+body.corporate-temescal-vacuum-coating-systems .page-header
+ {
+        display:none !important;
+}
+
+
+
+
+
+.page-header {
+	background-image: url(/wp-content/uploads/hero-corp-products-min.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 400px !important;
+}
+
+.page-header-markets {
+        background-image: url(/wp-content/uploads/hero-corp-markets-1.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 400px !important;
+}
+
+.bnr-update2020 {
+        margin: 70px;
+}
+
+.bnr-update2020 h1 {
+	font-style: italic !important;
+	font-size: 80px !important;
+	font-weight: 100 !important;
+	margin-bottom: 5px;
+	letter-spacing: -5px;
+	color: #939393;
+	text-align: center;
+	line-height: 1 !important;
+}
+
+.bnr-update2020 h1 span {
+        font-style:normal;
+        font-weight:200;
+        font-size:20px;
+}
+
+.bnr-update2020 p {
+    display:none !important;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+    font-family: Roboto,sans-serif;
+    background: #744a8b;
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+
+.flex-area-center {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+}
+
+h1.update2020 {
+	font-style: oblique !important;
+	font-size: 80px !important;
+	font-weight: 100 !important;
+	line-height: 1;
+	margin-top: -50px;
+	font-weight: 200;
+  text-shadow: 0 2px 5px #00000080;
+}
+
+p.update2020 {
+	font-size: 22px;
+	line-height: 1.3;
+	margin-top: 15px;
+  text-shadow: 0 2px 5px #00000080;
+}
+
+header.page-header {
+	margin-bottom: 0px;
+}
+
+.rowspacing {
+	margin-bottom: 30px;
+}
+
+a.prod-tile {
+	display: block;
+	height: 330px;
+	position: relative;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: top;
+	box-shadow: 0px 0px 10px #999;
+}
+
+a.prod-tile:hover {
+	transform: scale(1.02, 1.02);
+	-webkit-transition: transform 0.3s ease-in-out;
+	box-shadow: 0px 0px 10px #666;
+}
+
+.tile-title {
+	position: absolute;
+	top: 200px;
+	background-color: white;
+	height: 150px;
+	padding: 0px 15px 0px 15px;
+	width: 100%;
+}
+
+.tile-title h3 {
+	color: #131F6B;
+	font-size: 24px;
+	line-height: 1.05;
+	font-weight: 200;
+	margin-bottom: 5px;
+}
+
+.tile-title p {
+	color: #000;
+        line-height: 1.4;
+}
+
+[class*="bkg-tile-"] {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: top;
+}
+
+p.breadcrumb2 {
+	margin-top: 30px;
+	font-size: 12px;
+	line-height: 1;
+	font-weight: 500;
+	text-align: right;
+}
+
+p.breadcrumb2 a {
+	text-decoration: none;
+	color: #131F6B;
+}
+
+p.breadcrumb2 a:hover {
+	color: #345fb6;
+}
+
+p.breadcrumb2 span {
+	padding: 0 10px;
+}
+
+
+.featured-product-img {
+        background-size: cover;
+        background-position:center;
+        min-height: 350px;
+        background-repeat: no-repeat;
+}
+        .featured-product-img.fpi-ferrofluid {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-ferrofluid.jpg);
+        }
+        .featured-product-img.fpi-ferrofluidic-seals {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-ferrofluidic-seals.jpg);
+        }
+        .featured-product-img.fpi-thermoelectric-modules {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-termoelecric.jpg);
+        }
+        .featured-product-img.fpi-fabricated-quartzware {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-fabricated-quartz.jpg);
+        }
+        .featured-product-img.fpi-cvd-sic {
+              background-image:URL(/wp-content/uploads/corp-tile-products-cvd_sic-1.jpg);
+        }
+        .featured-product-img.fpi-advanced-ceramics {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-advanced-ceramics-1.jpg);
+        }
+        .featured-product-img.fpi-machinable-ceramics {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-machinable-ceramics.jpg);
+        }
+        .featured-product-img.fpi-silicon-wafers {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-silicon-wafer.jpg);
+        }
+        .featured-product-img.fpi-power-substrates {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-power-substrate.jpg);
+        }
+        .featured-product-img.fpi-process-tool-cleaning {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-process-tools-cleaning.jpg);
+        }
+        .featured-product-img.fpi-e-beam-components {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-ebeam-components.jpg);
+              background-size:contain !imporant;
+        }
+        .featured-product-img.fpi-temescal {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-temescal-1.jpg);
+        }
+        .featured-product-img.fpi-sifusion {
+              background-image:URL(/wp-content/uploads/corp-prod-featured-sifusion-1.jpg);
+        }
+        .featured-product-img.fpi-cms {
+              background-image:URL(/wp-content/uploads/corp-prod-contract-manufacturing.jpg);
+        }
+
+
+
+.flex-row {
+  display: flex;
+}
+
+h2 {
+    color: #131F6B;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.application-examples p.title {
+    margin-top:5px;
+    font-weight: 500;
+}
+.te-mod-prods p.title {
+       margin-top:5px;
+       font-weight: 500;
+}
+
+.market-wrappers {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin:50px 0 70px 0;
+}
+.market-wrappers .row {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    }
+.market-wrappers .row.stripe-bkg  {
+     background-color: #f7f7f7;
+}
+ul.market-li {
+    margin-left:0px;
+    padding-left:0px;
+    list-style-type:none;
+    font-weight:400;
+}
+
+ul.market-li::before {
+    padding-left:-20px;
+    content: "Ferrotec Products & Technologies";
+    font-weight:300;
+    margin-bottom:3px;
+    font-size:13px;
+}
+ul.XXmarket-li li::after {
+    content:" >";
+}
+ul.market-li li a {
+    display: block;
+    padding: 3px 10px;
+    background-color: #e0e0e0;
+    text-decoration: none;
+    margin-bottom: 1px;
+    color: #555;
+    font-size: 13px;
+}
+ul.market-li li a:hover {
+    background-color: #3152a5;
+    color:#fff;
+}
+.market-sec {
+    min-height:250px;
+    background-size:cover
+}
+
+.mkt-semi { 
+     background-image:url(/wp-content/uploads/tile-semiconductor-mfg-min.png);
+}
+.mkt-electronic-devices {
+     background-image:url(/wp-content/uploads/market-electronic.jpg);
+}
+.mkt-automotive {
+     background-image:url(/wp-content/uploads/market-automotive.jpg);
+}
+.mkt-biomedical {
+     background-image:url(/wp-content/uploads/tile-bio-medical-min.png);
+}
+.mkt-optoelectronic {
+     background-image:url(/wp-content/uploads/tile-opto-electronics-min.png);
+}
+
+

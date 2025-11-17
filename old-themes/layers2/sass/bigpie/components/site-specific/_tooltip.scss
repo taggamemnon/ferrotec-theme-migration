@@ -1,0 +1,48 @@
+/* HTML FORMAT
+<div class="tooltip">
+    <div class="tooltip_content">
+        <h4>Some Title.</h4>
+        <p>Some Text Description</p>
+    </div>
+    <a href="#" class="btn_addremove fa fa-times"></a>
+</div>
+*/
+
+.tooltip {
+	@include position(absolute, null 71px 27% null);
+	background: #f0f0f1;
+	color: $BPMediumGrey;
+	width: 290px;
+	border-radius: 6px 6px 0 6px;
+	padding: 8px;
+	padding-bottom: 22px;
+	z-index: 10;
+	opacity: 1;
+
+	&:after {
+		@include triangle(40px 20px, #f0f0f1, down);
+		@include position(absolute, 100% 0 null null);
+		content: "";
+		border-right: 0;
+	}
+
+	.tooltip_content {
+		max-height: 120px;
+		overflow: auto;
+
+		h4 {
+			color: $BPDarkGrey;
+			font-size: 15px;
+			margin-bottom: 5px;
+			font-weight: bold;
+			line-height: 18px;
+		}
+
+		p {
+			color: $BPTextGrey;
+			font-size: 13px;
+			line-height: 18px;
+			margin: 0;
+		}
+	}
+}

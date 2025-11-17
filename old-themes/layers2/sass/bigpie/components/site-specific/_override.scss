@@ -1,0 +1,9 @@
+body{
+  &.modal-open {
+    padding-right: 0 !important;
+  }
+}
+
+.btn-default[disabled] {
+  background: #a9a9a9;
+}

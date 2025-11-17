@@ -1,0 +1,16 @@
+# Prevent Claude from modifying original theme files
+/old-themes/
+
+# WordPress core (if present)
+/wp-admin/
+/wp-includes/
+/wp-content/uploads/
+/wp-content/cache/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build artifacts
+*.log
+.DS_Store

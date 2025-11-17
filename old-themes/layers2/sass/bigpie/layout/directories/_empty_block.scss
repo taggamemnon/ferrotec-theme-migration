@@ -1,0 +1,36 @@
+// ******************************************************************************************************************************
+// Empty Block Design
+// E.g. Merchant -> Matching Page -> Our Current Matches Section
+// ******************************************************************************************************************************
+.block_empty {
+	background: $LighterGray;
+	.block_header {
+		@include vertical-align;
+		@include inline-block(100%,188px,center,auto,auto);
+		border-radius: 8px 8px 0 0;
+		background: #fff;
+		border-bottom: 1px solid #b3b3b3;
+		color: #878787;
+		& > div {
+			position: relative;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			left: 0;
+
+			// IE 9 Overrides
+			.msie9_0 & {
+				top: 30px;
+			}
+		}
+		h3 {
+			max-height: none;
+			text-align: center;
+		}
+		p {
+			width: 210px;
+			font-size: 15px;
+			margin: 0 auto;
+		}
+	}
+}

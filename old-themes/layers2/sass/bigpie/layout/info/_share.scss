@@ -1,0 +1,38 @@
+.share_section {
+	border-top: 1px solid $Gray;
+	padding: 19px 9px 16px;
+	width: 100%;
+
+	.web_site {
+		font-weight: 400;
+		font-size: 18px;
+		color: $Gray;
+		.world_icon {
+			display: inline-block;
+			vertical-align: middle;
+			height: 34px;
+			width: 45px;
+			line-height: 1.2;
+			//@include image-url('../icon_set4.jpg');
+		}
+	}
+
+	.share_wrapper {
+		float: right;
+		a {
+			color: $Gray;
+			font-weight: 400;
+			font-size: 18px;
+			margin: 0 0 0 25px;
+		}
+
+		.share_page,
+		.facebook {
+			display: inline-block;
+			vertical-align: middle;
+			height: 34px;
+			width: 45px;
+			line-height: 1.2;
+		}
+	}
+}

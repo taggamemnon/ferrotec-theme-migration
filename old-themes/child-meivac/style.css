@@ -1,0 +1,169 @@
+/*
+Theme Name: MeiVac Layers Child theme
+Theme URI: 
+Author: AUC
+Author URI: auc.com 
+Description: 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 
+Text Domain: meivac_layers
+
+Template:     layers2
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+#gform_2.seals-registration .ginput_complex {
+    overflow: auto;
+}
+#gform_2.seals-registration .ginput_complex span {
+    float:left;
+    width:33.3%;
+    padding-left:15px;
+    padding-right:15px;
+}
+#gform_2.seals-registration label {
+    display:none;
+}
+#gform_2.seals-registration .gform_heading{
+    padding-left:15px;
+    padding-right:15px;    
+}
+#gform_2.seals-registration .gform_title {
+    text-align:center;
+    margin:0;
+}
+#gform_2.seals-registration #field_4_3, .seals-registration #field_4_4, .seals-registration #field_4_5 {
+    float:left;
+    width:33.3%;
+    padding-left:15px;
+    padding-right:15px;
+}
+#gform_2.seals-registration li {
+  margin-bottom: 0;
+  margin-top:10px;
+}
+#gform_2.seals-registration .gform_body {
+  overflow:auto;
+}
+#gform_2.seals-registration .gform_footer {
+  text-align: center;
+  margin:10px;
+}
+#wpadminbar {
+  background-color:green;
+}
+#vf-custom-login {
+   background-color: #1c75bc;
+   text-align:center;
+}
+
+#vf-custom-login label {
+    border:none;
+    margin-bottom:10px;
+    padding:0;
+}
+.vf-login_wrapper {
+    background: #1c75bc;
+    text-align: center;
+    color: #fff;
+    padding:15px;    
+}
+.vf-login_wrapper label {
+    color:#fff;
+    font-weight:300 
+}
+
+#gform_2.seals-registration {
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    background-color: #e6e7e8;
+}
+#gform_2.seals-registration #gform_submit_button_4{
+    background-color: #1c75bc;
+    color: #fff;
+    font-weight:300;
+    line-height: 1;
+    padding:5px 10px
+
+}
+
+#vf-custom-login #wp-submit{
+    color:#000;
+    padding:5px 10px;
+    line-height:1;
+}
+
+#vf-custom-login #rememberme {
+    height: auto;
+}
+.vf-downloads_wrapper {
+  text-align:center; width:100%; padding:20px; background-color:#efefef;
+  overflow:auto;
+}
+#gform_2.seals-registration #field_4_12 {
+    width: 66.6%;
+    float: left;
+    margin-left: 16.6%;
+}
+
+#gform_2.seals-registration .ginput_complex #input_4_12_1_container, #gform_2.seals-registration .ginput_complex #input_4_12_2_container {
+    width:50%;
+    
+}
+
+.listing-row .attachment-thumbnail {
+    max-width: 70px;
+    height: auto;
+}
+.woocommerce div.product .woocommerce-tabs .panel .tab-pane{
+    padding-top: 30px;
+}
+.product-title {
+    margin-bottom: 30px;
+}
+.header_top-rule {
+    border-top: solid 1px #000;
+    padding-top: 1em;
+}
+
+.evap_title{
+    background-color: #888;
+    color: white;
+    padding: 7px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+}
+.evap_head{
+    font-size: 12px;
+    font-weight: 500;
+    color: #0C214C;
+    padding: 10px 0;
+}
+.evap_spec{
+    padding: 10px 0;
+    text-align: left;
+}
+.evap_product {
+  border: 1px solid #888;
+}
+.evap_product .row {
+  margin-left: 0;
+  margin-right:0;
+  
+}
+.evap_product .row + .row {
+  border-top: 1px solid #888;
+}
+
+.table.meivac-table>tbody>tr>td, .table.meivac-table>tbody>tr>th, .table.meivac-table>tfoot>tr>td, .table.meivac-table>tfoot>tr>th, .table.meivac-table>thead>tr>td, .table.meivac-table>thead>tr>th {
+    vertical-align: middle;
+}
+#breadcrumbs{
+    margin-top: 0;
+}

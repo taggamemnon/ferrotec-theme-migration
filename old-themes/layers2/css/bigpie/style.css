@@ -1,0 +1,3407 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300);
+@import url(//fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+/* line 8, ../../sass/bigpie/base/_general.scss */
+body.page {
+  font: 400 14px/1.2 "Roboto", "Arial", sans-serif;
+}
+
+/* line 12, ../../sass/bigpie/base/_general.scss */
+.full-width {
+  width: 100%;
+}
+
+/* line 14, ../../sass/bigpie/base/_general.scss */
+.hidden {
+  visibility: hidden;
+}
+
+/* line 16, ../../sass/bigpie/base/_general.scss */
+.sweet-alert p {
+  font-size: 22px;
+}
+
+/* line 18, ../../sass/bigpie/base/_general.scss */
+.fa-empty + span {
+  font-size: 0;
+  color: transparent;
+}
+
+/* line 23, ../../sass/bigpie/base/_general.scss */
+.float-right {
+  float: right !important;
+}
+
+/* line 27, ../../sass/bigpie/base/_general.scss */
+.unaproved h1 {
+  text-align: center;
+}
+
+/* line 29, ../../sass/bigpie/base/_general.scss */
+.align_right {
+  text-align: right !important;
+}
+
+/* line 31, ../../sass/bigpie/base/_general.scss */
+textarea {
+  line-height: 1.2;
+}
+
+/* line 33, ../../sass/bigpie/base/_general.scss */
+.error_message {
+  color: red;
+}
+
+/* line 37, ../../sass/bigpie/base/_general.scss */
+input::-ms-clear {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* line 43, ../../sass/bigpie/base/_general.scss */
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* line 48, ../../sass/bigpie/base/_general.scss */
+select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 #000;
+}
+
+/*
+Helper to ease the use of inline-blocks -
+The faster, more usable and more sane use of aligning elements horizontally.
+*/
+/* HTML FORMAT:
+<label class="form_checkbox">
+    <input type="checkbox">
+    <i class="fa fa-check"></i>
+    <span>Some Label Text.</span>
+</label>
+*/
+/* line 1, ../../sass/bigpie/components/globals/_nouislider.scss */
+no-ui-slider {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  min-height: 120px;
+}
+
+/* line 9, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 20, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-target {
+  position: relative;
+  direction: ltr;
+  border-radius: 4px;
+  border: 1px solid #D3D3D3;
+  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+}
+/* line 27, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-target.noUi-connect {
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #BBB;
+}
+
+/* line 33, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-base {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 9;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 45, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+/* line 53, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-stacking + .noUi-origin {
+    /* Fix stacking order in IE7, which incorrectly
+		 creates a new context for the origins. */
+  *z-index: -1;
+}
+/* line 59, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: left 0.3s, top 0.3s;
+  transition: left 0.3s, top 0.3s;
+}
+
+/* line 66, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-handle {
+  position: relative;
+  z-index: 1;
+  border: 1px solid #D9D9D9;
+  border-bottom: 0;
+  border-radius: 5px;
+  background: #FFF;
+  cursor: pointer;
+  z-index: 1;
+}
+/* line 79, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-stacking .noUi-handle {
+  z-index: 10;
+}
+
+/* line 84, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* line 88, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-horizontal {
+  height: 18px;
+}
+/* line 91, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-horizontal .noUi-handle {
+  width: 34px;
+  height: 28px;
+  left: -17px;
+  top: -6px;
+}
+
+/* line 99, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical {
+  width: 18px;
+}
+/* line 102, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 20px;
+  left: -6px;
+  top: -17px;
+}
+
+/* line 110, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-background {
+  background: #FAFAFA;
+  box-shadow: inset 0 1px 1px #f0f0f0;
+}
+
+/* line 115, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-connect {
+  background: #3FB8AF;
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45);
+  -webkit-transition: background 450ms;
+  transition: background 450ms;
+}
+
+/* Handles and cursors;
+ */
+/* line 124, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-dragable {
+  cursor: w-resize;
+}
+/* line 127, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-dragable {
+  cursor: n-resize;
+}
+
+/* line 132, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-active {
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
+}
+
+/* line 136, ../../sass/bigpie/components/globals/_nouislider.scss */
+.caret {
+  position: relative;
+  top: 25px;
+  left: 7px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid rgba(255, 255, 255, 0);
+  border-right: 10px solid transparent;
+  border-top: 10px solid #4d4d4d;
+  z-index: 10;
+}
+
+/* Handle stripes;
+ */
+/* line 150, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-handle:before {
+  content: "||||";
+  display: block;
+  position: absolute;
+  height: 8px;
+  color: #E8E7E6;
+  font-size: 11px;
+  left: 6px;
+  top: 4px;
+  letter-spacing: 4px;
+  font-weight: lighter;
+}
+
+/* line 168, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+  width: 14px;
+  height: 1px;
+  left: 6px;
+  top: 14px;
+}
+
+/* line 176, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-handle:after {
+  top: 17px;
+}
+
+/* Disabled state;
+ */
+/* line 182, ../../sass/bigpie/components/globals/_nouislider.scss */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+  background: #B8B8B8;
+}
+
+/* line 187, ../../sass/bigpie/components/globals/_nouislider.scss */
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+
+/* Base;
+ *
+ */
+/* line 194, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips,
+.noUi-pips * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 200, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips {
+  position: absolute;
+  font: 400 12px Arial;
+  color: #999;
+}
+
+/* Values;
+ *
+ */
+/* line 209, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value {
+  width: 40px;
+  position: absolute;
+  text-align: center;
+}
+
+/* line 215, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-sub {
+  color: #ccc;
+  font-size: 10px;
+}
+
+/* Markings;
+ *
+ */
+/* line 223, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker {
+  position: absolute;
+  background: #CCC;
+}
+
+/* line 228, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-sub {
+  background: #AAA;
+}
+
+/* line 232, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-large {
+  background: #AAA;
+}
+
+/* Horizontal layout;
+ *
+ */
+/* line 239, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips-horizontal {
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 10px 0;
+}
+
+/* line 247, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-horizontal {
+  padding-top: 20px;
+  margin-left: -20px;
+}
+
+/* line 252, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-horizontal.noUi-value-sub {
+  padding-top: 15px;
+}
+
+/* line 256, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-horizontal.noUi-marker {
+  width: 2px;
+  height: 5px;
+  margin-left: -1px;
+}
+
+/* line 262, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-horizontal.noUi-marker-sub {
+  height: 10px;
+}
+
+/* line 266, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-horizontal.noUi-marker-large {
+  height: 15px;
+}
+
+/* Vertical layout;
+ *
+ */
+/* line 273, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips-vertical {
+  top: 0;
+  left: 100%;
+  height: 100%;
+  padding: 0 10px;
+}
+
+/* line 280, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-vertical {
+  width: 15px;
+  margin-top: -5px;
+  margin-left: 20px;
+}
+
+/* line 286, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-vertical.noUi-marker {
+  width: 5px;
+  height: 2px;
+  margin-top: -1px;
+}
+
+/* line 292, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-vertical.noUi-marker-sub {
+  width: 10px;
+}
+
+/* line 296, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-vertical.noUi-marker-large {
+  width: 15px;
+}
+
+/* line 301, ../../sass/bigpie/components/globals/_nouislider.scss */
+.slider_tooltip {
+  position: absolute;
+  top: -60px;
+  left: -12px;
+  line-height: 24px;
+  text-align: center;
+}
+/* line 308, ../../sass/bigpie/components/globals/_nouislider.scss */
+.slider_tooltip small {
+  display: block;
+  text-align: left;
+  font-size: 12px;
+  padding-left: 2px;
+}
+/* line 314, ../../sass/bigpie/components/globals/_nouislider.scss */
+.slider_tooltip small.dollars {
+  text-align: center;
+}
+
+/* line 2, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style, .btn_style_mini, .btn_style_jumbo, .btn_style_big {
+  background: #ee7600;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e47100;
+  font-size: 18px;
+  outline: none !important;
+  color: white;
+}
+/* line 10, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style:hover, .btn_style_mini:hover, .btn_style_jumbo:hover, .btn_style_big:hover, .btn_style:active, .btn_style_mini:active, .btn_style_jumbo:active, .btn_style_big:active {
+  background: #ff8a18;
+  cursor: pointer;
+}
+/* line 15, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style.disabled:hover, .disabled.btn_style_mini:hover, .disabled.btn_style_jumbo:hover, .disabled.btn_style_big:hover {
+  cursor: default;
+}
+/* line 19, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style[disabled], [disabled].btn_style_mini, [disabled].btn_style_jumbo, [disabled].btn_style_big {
+  background: none;
+  background-color: #D5D5D5;
+  border-color: #b1b1b1;
+  color: #a3a3a3;
+  cursor: default !important;
+}
+/* line 27, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style.blank, .blank.btn_style_mini, .blank.btn_style_jumbo, .blank.btn_style_big {
+  background: transparent;
+  color: #b1b1b1;
+  border: 0;
+}
+/* line 31, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style.blank:hover, .blank.btn_style_mini:hover, .blank.btn_style_jumbo:hover, .blank.btn_style_big:hover {
+  background: #EAEAEA;
+}
+/* line 33, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style.blank:hover:active, .blank.btn_style_mini:hover:active, .blank.btn_style_jumbo:hover:active, .blank.btn_style_big:hover:active {
+  padding-top: 2px;
+  padding-left: 62px;
+  padding-right: 58px;
+}
+/* line 42, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style.btn_cancel, .btn_cancel.btn_style_mini, .btn_cancel.btn_style_jumbo, .btn_cancel.btn_style_big {
+  background-color: #EAEAEA;
+  border-color: #b1b1b1;
+  color: #5e5e5e;
+}
+/* line 47, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style.btn_cancel:active, .btn_cancel.btn_style_mini:active, .btn_cancel.btn_style_jumbo:active, .btn_cancel.btn_style_big:active, .btn_style.btn_cancel:hover, .btn_cancel.btn_style_mini:hover, .btn_cancel.btn_style_jumbo:hover, .btn_cancel.btn_style_big:hover {
+  background: white;
+}
+/* line 52, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style.btn_cancel[disabled], .btn_cancel[disabled].btn_style_mini, .btn_cancel[disabled].btn_style_jumbo, .btn_cancel[disabled].btn_style_big {
+  border-color: #b1b1b1;
+}
+/* line 57, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style.aside, .aside.btn_style_mini, .aside.btn_style_jumbo, .aside.btn_style_big {
+  position: absolute;
+}
+/* line 59, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style.aside.left, .aside.left.btn_style_mini, .aside.left.btn_style_jumbo, .aside.left.btn_style_big {
+  right: 50%;
+  left: auto;
+  -ms-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+/* line 64, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style.aside.right, .aside.right.btn_style_mini, .aside.right.btn_style_jumbo, .aside.right.btn_style_big {
+  right: auto;
+  left: 50%;
+  -ms-transform: translate(50%, 0);
+  -moz-transform: translate(50%, 0);
+  -webkit-transform: translate(50%, 0);
+  transform: translate(50%, 0);
+}
+
+/* line 72, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style_mini {
+  padding: 6px 30px;
+  font-size: 16px;
+}
+
+/* line 78, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style_jumbo {
+  font-size: 26px;
+  font-weight: lighter;
+}
+
+/* line 84, ../../sass/bigpie/components/site-specific/_btn.scss */
+.btn_style_big {
+  display: inline-block;
+  height: 37px;
+  width: 192px;
+  line-height: 37px;
+  padding: 0;
+  font-size: 17px;
+  border-color: #b9b9b9;
+  border-radius: 20px;
+  background: #fff;
+  color: #000000;
+  outline: none;
+}
+
+/* line 96, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn {
+  background: #ee7600;
+  border: 2px solid #ee7600;
+  border-radius: 10px;
+  color: white;
+  font-size: 36px;
+  font-weight: lighter;
+  height: 86px;
+  outline: none;
+  vertical-align: top;
+  position: relative;
+  padding: 0 58px;
+  z-index: 1;
+}
+/* line 110, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn[disabled] {
+  background: #EAEAEA;
+  border: 2px solid #D5D5D5;
+  opacity: 1;
+  color: #5e5e5e;
+  pointer-events: auto;
+}
+/* line 117, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn[disabled]:hover {
+  background: white;
+  border: 2px solid #EAEAEA;
+}
+/* line 122, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn[disabled].next, .giant_btn[disabled].back {
+  background: #EAEAEA;
+}
+/* line 125, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn[disabled].next:after, .giant_btn[disabled].next:before, .giant_btn[disabled].back:after, .giant_btn[disabled].back:before {
+  background: #EAEAEA;
+}
+/* line 131, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.next {
+  background: #ee7600;
+}
+/* line 133, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.next:hover, .giant_btn.next:hover:after {
+  background-color: #ff8a18;
+}
+/* line 137, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.next:active, .giant_btn.next:active:after {
+  background-color: #c56200;
+}
+/* line 142, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.next:after {
+  content: ' ';
+  width: 64px;
+  height: 64px;
+  background: #ee7600;
+  position: absolute;
+  right: -26px;
+  top: 9px;
+  border-radius: 10px;
+  z-index: -1;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 157, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.next[disabled]:hover {
+  background: transparent;
+  border-top: 2px solid #EAEAEA;
+  border-left: 2px solid #EAEAEA;
+  border-bottom: 2px solid #EAEAEA;
+  border-right: 2px solid white;
+}
+/* line 165, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.next[disabled]:hover:after {
+  background: transparent;
+  border-top: 2px solid #EAEAEA;
+  border-right: 2px solid #EAEAEA;
+}
+/* line 174, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.back {
+  background-color: #ee7600;
+}
+/* line 176, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.back:hover, .giant_btn.back:hover:before {
+  background: #ff8a18;
+}
+/* line 180, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.back:active, .giant_btn.back:active:before {
+  background-color: #c56200;
+}
+/* line 185, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.back:before {
+  content: ' ';
+  width: 64px;
+  height: 64px;
+  background: #ee7600;
+  position: absolute;
+  left: -26px;
+  top: 9px;
+  border-radius: 10px;
+  z-index: -1;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  border-top: 2px solid #D5D5D5;
+  border-left: 2px solid #D5D5D5;
+}
+/* line 203, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.back[disabled]:hover {
+  background: transparent;
+  border-top: 2px solid #EAEAEA;
+  border-right: 2px solid #EAEAEA;
+  border-bottom: 2px solid #EAEAEA;
+  border-left: 2px solid white;
+}
+/* line 211, ../../sass/bigpie/components/site-specific/_btn.scss */
+.giant_btn.back[disabled]:hover:before {
+  background: transparent;
+  border-top: 2px solid #EAEAEA;
+  border-left: 2px solid #EAEAEA;
+}
+
+/* line 3, ../../sass/bigpie/components/site-specific/_btn-addremove.scss */
+.btn_addremove {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  height: 23px;
+  width: 23px;
+  line-height: 23px;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #999;
+  border-radius: 15px;
+  border: 1px solid #666;
+  padding: 0;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+  z-index: 19;
+}
+/* line 14, ../../sass/bigpie/components/site-specific/_btn-addremove.scss */
+.btn_addremove.fa-times {
+  line-height: 1;
+}
+/* line 16, ../../sass/bigpie/components/site-specific/_btn-addremove.scss */
+.btn_addremove.fa-minus {
+  background: #ee7600;
+  border-color: #ee7600;
+}
+/* line 20, ../../sass/bigpie/components/site-specific/_btn-addremove.scss */
+.btn_addremove.fa-minus.disabled {
+  background: #999;
+  border-color: #666;
+  cursor: not-allowed;
+}
+
+/* line 1, ../../sass/bigpie/components/site-specific/_chart.scss */
+.chart, .empty_chart {
+  width: 100%;
+  height: 300px;
+  background-color: #f7f7f7;
+  border-radius: 0;
+  margin-top: 15px;
+}
+
+/* line 9, ../../sass/bigpie/components/site-specific/_chart.scss */
+.empty_chart {
+  text-align: center;
+}
+/* line 11, ../../sass/bigpie/components/site-specific/_chart.scss */
+.empty_chart h2 {
+  line-height: 300px;
+  color: #b1b1b1;
+}
+
+/* line 1, ../../sass/bigpie/components/site-specific/_drop-down-list.scss */
+.drop_down {
+  position: relative;
+}
+/* line 5, ../../sass/bigpie/components/site-specific/_drop-down-list.scss */
+.drop_down:hover ul {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  visibility: visible;
+  -moz-transition: linear 0.1s all;
+  -o-transition: linear 0.1s all;
+  -webkit-transition: linear 0.1s all;
+  transition: linear 0.1s all;
+}
+/* line 12, ../../sass/bigpie/components/site-specific/_drop-down-list.scss */
+.drop_down > a {
+  background: #ee7600;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 7px 10px;
+  margin: 0 0 5px 0;
+  position: relative;
+}
+/* line 23, ../../sass/bigpie/components/site-specific/_drop-down-list.scss */
+.drop_down > a:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  width: 0px;
+  height: 0px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #fff;
+}
+/* line 34, ../../sass/bigpie/components/site-specific/_drop-down-list.scss */
+.drop_down ul {
+  position: absolute;
+  top: 33px;
+  -moz-transition: linear 0.1s all;
+  -o-transition: linear 0.1s all;
+  -webkit-transition: linear 0.1s all;
+  transition: linear 0.1s all;
+  -moz-border-radius: 0 0 4px 4px;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 4px 4px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  border: 1px solid #ccc;
+  z-index: 9;
+  visibility: hidden;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+/* line 47, ../../sass/bigpie/components/site-specific/_drop-down-list.scss */
+.drop_down ul li a {
+  padding: 7px 10px;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  color: #5e5e5e;
+}
+/* line 52, ../../sass/bigpie/components/site-specific/_drop-down-list.scss */
+.drop_down ul li a:hover {
+  background: #ee7600;
+  color: #fff;
+}
+/* line 56, ../../sass/bigpie/components/site-specific/_drop-down-list.scss */
+.drop_down ul li a:last-child {
+  border: 0;
+}
+
+/* line 1, ../../sass/bigpie/components/site-specific/_form-checkbox.scss */
+.form_checkbox {
+  cursor: pointer;
+}
+/* line 11, ../../sass/bigpie/components/globals/_form-checkbox.scss */
+.form_checkbox input {
+  display: none;
+}
+/* line 12, ../../sass/bigpie/components/globals/_form-checkbox.scss */
+.form_checkbox i {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  height: 18px;
+  width: 18px;
+  line-height: 16px;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+  color: #ccc;
+}
+/* line 17, ../../sass/bigpie/components/globals/_form-checkbox.scss */
+.form_checkbox i:before {
+  content: "";
+}
+/* line 19, ../../sass/bigpie/components/globals/_form-checkbox.scss */
+.form_checkbox input:checked + i:before {
+  content: "";
+}
+/* line 20, ../../sass/bigpie/components/globals/_form-checkbox.scss */
+.form_checkbox span, .form_checkbox label {
+  color: #ccc;
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+/* line 1, ../../sass/bigpie/components/site-specific/_meter.scss */
+meter {
+  height: 14px;
+  border: 1px solid #505050;
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  position: relative;
+  /* Firefox */
+  background: none;
+  /* Required to get rid of the default background prop. */
+  background-color: #fff;
+  box-shadow: none;
+}
+/* line 18, ../../sass/bigpie/components/site-specific/_meter.scss */
+meter span {
+  vertical-align: top;
+  display: inline-block;
+  height: 12px;
+  background: #7ab732;
+  border-radius: 6px;
+}
+/* line 26, ../../sass/bigpie/components/site-specific/_meter.scss */
+meter::-webkit-meter-bar {
+  background: none;
+  /* Important to get rid of default background. */
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: none;
+}
+/* line 32, ../../sass/bigpie/components/site-specific/_meter.scss */
+meter::-webkit-meter-optimum-value {
+  transition: width .5s;
+  border-radius: 6px;
+  background-size: 100% 100%;
+  background: #7ab732;
+}
+/* line 38, ../../sass/bigpie/components/site-specific/_meter.scss */
+meter::-moz-meter-bar {
+  border-radius: 6px;
+  background: #7ab732;
+  background-size: 100% 100%;
+}
+/* line 47, ../../sass/bigpie/components/site-specific/_meter.scss */
+.msie meter span {
+  top: 0;
+  left: 0;
+}
+
+/* line 1, ../../sass/bigpie/components/site-specific/_select.scss */
+select {
+  border: 1px solid #ccc;
+  height: 26px;
+  line-height: 18px;
+  margin: 0;
+  padding: 3px;
+  background: transparent none no-repeat;
+  cursor: pointer;
+  outline: none !important;
+}
+/* line 10, ../../sass/bigpie/components/site-specific/_select.scss */
+select option {
+  outline: none !important;
+}
+
+/* line 13, ../../sass/bigpie/components/site-specific/_select.scss */
+.label_select select {
+  width: 200px;
+}
+
+@media screen and (min-width: 0) {
+  /* for relatively modern browsers including IE 8+ */
+  /* line 19, ../../sass/bigpie/components/site-specific/_select.scss */
+  select {
+    border-radius: 4px;
+    background-image: url("data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAYAAACkVDyJAAAAlElEQVRIx+2VwQ3AIAhFwTiFi7KC7uYGHo1z0Et7MWkjaEiaQOJBDzy/wgdqrXwHWKyAiGAZDnSgHBhC+IfCUgqbKXxgGqhY4QyRQkUK35KLoK01iZd+xZKXRuEfbvdQPPGkAABEhMeLhohE5yfaAufk93791r13zQDmnLNqcOMYg1NKmoJgTRHtmDeaWZvPQweaAi8PXSmZJU3QRAAAAABJRU5ErkJggg==");
+    background-position: -50px -50px;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* for Webkit */
+  /* line 28, ../../sass/bigpie/components/site-specific/_select.scss */
+  select {
+    -webkit-appearance: none;
+    background-position: right center;
+    padding: 3px 32px 3px 5px;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* for IE10+ */
+  /* line 37, ../../sass/bigpie/components/site-specific/_select.scss */
+  select::-ms-expand {
+    display: none;
+  }
+
+  /* line 40, ../../sass/bigpie/components/site-specific/_select.scss */
+  select {
+    background-position: right center;
+    padding-right: 30px;
+  }
+}
+/* line 1, ../../sass/bigpie/components/site-specific/_loader.scss */
+.loader_overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  overflow-y: auto;
+}
+/* line 6, ../../sass/bigpie/components/site-specific/_loader.scss */
+.loader_overlay.loader_inner {
+  position: absolute;
+}
+
+/* line 9, ../../sass/bigpie/components/site-specific/_loader.scss */
+.loader {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  border-radius: 50%;
+  text-indent: -9999em;
+  -webkit-animation: load 1.3s infinite linear;
+  animation: load 1.3s infinite linear;
+}
+
+@-webkit-keyframes load {
+  0%, 100% {
+    box-shadow: 0em -3em 0em 0.2em #cccccc, 2em -2em 0 0em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 0em #cccccc;
+  }
+  12.5% {
+    box-shadow: 0em -3em 0em 0em #cccccc, 2em -2em 0 0.2em #cccccc, 3em 0em 0 0em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc;
+  }
+  25% {
+    box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 0em #cccccc, 3em 0em 0 0.2em #cccccc, 2em 2em 0 0em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc;
+  }
+  37.5% {
+    box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 0em #cccccc, 2em 2em 0 0.2em #cccccc, 0em 3em 0 0em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc;
+  }
+  50% {
+    box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 0em #cccccc, 0em 3em 0 0.2em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc;
+  }
+  62.5% {
+    box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 0em #cccccc, -2em 2em 0 0.2em #cccccc, -3em 0em 0 0em #cccccc, -2em -2em 0 -0.5em #cccccc;
+  }
+  75% {
+    box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 0.2em #cccccc, -2em -2em 0 0em #cccccc;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0em 0em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 0em #cccccc, -2em -2em 0 0.2em #cccccc;
+  }
+}
+@keyframes load {
+  0%, 100% {
+    box-shadow: 0em -3em 0em 0.2em #cccccc, 2em -2em 0 0em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 0em #cccccc;
+  }
+  12.5% {
+    box-shadow: 0em -3em 0em 0em #cccccc, 2em -2em 0 0.2em #cccccc, 3em 0em 0 0em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc;
+  }
+  25% {
+    box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 0em #cccccc, 3em 0em 0 0.2em #cccccc, 2em 2em 0 0em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc;
+  }
+  37.5% {
+    box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 0em #cccccc, 2em 2em 0 0.2em #cccccc, 0em 3em 0 0em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc;
+  }
+  50% {
+    box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 0em #cccccc, 0em 3em 0 0.2em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc;
+  }
+  62.5% {
+    box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 0em #cccccc, -2em 2em 0 0.2em #cccccc, -3em 0em 0 0em #cccccc, -2em -2em 0 -0.5em #cccccc;
+  }
+  75% {
+    box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 0.2em #cccccc, -2em -2em 0 0em #cccccc;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0em 0em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 0em #cccccc, -2em -2em 0 0.2em #cccccc;
+  }
+}
+/* HTML FORMAT
+<div class="tooltip">
+    <div class="tooltip_content">
+        <h4>Some Title.</h4>
+        <p>Some Text Description</p>
+    </div>
+    <a href="#" class="btn_addremove fa fa-times"></a>
+</div>
+*/
+/* line 11, ../../sass/bigpie/components/site-specific/_tooltip.scss */
+.tooltip {
+  position: absolute;
+  right: 71px;
+  bottom: 27%;
+  background: #f0f0f1;
+  color: #808080;
+  width: 290px;
+  border-radius: 6px 6px 0 6px;
+  padding: 8px;
+  padding-bottom: 22px;
+  z-index: 10;
+  opacity: 1;
+}
+/* line 22, ../../sass/bigpie/components/site-specific/_tooltip.scss */
+.tooltip:after {
+  height: 0;
+  width: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #f0f0f1;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  content: "";
+  border-right: 0;
+}
+/* line 29, ../../sass/bigpie/components/site-specific/_tooltip.scss */
+.tooltip .tooltip_content {
+  max-height: 120px;
+  overflow: auto;
+}
+/* line 33, ../../sass/bigpie/components/site-specific/_tooltip.scss */
+.tooltip .tooltip_content h4 {
+  color: #555555;
+  font-size: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  line-height: 18px;
+}
+/* line 41, ../../sass/bigpie/components/site-specific/_tooltip.scss */
+.tooltip .tooltip_content p {
+  color: #727272;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0;
+}
+
+/* line 1, ../../sass/bigpie/components/site-specific/_daterangepicker.scss */
+.daterangepicker {
+  display: none;
+  border: 1px solid #000;
+}
+
+/* line 6, ../../sass/bigpie/components/site-specific/_daterangepicker.scss */
+.daterangepicker .calendar-time {
+  display: none;
+}
+
+/* line 2, ../../sass/bigpie/components/site-specific/_override.scss */
+body.modal-open {
+  padding-right: 0 !important;
+}
+
+/* line 7, ../../sass/bigpie/components/site-specific/_override.scss */
+.btn-default[disabled] {
+  background: #a9a9a9;
+}
+
+/* line 4, ../../sass/bigpie/layout/base/_header.scss */
+header nav .button_container button.btn-link {
+  margin: 12px 30px 0 0;
+  font-size: 18px;
+}
+
+/* FORMS */
+/* line 2, ../../sass/bigpie/layout/base/_form.scss */
+.form-control {
+  font-family: "helvetica_neue_lt_std43LtEx", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 40px;
+  padding: 6px 20px;
+  font-size: 17px;
+  line-height: 1.428571429;
+  color: #ffffff;
+  background-color: #4C4C4C;
+  border: none;
+  border-radius: 25px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+}
+
+/* line 17, ../../sass/bigpie/layout/base/_form.scss */
+.form-group label {
+  font: 15px "helvetica_neue_lt_std33ThEx", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-left: 13px;
+  margin-top: 4px;
+}
+/* line 22, ../../sass/bigpie/layout/base/_form.scss */
+.form-group label span {
+  font-size: 17px;
+}
+
+/* line 28, ../../sass/bigpie/layout/base/_form.scss */
+.message {
+  padding: 10px;
+  font-size: 1em;
+  font-family: "helvetica_neue_lt_std43LtEx", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* line 33, ../../sass/bigpie/layout/base/_form.scss */
+.message.success {
+  color: green;
+}
+/* line 37, ../../sass/bigpie/layout/base/_form.scss */
+.message.error {
+  color: red;
+}
+
+/* line 42, ../../sass/bigpie/layout/base/_form.scss */
+.orange_input {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #ee7600;
+  padding: 14px;
+  width: 100%;
+  color: #ee7600;
+  font-size: 20px;
+}
+
+/* BUTTONS */
+/* line 2, ../../sass/bigpie/layout/base/_buttons.scss */
+button, input {
+  outline: none !important;
+}
+
+/* line 5, ../../sass/bigpie/layout/base/_buttons.scss */
+.btn, .btn-square {
+  font-family: "helvetica_neue_lt_std53Ex", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  border-radius: 20px;
+  padding-right: 2em;
+  padding-left: 2em;
+  outline: 0 !important;
+}
+
+/* line 17, ../../sass/bigpie/layout/base/_buttons.scss */
+.btn:hover, .btn-square:hover, .btn:focus, .btn-square:focus {
+  color: #fff;
+}
+
+/* line 21, ../../sass/bigpie/layout/base/_buttons.scss */
+.btn-default {
+  text-shadow: none;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZhNzYxOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjZTQ3MDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background-image: -webkit-linear-gradient(top, #FA7618 0%, #CE4700 100%);
+  background-image: linear-gradient(to bottom, #fa7618 0%, #ce4700 100%);
+  background-repeat: repeat-x;
+  border: none;
+  border-width: 0;
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FA7618', endColorstr='#CE4700', GradientType=0);*/
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+/* line 33, ../../sass/bigpie/layout/base/_buttons.scss */
+.contact .marketing .btn-default {
+  text-shadow: none;
+  background: #878788;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg3ODc4OCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MzQ0NDgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background-image: -webkit-linear-gradient(top, #878788 0%, #434448 100%);
+  background-image: linear-gradient(to bottom, #878788 0%, #434448 100%);
+  background-repeat: repeat-x;
+  border: none;
+  border-width: 0;
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#878788', endColorstr='#434448', GradientType=0);*/
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+/* line 46, ../../sass/bigpie/layout/base/_buttons.scss */
+.btn-default:hover, .btn-default:focus, .navbar-default .navbar-nav > li > a.btn-default:hover, .navbar-default .navbar-nav > li > a.btn-default:focus {
+  background-position: 0 0;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+/* line 52, ../../sass/bigpie/layout/base/_buttons.scss */
+.contact .marketing .btn-default:hover {
+  background-color: #434448;
+}
+
+/* line 56, ../../sass/bigpie/layout/base/_buttons.scss */
+.btn-default:active, .btn-default.active {
+  background-color: #FA7618;
+  border-color: #dbdbdb;
+}
+
+/* line 61, ../../sass/bigpie/layout/base/_buttons.scss */
+.btn-square {
+  font-family: Roboto, Arial, sans-serif;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #ee7600;
+  padding: 12px 17px;
+  border: 0;
+  color: #fff;
+}
+
+/* line 70, ../../sass/bigpie/layout/base/_buttons.scss */
+.btn-link {
+  font-family: Roboto, Arial, sans-serif;
+  background: none;
+  border: 0;
+  color: #5e5e5e;
+}
+
+/* line 76, ../../sass/bigpie/layout/base/_buttons.scss */
+.btn_style_jumbo {
+  background: #ee7600;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e47100;
+  font-size: 18px;
+  outline: none !important;
+  color: white;
+  padding: 18px 60px;
+  font-size: 28px;
+  font-weight: 400;
+  border: 1px solid #fff;
+}
+/* line 88, ../../sass/bigpie/layout/base/_buttons.scss */
+.btn_style_jumbo:hover {
+  background: #ff8a18;
+  cursor: pointer;
+}
+
+/* line 93, ../../sass/bigpie/layout/base/_buttons.scss */
+.right_arrow {
+  position: relative;
+}
+/* line 95, ../../sass/bigpie/layout/base/_buttons.scss */
+.right_arrow:before, .right_arrow:after {
+  background: #fff;
+  content: "";
+  height: 53px;
+  margin-top: 0;
+  position: absolute;
+  right: -24px;
+  top: 8px;
+  width: 54px;
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -moz-border-radius: .4em;
+  -webkit-border-radius: .4em;
+  border-radius: 7px;
+}
+/* line 114, ../../sass/bigpie/layout/base/_buttons.scss */
+.right_arrow:after {
+  right: -22px;
+  background: #ee7600;
+}
+/* line 118, ../../sass/bigpie/layout/base/_buttons.scss */
+.right_arrow:hover:after {
+  background: #ff8a18;
+}
+
+/* line 2, ../../sass/bigpie/layout/base/_pagination.scss */
+nav.pagination_wrapper .pagination > li > a, nav.pagination_wrapper .pagination > li > span {
+  color: #fff;
+  background: #ee7600;
+}
+/* line 5, ../../sass/bigpie/layout/base/_pagination.scss */
+nav.pagination_wrapper .pagination > li > a:hover, nav.pagination_wrapper .pagination > li > span:hover {
+  background: #E4770C;
+}
+
+/* line 5, ../../sass/bigpie/layout/modals/_global-modal.scss */
+.modal-dialog .modal-header .close {
+  display: inline-block;
+  vertical-align: top;
+  height: 28px;
+  width: 29px;
+  line-height: 0;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  position: absolute;
+  right: -16px;
+  top: -11px;
+  background: #4D4D4D;
+  border: 2px solid #fff;
+  font-size: 24px;
+  padding: 0 0 1px 0;
+}
+/* line 16, ../../sass/bigpie/layout/modals/_global-modal.scss */
+.modal-dialog .modal-header .close:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  background: #313131;
+}
+/* line 27, ../../sass/bigpie/layout/modals/_global-modal.scss */
+.modal-dialog.blue_modal .modal-content {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #1A4D8A;
+  border: 1px solid #fff;
+  color: #fff;
+}
+/* line 37, ../../sass/bigpie/layout/modals/_global-modal.scss */
+.modal-dialog.orange_modal .modal-content {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #EB7723;
+  border: 1px solid #fff;
+  color: #fff;
+}
+/* line 45, ../../sass/bigpie/layout/modals/_global-modal.scss */
+.modal-dialog.light_blue_modal .modal-content {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #CAD5E0;
+  border: 1px solid #fff;
+  color: #000;
+}
+
+/* MODAL */
+/* line 2, ../../sass/bigpie/layout/modals/_modal.scss */
+body.modal-open {
+  overflow: auto;
+}
+
+/* line 6, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal {
+  overflow-y: auto;
+}
+/* line 9, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal h1, .modal h2, .modal h3, .modal h4, .modal h5, .modal h6, .modal .h1, .modal .h2, .modal .h3, .modal .h4, .modal .h5, .modal .h6 {
+  font-family: "helvetica_neue_lt_std43LtEx", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0;
+  line-height: 33px;
+  color: white;
+}
+/* line 16, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal p {
+  line-height: 20px;
+  letter-spacing: 0;
+}
+/* line 21, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+/* line 27, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal h4 {
+  font-size: 18px;
+  margin-top: 30px;
+  line-height: 1.1;
+}
+/* line 33, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal a {
+  font-size: 14px;
+  color: #428BCA;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+/* line 40, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal .checkbox,
+.modal .help-block {
+  margin-left: 15px;
+}
+/* line 45, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal .form-control {
+  background-color: white;
+  color: #000;
+}
+/* line 50, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal .form-group label {
+  margin-left: 0;
+}
+/* line 54, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal .remember-me {
+  color: white;
+}
+
+/* line 60, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal-content {
+  background-color: #000;
+  border: none;
+  border-radius: 0px;
+}
+
+/* line 66, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal-header {
+  border-bottom: none;
+}
+/* line 69, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal-header button.close {
+  color: #fff;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+/* line 74, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal-header button.close:hover, .modal-header button.close:focus {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+/* line 82, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal-body {
+  padding: 20px 40px 40px;
+}
+/* line 84, ../../sass/bigpie/layout/modals/_modal.scss */
+.modal-body p {
+  color: #ccc;
+}
+
+/* line 1, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal {
+  top: 0;
+  height: 100%;
+  overflow-y: auto;
+  margin-right: -30px;
+  padding-right: 30px;
+}
+/* line 8, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+}
+/* line 14, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-body {
+  background-color: #4F75AB;
+  background-image: url(../../img/bigpie/slidebg-merchant.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  border-bottom: 9px solid #506380;
+  display: inline-block;
+  width: 100%;
+  padding: 24px 18px 12px;
+}
+/* line 25, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-body .title {
+  color: #fff;
+  margin: 14px 0 38px 0;
+  font-size: 26px;
+  text-align: center;
+}
+/* line 31, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-body section {
+  margin: 0 0 37px 0;
+}
+/* line 35, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-body .link:hover {
+  -moz-box-shadow: inset 0px 3px 34px 0px #e0e0e0;
+  -webkit-box-shadow: inset 0px 3px 34px 0px #e0e0e0;
+  box-shadow: inset 0px 3px 34px 0px #e0e0e0;
+  text-decoration: none;
+  background: #e9e5e5;
+}
+/* line 40, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-body .link:hover > p {
+  background: #F28A0F;
+}
+/* line 45, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-body .link {
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: #fff;
+  border-radius: 6px;
+  padding: 0;
+  vertical-align: top;
+  overflow: hidden;
+  color: #fff;
+  display: block;
+  margin: 10px 0;
+}
+/* line 56, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-body .link img {
+  vertical-align: middle;
+  text-align: center;
+  padding: 0;
+  margin: auto;
+  display: block;
+  margin-bottom: 25px;
+  padding-top: 19px;
+}
+/* line 65, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-body .link > p {
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: #F6931D;
+  padding: 8px 0;
+  text-align: center;
+  color: #fff;
+  font-family: "helvetica_neue_lt_std53Ex", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+}
+/* line 77, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-body .click-here {
+  color: #fff;
+}
+/* line 81, ../../sass/bigpie/layout/modals/_register.scss */
+.register_modal .modal-body .title {
+  font-family: "helvetica_neue_lt_std43LtEx", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 88, ../../sass/bigpie/layout/modals/_register.scss */
+#register-success-html-modal-success h1,
+#register-success-html-modal-success h2,
+#register-success-html-modal-success h3,
+#register-success-html-modal h1,
+#register-success-html-modal h2,
+#register-success-html-modal h3 {
+  color: white;
+}
+
+/* line 97, ../../sass/bigpie/layout/modals/_register.scss */
+#register-success-html-modal-success h2,
+#register-success-html-modal h2 {
+  font-size: 24px;
+}
+
+/* line 102, ../../sass/bigpie/layout/modals/_register.scss */
+#register-success-html-modal-success h3,
+#register-success-html-modal h3 {
+  font-size: 18px;
+}
+
+/* line 107, ../../sass/bigpie/layout/modals/_register.scss */
+#register-success-html-modal-success .footer,
+#register-success-html-modal .footer {
+  height: 170px;
+}
+
+/* line 112, ../../sass/bigpie/layout/modals/_register.scss */
+#register-success-html-modal-success .modal-header,
+#register-success-html-modal .modal-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* line 119, ../../sass/bigpie/layout/modals/_register.scss */
+.notify-me {
+  position: relative;
+}
+
+/* line 123, ../../sass/bigpie/layout/modals/_register.scss */
+.notify-me .register_error {
+  position: absolute;
+  margin-left: 23px;
+}
+
+/* line 128, ../../sass/bigpie/layout/modals/_register.scss */
+.notify-me.text-right .register_error {
+  right: 0;
+}
+
+/* line 132, ../../sass/bigpie/layout/modals/_register.scss */
+.accountEmail.invalid {
+  border: 3px solid red;
+}
+
+@media (min-width: 480px) {
+  /* line 3, ../../sass/bigpie/layout/modals/_media.scss */
+  .register_modal {
+    top: 20px;
+  }
+
+  /* line 7, ../../sass/bigpie/layout/modals/_media.scss */
+  .register_modal {
+    top: 0;
+    height: auto;
+    overflow-y: hidden;
+    margin-right: 0;
+    margin: auto;
+    padding-right: 0;
+  }
+
+  /* line 16, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-1 .container {
+    background-image: url(../img/slidebg-pie-crane-a.png), url(../img/slidebg-pie-crane-b.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 75% top, center bottom;
+    background-size: auto 35%, auto 25%;
+  }
+
+  /* line 23, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-1 .carousel-caption {
+    bottom: 100px;
+  }
+
+  /* line 27, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-1 .carousel-caption h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  /* line 32, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-2 .container {
+    background: url(../img/slidebg-100percent.png) 10% bottom/auto 80% no-repeat;
+  }
+}
+@media (min-width: 768px) {
+  /* line 39, ../../sass/bigpie/layout/modals/_media.scss */
+  .register_modal {
+    top: 200px;
+  }
+
+  /* line 43, ../../sass/bigpie/layout/modals/_media.scss */
+  .register_modal .modal-content .modal-body .link {
+    width: 167px;
+    height: 160px;
+    display: inline-block;
+  }
+
+  /* line 50, ../../sass/bigpie/layout/modals/_media.scss */
+  .register_modal .modal-content .modal-body .link.merchant {
+    margin: 10px 12px;
+  }
+
+  /* line 54, ../../sass/bigpie/layout/modals/_media.scss */
+  .register_modal .modal-content .modal-body .link.merchant img {
+    width: 84px;
+  }
+
+  /* line 58, ../../sass/bigpie/layout/modals/_media.scss */
+  .register_modal .modal-content .modal-body .link.nonprofits img {
+    width: 62px;
+    padding: 25px 0 0 0;
+  }
+
+  /* line 63, ../../sass/bigpie/layout/modals/_media.scss */
+  .register_modal .modal-content .modal-body .link img {
+    width: 110px;
+  }
+
+  /* line 70, ../../sass/bigpie/layout/modals/_media.scss */
+  .img-responsive {
+    max-width: 100%;
+  }
+
+  /* line 74, ../../sass/bigpie/layout/modals/_media.scss */
+  .noBreak-xs {
+    display: inline;
+  }
+
+  /* line 78, ../../sass/bigpie/layout/modals/_media.scss */
+  .noBreak-sm {
+    display: none;
+  }
+
+  /* line 82, ../../sass/bigpie/layout/modals/_media.scss */
+  .lead {
+    font-size: 18px;
+  }
+
+  /* Remove the edge padding needed for mobile */
+  /* line 87, ../../sass/bigpie/layout/modals/_media.scss */
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Navbar positioning foo */
+  /* line 96, ../../sass/bigpie/layout/modals/_media.scss */
+  .navbar-wrapper .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  /* line 101, ../../sass/bigpie/layout/modals/_media.scss */
+  .navbar .container {
+    padding-left: 15px;
+  }
+
+  /* line 105, ../../sass/bigpie/layout/modals/_media.scss */
+  .navbar-wrapper .navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  /* line 111, ../../sass/bigpie/layout/modals/_media.scss */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* line 115, ../../sass/bigpie/layout/modals/_media.scss */
+  .navbar-default .navbar-collapse {
+    margin-top: 0px;
+  }
+
+  /* line 119, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel-caption {
+    right: 5%;
+    left: 5%;
+    padding-bottom: 15px;
+  }
+
+  /* Bump up size of carousel content */
+  /* line 126, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel-caption p, .hero p {
+    margin-bottom: 20px;
+  }
+
+  /* line 130, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel-caption h1, .carousel .panel-1 .carousel-caption h1, .carousel .panel-5 .carousel-caption h1 {
+    margin-bottom: 0px;
+    font-size: 30px;
+  }
+
+  /* line 135, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-1 .container {
+    background: url(../img/slidebg-pie-crane.png) 90%/auto 100% no-repeat;
+  }
+
+  /* line 139, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-1 .container {
+    background-image: url(../img/slidebg-pie-crane-a.png), url(../img/slidebg-pie-crane-b.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right top, bottom right;
+    background-size: auto 180px, auto 110px;
+  }
+
+  /* line 146, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-2 .container {
+    background: url(../img/slidebg-100percent.png) 10%/auto 100% no-repeat;
+  }
+
+  /* line 150, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-3 .container {
+    background-image: url(../img/dn-arrow-main.png), url(../img/slidebg-patron.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 166px top, right bottom;
+    background-size: auto auto, auto 70%;
+  }
+
+  /* line 157, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-1 .carousel-caption {
+    bottom: 20px;
+  }
+
+  /* line 161, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-3 .carousel-caption {
+    bottom: 20px;
+  }
+
+  /* line 165, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-4 .carousel-caption {
+    bottom: 70px;
+  }
+
+  /* line 169, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-4 .carousel-caption p.fs28 {
+    margin-left: 25px;
+    margin-bottom: 20px;
+  }
+
+  /* line 174, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-4 .container {
+    background-image: url(../img/dn-arrow-main.png), url(../img/slidebg-merchant.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 315px top, center bottom;
+    background-size: auto auto, 70% auto;
+  }
+
+  /* line 181, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-5 .container {
+    background-image: url(../img/dn-arrow-main.png), url(../img/slidebg-nonprofit.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 480px top, left bottom;
+    background-size: auto auto, auto 70%;
+  }
+
+  /* line 188, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-5 .carousel-caption {
+    bottom: 20px;
+  }
+
+  /* line 192, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .register_error {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+
+  /* line 197, ../../sass/bigpie/layout/modals/_media.scss */
+  .patron #feat-1 .container, .merchant #feat-1 .container, .nonprofit #feat-1 .container {
+    background: url(../img/dn-arrow-main.png) 166px top no-repeat;
+    z-index: 2;
+    position: relative;
+    margin-top: -10px;
+  }
+
+  /* line 204, ../../sass/bigpie/layout/modals/_media.scss */
+  .hero .container {
+    background: url(../img/dn-arrow-main.png) 166px top no-repeat;
+    z-index: 2;
+    position: relative;
+  }
+
+  /* line 210, ../../sass/bigpie/layout/modals/_media.scss */
+  .merchant .hero .container {
+    background-position: 315px top;
+  }
+
+  /* line 214, ../../sass/bigpie/layout/modals/_media.scss */
+  .merchant #feat-1 .container {
+    background-position: 315px top;
+  }
+
+  /* line 218, ../../sass/bigpie/layout/modals/_media.scss */
+  .nonprofit .hero .container {
+    background-position: 480px top;
+  }
+
+  /* line 222, ../../sass/bigpie/layout/modals/_media.scss */
+  .nonprofit #feat-1 .container {
+    background-position: 480px top;
+  }
+
+  /* line 226, ../../sass/bigpie/layout/modals/_media.scss */
+  .about .hero .container {
+    background: url(../img/hero-about.png) 0 100px no-repeat;
+    background-size: 40%;
+  }
+
+  /* line 231, ../../sass/bigpie/layout/modals/_media.scss */
+  .hero.bottom {
+    min-height: 350px;
+  }
+
+  /* line 235, ../../sass/bigpie/layout/modals/_media.scss */
+  .hero.bottom .container {
+    background: none;
+  }
+
+  /* line 239, ../../sass/bigpie/layout/modals/_media.scss */
+  .hero h1 {
+    margin-top: 70px;
+    font-size: 48px;
+  }
+
+  /* line 244, ../../sass/bigpie/layout/modals/_media.scss */
+  .featurette-heading {
+    font-size: 50px;
+    margin-top: 40px;
+  }
+
+  /* line 249, ../../sass/bigpie/layout/modals/_media.scss */
+  .marketing .col-lg-4 {
+    margin-bottom: 0px;
+  }
+
+  /* line 253, ../../sass/bigpie/layout/modals/_media.scss */
+  .marketing.threeCols .row.hidden-xs {
+    margin-bottom: 40px;
+  }
+
+  /* line 257, ../../sass/bigpie/layout/modals/_media.scss */
+  .marketing .staff p span {
+    font-size: 21px;
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+  /* line 265, ../../sass/bigpie/layout/modals/_media.scss */
+  .noBreak-sm {
+    display: inline;
+  }
+
+  /* line 269, ../../sass/bigpie/layout/modals/_media.scss */
+  .noBreak-md {
+    display: none;
+  }
+
+  /* line 273, ../../sass/bigpie/layout/modals/_media.scss */
+  .lead {
+    font-size: 21px;
+  }
+
+  /* line 277, ../../sass/bigpie/layout/modals/_media.scss */
+  .fs20 {
+    font-size: 20px;
+    line-height: 130%;
+  }
+
+  /* line 282, ../../sass/bigpie/layout/modals/_media.scss */
+  .fs24 {
+    font-size: 24px;
+    line-height: 130%;
+  }
+
+  /* line 287, ../../sass/bigpie/layout/modals/_media.scss */
+  .fs28 {
+    font-size: 28px;
+    line-height: 130%;
+  }
+
+  /* line 292, ../../sass/bigpie/layout/modals/_media.scss */
+  .fs33 {
+    font-size: 33px;
+    line-height: 110%;
+  }
+
+  /* line 297, ../../sass/bigpie/layout/modals/_media.scss */
+  .fs36 {
+    font-size: 36px;
+    line-height: 100%;
+    margin-bottom: 0;
+  }
+
+  /* line 303, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel-caption h1, .carousel .panel-1 .carousel-caption h1, .carousel .panel-5 .carousel-caption h1 {
+    font-size: 42px;
+  }
+
+  /* line 307, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .sign-up {
+    margin-left: 25px;
+  }
+
+  /* line 311, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel-caption .form-group h2 {
+    font-size: 33px;
+  }
+
+  /* line 315, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel-caption .form-group p {
+    font-size: 24px;
+  }
+
+  /* line 319, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-3 .carousel-caption p.fs28, .carousel .panel-4 .carousel-caption p.fs28 {
+    margin-left: 25px;
+    margin-bottom: 20px;
+  }
+
+  /* line 324, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-1 .carousel-caption {
+    bottom: 5px;
+  }
+
+  /* line 328, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-2 .carousel-caption {
+    bottom: 0px;
+  }
+
+  /* line 332, ../../sass/bigpie/layout/modals/_media.scss */
+  .featurette-heading {
+    margin-top: 50px;
+  }
+
+  /* line 336, ../../sass/bigpie/layout/modals/_media.scss */
+  .faq .featurette-heading, .contact .featurette-heading {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  /* line 341, ../../sass/bigpie/layout/modals/_media.scss */
+  .hero .container {
+    background-position: 381px top;
+  }
+
+  /* line 345, ../../sass/bigpie/layout/modals/_media.scss */
+  .patron #feat-1 .container {
+    background-position: 381px top;
+    margin-top: -10px;
+  }
+
+  /* line 350, ../../sass/bigpie/layout/modals/_media.scss */
+  .merchant .hero .container {
+    background-position: 535px top;
+  }
+
+  /* line 354, ../../sass/bigpie/layout/modals/_media.scss */
+  .merchant #feat-1 .container {
+    background-position: 535px top;
+  }
+
+  /* line 358, ../../sass/bigpie/layout/modals/_media.scss */
+  .nonprofit .hero .container {
+    background-position: 700px top;
+  }
+
+  /* line 362, ../../sass/bigpie/layout/modals/_media.scss */
+  .nonprofit #feat-1 .container {
+    background-position: 700px top;
+  }
+
+  /* line 366, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-1 .container {
+    background-image: url(../img/slidebg-pie-crane-a.png), url(../img/slidebg-pie-crane-b.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 93% top, 93% bottom;
+    background-size: auto 210px, auto 140px;
+  }
+
+  /* line 373, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-3 .container {
+    background-image: url(../img/dn-arrow-main.png), url(../img/slidebg-patron.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 380px top, right bottom;
+    background-size: auto auto, auto 80%;
+  }
+
+  /* line 380, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-4 .container {
+    background-image: url(../img/dn-arrow-main.png), url(../img/slidebg-merchant.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 535px top, center bottom;
+    background-size: auto auto, 70% auto;
+  }
+
+  /* line 387, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-5 .container {
+    background: url(../img/dn-arrow-main.png) 700px top no-repeat, url(../img/slidebg-nonprofit.png) left bottom no-repeat;
+  }
+
+  /* line 391, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-5 .container {
+    background-image: url(../img/dn-arrow-main.png), url(../img/slidebg-nonprofit.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 700px top, left bottom;
+    background-size: auto auto, auto 80%;
+  }
+
+  /* line 398, ../../sass/bigpie/layout/modals/_media.scss */
+  .marketing h2 {
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 100%;
+    margin-bottom: 25px;
+  }
+
+  /* line 405, ../../sass/bigpie/layout/modals/_media.scss */
+  .marketing h2 span {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 411, ../../sass/bigpie/layout/modals/_media.scss */
+  .noBreak-md {
+    display: inline;
+  }
+
+  /* line 415, ../../sass/bigpie/layout/modals/_media.scss */
+  .noBreak-lg {
+    display: none;
+  }
+
+  /* line 422, ../../sass/bigpie/layout/modals/_media.scss */
+  .hero .container {
+    background-position: 580px top;
+  }
+
+  /* line 426, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-1 .carousel-caption {
+    bottom: 20px;
+  }
+
+  /* line 430, ../../sass/bigpie/layout/modals/_media.scss */
+  .patron #feat-1 .container {
+    background-position: 580px top;
+  }
+
+  /* line 434, ../../sass/bigpie/layout/modals/_media.scss */
+  .merchant .hero .container {
+    background-position: 735px top;
+  }
+
+  /* line 438, ../../sass/bigpie/layout/modals/_media.scss */
+  .merchant #feat-1 .container {
+    background-position: 735px top;
+  }
+
+  /* line 442, ../../sass/bigpie/layout/modals/_media.scss */
+  .nonprofit .hero .container {
+    background-position: 900px top;
+  }
+
+  /* line 446, ../../sass/bigpie/layout/modals/_media.scss */
+  .nonprofit #feat-1 .container {
+    background-position: 900px top;
+  }
+
+  /* line 450, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-3 .container {
+    background: url(../img/dn-arrow-main.png) 580px top no-repeat, url(../img/slidebg-patron.png) right bottom no-repeat;
+  }
+
+  /* line 454, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-3 .container {
+    background-image: url(../img/dn-arrow-main.png), url(../img/slidebg-patron.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 580px top, 90% bottom;
+    background-size: auto auto, auto 80%;
+  }
+
+  /* line 461, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-4 .container {
+    background-image: url(../img/dn-arrow-main.png), url(../img/slidebg-merchant.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 735px top, center bottom;
+    background-size: auto auto, 70% auto;
+  }
+
+  /* line 468, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-5 .container {
+    background: url(../img/dn-arrow-main.png) 900px top no-repeat, url(../img/slidebg-nonprofit.png) left bottom no-repeat;
+  }
+
+  /* line 472, ../../sass/bigpie/layout/modals/_media.scss */
+  .carousel .panel-5 .container {
+    background-image: url(../img/dn-arrow-main.png), url(../img/slidebg-nonprofit.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 900px top, left bottom;
+    background-size: auto auto, auto 90%;
+  }
+
+  /* line 479, ../../sass/bigpie/layout/modals/_media.scss */
+  .featurette img[src*="feat-patron-build-neighborhoods.png"] {
+    margin-top: 20px;
+    height: 400px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* line 3, ../../sass/bigpie/layout/modals/_suggest.scss */
+#suggestModal .modal-header {
+  padding: 20px 40px;
+  margin: 0;
+}
+/* line 8, ../../sass/bigpie/layout/modals/_suggest.scss */
+#suggestModal .suggest_healine {
+  font-size: 50px;
+  font-family: sans-serif;
+  font-style: italic;
+  line-height: 1;
+  text-align: left;
+}
+/* line 16, ../../sass/bigpie/layout/modals/_suggest.scss */
+#suggestModal .get_started_button_holder {
+  text-align: center;
+}
+/* line 18, ../../sass/bigpie/layout/modals/_suggest.scss */
+#suggestModal .get_started_button_holder button {
+  border-radius: 11px;
+  padding: 23px 48px;
+  border-color: #fff;
+}
+/* line 25, ../../sass/bigpie/layout/modals/_suggest.scss */
+#suggestModal h5 {
+  line-height: 1.1;
+  width: 90px;
+  font-size: 22px;
+  font-family: sans-serif;
+  margin-right: 40px;
+}
+/* line 31, ../../sass/bigpie/layout/modals/_suggest.scss */
+#suggestModal h5.two_lines_fix {
+  position: relative;
+  top: 9px;
+}
+/* line 37, ../../sass/bigpie/layout/modals/_suggest.scss */
+#suggestModal label {
+  display: inline-block;
+}
+/* line 41, ../../sass/bigpie/layout/modals/_suggest.scss */
+#suggestModal input, #suggestModal select {
+  height: 56px;
+  font-family: sans-serif;
+  display: inline-block;
+  width: 334px;
+}
+/* line 46, ../../sass/bigpie/layout/modals/_suggest.scss */
+#suggestModal input.invalid, #suggestModal select.invalid {
+  border: 3px solid red;
+}
+/* line 51, ../../sass/bigpie/layout/modals/_suggest.scss */
+#suggestModal select {
+  width: 100px;
+  border-radius: 0px;
+}
+
+/* line 58, ../../sass/bigpie/layout/modals/_suggest.scss */
+#errorModal .modal-content {
+  background: #e01a24;
+}
+
+/* line 4, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-header {
+  padding: 25px 35px;
+}
+/* line 6, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-header h1 {
+  font: 400 54px/1 "Roboto", "Arial", sans-serif;
+  font-style: italic;
+  margin: 0 0 17px 0;
+}
+/* line 11, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-header p {
+  font: 600 20px/28px "Roboto", "Arial", sans-serif;
+  margin: 0;
+}
+/* line 19, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body {
+  padding: 20px 40px 45px;
+}
+/* line 21, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body .form-group {
+  margin-bottom: 35px;
+}
+/* line 23, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body .form-group label {
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+  font: 600 20px/23px "Roboto", "Arial", sans-serif;
+}
+/* line 27, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body .form-group input {
+  display: inline-block;
+  vertical-align: top;
+  width: 67%;
+  padding: 12px;
+}
+/* line 30, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body .form-group input:focus {
+  outline: none;
+}
+/* line 32, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body .form-group input.two_digits {
+  display: inline-block;
+  vertical-align: top;
+  width: 10%;
+}
+/* line 35, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body .form-group input.seven_digits {
+  display: inline-block;
+  vertical-align: top;
+  width: 22%;
+}
+/* line 40, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body .form-group .hyphen {
+  font-size: 39px;
+}
+/* line 44, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body .get_started_button_holder {
+  text-align: center;
+}
+/* line 46, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body .get_started_button_holder .btn_style_jumbo {
+  padding: 18px 60px;
+  font-size: 28px;
+  font-weight: 400;
+  border: 1px solid #fff;
+}
+/* line 56, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body ::-webkit-input-placeholder {
+  opacity: 0.5;
+  color: #e47100;
+}
+/* line 61, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body :-moz-placeholder {
+  /* Firefox 18- */
+  opacity: 0.5;
+  color: #e47100;
+}
+/* line 66, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body ::-moz-placeholder {
+  /* Firefox 19+ */
+  opacity: 0.5;
+  color: #e47100;
+}
+/* line 71, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-body :-ms-input-placeholder {
+  color: rgba(228, 113, 0, 0.5);
+}
+/* line 77, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-footer {
+  font: 400 16px/1 "Roboto", "Arial", sans-serif;
+  -moz-border-radius: 0 0 11px 11px;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 11px 11px;
+  border-top: 1px solid #fff;
+  background: #241F20;
+  padding: 15px 35px;
+  font-style: italic;
+  text-align: left;
+}
+/* line 85, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-footer > div {
+  margin: 0 0 17px 0;
+  font-size: 20px;
+}
+/* line 89, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-footer button {
+  font: 600 14px/1 "Roboto", "Arial", sans-serif;
+  border: 1px solid #fff;
+  float: right;
+  background: #58595B;
+  border-radius: 5px;
+  padding: 11px 5px;
+  margin: 0 0 0 23px;
+}
+/* line 97, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .modal-footer button:hover {
+  background: #737373;
+}
+/* line 105, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie .invalid {
+  border: 3px solid red !important;
+}
+/* line 114, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie.join_for_merchent .get_started_button_holder {
+  text-align: right !important;
+  padding: 0 20px 0 0;
+}
+/* line 117, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie.join_for_merchent .get_started_button_holder .right_arrow {
+  padding: 18px 41px !important;
+}
+/* line 126, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie.join_for_patron .get_started_button_holder {
+  text-align: right !important;
+  padding: 0 20px 0 0;
+}
+/* line 129, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie.join_for_patron .get_started_button_holder .right_arrow {
+  padding: 18px 41px !important;
+}
+/* line 130, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie.join_for_patron .get_started_button_holder .without_tax {
+  font: 600 19px/21px "Roboto", "Arial", sans-serif !important;
+  padding: 16px 38px 12px !important;
+  border-color: #E6E7E8;
+  background: #414042;
+  color: #E6E7E8;
+  width: 189px;
+  float: left;
+}
+/* line 138, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie.join_for_patron .get_started_button_holder .without_tax:hover {
+  background: #545454;
+}
+/* line 144, ../../sass/bigpie/layout/modals/_join.scss */
+.join_bigpie.join_for_patron .modal-footer > div {
+  display: inline-block;
+  padding: 8px 0 0 0;
+  margin: 0;
+}
+
+/* line 166, ../../sass/bigpie/layout/modals/_join.scss */
+#claimModal .invalid,
+#bp_joinPatronForgotPassword .invalid,
+#bp_joinCreateNonprofitModal .invalid,
+#bp_joinPatronModal .invalid,
+#bp_joinNonprofitModal .invalid,
+#bp_joinMerchantModal .invalid,
+#bp_joinListringAlreadyClaimedModal .invalid,
+#bp_joinPleaseConfirmModal .invalid {
+  border: 3px solid red !important;
+}
+/* line 170, ../../sass/bigpie/layout/modals/_join.scss */
+#claimModal .input_error,
+#bp_joinPatronForgotPassword .input_error,
+#bp_joinCreateNonprofitModal .input_error,
+#bp_joinPatronModal .input_error,
+#bp_joinNonprofitModal .input_error,
+#bp_joinMerchantModal .input_error,
+#bp_joinListringAlreadyClaimedModal .input_error,
+#bp_joinPleaseConfirmModal .input_error {
+  text-align: center;
+  top: 11px;
+  position: relative;
+  color: red;
+  font-weight: 600;
+}
+
+/* line 181, ../../sass/bigpie/layout/modals/_join.scss */
+#bp_joinListringAlreadyClaimedModal .input_error,
+#bp_joinPleaseConfirmModal .input_error {
+  margin: 0;
+  font-size: 16px;
+  text-align: left;
+  height: 0px;
+  top: 5px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* line 195, ../../sass/bigpie/layout/modals/_join.scss */
+  .modal-dialog {
+    margin-top: 30px;
+  }
+
+  /* line 200, ../../sass/bigpie/layout/modals/_join.scss */
+  .form-group label {
+    display: block !important;
+  }
+  /* line 204, ../../sass/bigpie/layout/modals/_join.scss */
+  .form-group input {
+    width: 100% !important;
+  }
+}
+/* line 1, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal {
+  width: 560px;
+}
+/* line 5, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal .modal-header {
+  padding: 0;
+  min-height: inherit;
+}
+/* line 11, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal h1 {
+  font: 400 54px/1 "Roboto", "Arial", sans-serif;
+  font-style: italic;
+  margin: 5px 0 16px 0;
+}
+/* line 16, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal p, .success_modal a {
+  font: 100 19px/25px "Roboto", "Arial", sans-serif;
+  margin: 0 0 24px 0;
+  color: #fff;
+}
+/* line 20, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal p:last-child, .success_modal a:last-child {
+  margin: 0;
+}
+/* line 21, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal p strong, .success_modal a strong {
+  font-weight: 400;
+}
+/* line 24, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal p span, .success_modal a span {
+  font-weight: 600;
+}
+/* line 29, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal a {
+  text-decoration: none;
+  font-weight: 600;
+}
+/* line 33, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal .button_holder {
+  text-align: center;
+}
+/* line 35, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal .button_holder .btn_style_jumbo {
+  border: 1px solid #fff;
+  background: #58595B;
+  padding: 18px 26px;
+  margin: 0 0 17px 0;
+}
+/* line 40, ../../sass/bigpie/layout/modals/_success-modal.scss */
+.success_modal .button_holder .btn_style_jumbo:hover {
+  background: #737373;
+}
+
+/* line 1, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password {
+  width: 825px;
+}
+/* line 5, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-header {
+  padding: 0;
+  min-height: inherit;
+}
+/* line 11, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body {
+  padding: 28px 30px 40px;
+}
+/* line 13, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body h1 {
+  font: 400 42px/1 "helvetica_neue_lt_std43LtEx", "Arial", sans-serif;
+  margin: 5px 0 25px 0;
+  text-align: center;
+  color: #000;
+}
+/* line 19, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body p {
+  font: 100 21px/1 "helvetica_neue_lt_std43LtEx", "Arial", sans-serif;
+  color: #000;
+}
+/* line 24, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body .border_box_container {
+  margin: 76px 0 0 0;
+  text-align: center;
+}
+/* line 27, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body .border_box_container .border_box {
+  display: inline-block;
+  vertical-align: top;
+  width: 322px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background: #D9E1E9;
+  padding: 31px 10px 16px;
+  margin: 0 11px;
+  min-height: 230px;
+}
+/* line 35, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body .border_box_container .border_box p {
+  padding: 0 0 30px 0;
+}
+/* line 37, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body .border_box_container .border_box.new_account button {
+  padding: 11px 23px;
+}
+/* line 41, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body input {
+  font: 400 20px/1 "helvetica_neue_lt_std43LtEx", "Arial", sans-serif;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin: 0 0 18px 0;
+  font-size: 20px;
+  padding: 15px;
+  width: 100%;
+  /* Firefox 4-18 */
+  /* Firefox 19+ */
+  /* IE10+ */
+}
+/* line 49, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body input:focus {
+  outline: none;
+  border: 1px solid #A8A8A8;
+}
+/* line 54, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body input::-webkit-input-placeholder {
+  padding: 3px 0 0 0;
+}
+/* line 57, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body input:-moz-placeholder {
+  padding: 3px 0 0 0;
+}
+/* line 60, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body input::-moz-placeholder {
+  padding: 3px 0 0 0;
+}
+/* line 63, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body input:-ms-input-placeholder {
+  padding: 3px 0 0 0;
+}
+/* line 65, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body button {
+  font: bold 22px/1 "helvetica_neue_lt_std43LtEx", "Arial", sans-serif;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  padding: 22px 47px;
+  color: #fff;
+}
+/* line 70, ../../sass/bigpie/layout/modals/_forgot-password.scss */
+.forgot_password .modal-body button:focus {
+  outline: none;
+}
+
+/* line 4, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-header {
+  padding: 0;
+  min-height: inherit;
+}
+/* line 13, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-content .modal-body h1 {
+  font: 400 54px/1.1 "Roboto", "Arial", sans-serif;
+  font-style: italic;
+  margin: 0 0 7px 0;
+}
+/* line 18, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-content .modal-body > p {
+  font: 600 18px/25px "Roboto", "Arial", sans-serif;
+  margin: 0 0 20px 0;
+  color: #fff;
+}
+/* line 26, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-content .modal-body .form-group input.two_digits {
+  display: inline-block;
+  vertical-align: top;
+  width: 10%;
+}
+/* line 29, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-content .modal-body .form-group input.seven_digits {
+  display: inline-block;
+  vertical-align: top;
+  width: 22%;
+}
+/* line 35, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-content .modal-body .hyphen {
+  font-size: 28px;
+}
+/* line 39, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-content .block {
+  min-width: 286px;
+  height: 188px;
+  float: none;
+}
+/* line 43, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-content .block .block_header > div p {
+  font-weight: 400;
+  line-height: 25px;
+}
+/* line 45, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-content .row {
+  margin: 37px 14px 0 0;
+}
+/* line 47, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-content .row button {
+  padding: 18px 38px 18px 18px;
+  float: right;
+}
+/* line 50, ../../sass/bigpie/layout/modals/_confirm.scss */
+.confirm .modal-content .row button:first-child {
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  font: 600 19px/21px "Roboto", "Arial", sans-serif !important;
+  padding: 16px 38px 12px !important;
+  border: 1px solid #E6E7E8;
+  background: #414042;
+  color: #E6E7E8;
+  width: 189px;
+  float: left;
+}
+
+/* line 4, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.already_claimed .modal-header {
+  padding: 0;
+  min-height: inherit;
+}
+/* line 11, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.already_claimed .modal-content h1 {
+  font: 400 54px/1.1 "Roboto", "Arial", sans-serif;
+  font-style: italic;
+  margin: 0 0 27px 0;
+}
+/* line 16, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.already_claimed .modal-content .block {
+  min-width: 286px;
+  height: 188px;
+  float: none;
+}
+/* line 20, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.already_claimed .modal-content .block .block_header > div p {
+  font-weight: 400;
+  line-height: 25px;
+}
+/* line 22, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.already_claimed .modal-content > p, .already_claimed .modal-content a {
+  color: #fff;
+  font: 600 20px/1 "Roboto", "Arial", sans-serif;
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+/* line 30, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.not_me {
+  display: inline-block;
+  vertical-align: top;
+  width: 214px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  border: 1px solid #89A3C6;
+  padding: 11px;
+}
+/* line 35, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.not_me p {
+  font: 600 20px/1 "Roboto", "Arial", sans-serif;
+  color: #89A3C6 !important;
+}
+/* line 38, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.not_me p.title {
+  color: #fff !important;
+}
+/* line 42, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.not_me form, .not_me .form-group {
+  margin: 0;
+}
+/* line 43, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.not_me input {
+  padding: 5px !important;
+  width: 100%;
+}
+/* line 47, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.not_me input.two_digits {
+  width: 20% !important;
+}
+/* line 50, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.not_me input.seven_digits {
+  width: 55% !important;
+}
+/* line 54, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.not_me label {
+  font: 600 15px/1 "Roboto", "Arial", sans-serif;
+  margin: 22px 0 3px 0;
+  color: #89A3C6;
+  display: block;
+}
+/* line 60, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.not_me .btn_style_jumbo {
+  border: 0;
+  font: 600 15px/1 "Roboto", "Arial", sans-serif;
+  padding: 7px 15px;
+  margin: 9px auto 0;
+  display: block;
+}
+/* line 68, ../../sass/bigpie/layout/modals/_already-claimed.scss */
+.not_me .hyphen {
+  font-size: 28px;
+}
+
+/* line 9, ../../sass/bigpie/layout/modals/_need-help.scss */
+.need_help .modal-content .modal-body {
+  padding-top: 10px;
+}
+/* line 11, ../../sass/bigpie/layout/modals/_need-help.scss */
+.need_help .modal-content .modal-body h5 {
+  font: 600 18px/20px "Roboto", "Arial", sans-serif;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+/* line 16, ../../sass/bigpie/layout/modals/_need-help.scss */
+.need_help .modal-content .modal-body .btn_style_jumbo.right_arrow {
+  font-size: 23px;
+  padding: 0 8px;
+  height: 71px;
+  margin-top: 23px;
+}
+/* line 21, ../../sass/bigpie/layout/modals/_need-help.scss */
+.need_help .modal-content .modal-body .btn_style_jumbo.right_arrow span {
+  position: relative;
+  z-index: 999;
+}
+/* line 27, ../../sass/bigpie/layout/modals/_need-help.scss */
+.need_help .modal-content .modal-body label {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 0 5px 0 !important;
+  font: 600 15px/1 "Roboto", "Arial", sans-serif !important;
+}
+/* line 33, ../../sass/bigpie/layout/modals/_need-help.scss */
+.need_help .modal-content .modal-body input {
+  border: 1px solid #ee7600;
+  padding: 14px;
+  width: 100%;
+  color: #ee7600;
+  font-size: 20px;
+}
+/* line 40, ../../sass/bigpie/layout/modals/_need-help.scss */
+.need_help .modal-content .modal-body .not_me {
+  width: 244px;
+}
+/* line 41, ../../sass/bigpie/layout/modals/_need-help.scss */
+.need_help .modal-content .modal-body .form-group {
+  margin: 0 !important;
+}
+/* line 43, ../../sass/bigpie/layout/modals/_need-help.scss */
+.need_help .modal-content .modal-body .hyphen {
+  position: relative;
+  bottom: 5px;
+}
+
+/* line 3, ../../sass/bigpie/layout/modals/_enter-email.scss */
+.modal-dialog.enter_email .modal-header p {
+  color: #8AA4C6;
+}
+/* line 7, ../../sass/bigpie/layout/modals/_enter-email.scss */
+.modal-dialog.enter_email .modal-body {
+  padding: 0 40px 35px;
+}
+/* line 9, ../../sass/bigpie/layout/modals/_enter-email.scss */
+.modal-dialog.enter_email .modal-body .form-group {
+  margin-bottom: 22px;
+}
+/* line 11, ../../sass/bigpie/layout/modals/_enter-email.scss */
+.modal-dialog.enter_email .modal-body .form-group:last-child {
+  margin-bottom: 46px;
+}
+/* line 12, ../../sass/bigpie/layout/modals/_enter-email.scss */
+.modal-dialog.enter_email .modal-body .form-group input, .modal-dialog.enter_email .modal-body .form-group label {
+  vertical-align: middle;
+}
+/* line 14, ../../sass/bigpie/layout/modals/_enter-email.scss */
+.modal-dialog.enter_email .modal-body .get_started_button_holder {
+  text-align: right !important;
+}
+/* line 16, ../../sass/bigpie/layout/modals/_enter-email.scss */
+.modal-dialog.enter_email .modal-body .get_started_button_holder .btn_style_jumbo.right_arrow {
+  margin-right: 25px;
+  padding: 18px 39px;
+}
+
+/* line 5, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.blocks_wrapper {
+  min-height: 300px;
+  max-height: 624.25px;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 19px 19px;
+  background: #f7f7f7;
+  font-size: 0;
+  position: relative;
+}
+/* line 6, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.blocks_wrapper.medium {
+  height: 517px !important;
+}
+/* line 7, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.blocks_wrapper.high {
+  height: 755px !important;
+}
+/* line 8, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.blocks_wrapper.short {
+  height: 274px;
+}
+/* line 9, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.blocks_wrapper.smallBoxMedium {
+  height: 414px !important;
+}
+/* line 23, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.blocks_wrapper .no_results p {
+  position: absolute;
+  line-height: 0;
+  top: 50%;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  text-align: center;
+}
+/* line 34, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.blocks_wrapper .empty_directory {
+  position: absolute;
+  line-height: 0;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #b1b1b1;
+}
+
+/* line 50, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block {
+  display: inline-block;
+  vertical-align: top;
+  height: 227px;
+  width: 32.2%;
+  font-size: 14px;
+  border: 1px solid #999;
+  border-radius: 10px;
+  background: #fff;
+  margin-left: 1.7%;
+  position: relative;
+  float: left;
+}
+/* line 59, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block:nth-of-type(3n+1) {
+  margin-left: 0;
+  clear: left;
+}
+/* line 60, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block:nth-of-type(n+4) {
+  margin-top: 16px;
+}
+/* line 61, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block > div:last-child {
+  border-radius: 0 0 8px 8px;
+}
+/* line 63, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block.message {
+  border: none;
+  padding: 40px 60px;
+  background-color: transparent;
+}
+/* line 70, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block.message h3 {
+  font-size: 24px;
+}
+/* line 74, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block.message button.btn_style_big {
+  position: absolute;
+  bottom: 10px;
+  right: 25px;
+}
+/* line 80, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block.message.message_two_blocks {
+  display: inline-block;
+  vertical-align: top;
+  height: 227px;
+  width: 64.4%;
+  padding: 20px 30px;
+  font-style: italic;
+}
+/* line 84, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block.message.message_two_blocks h3 {
+  padding-right: 50px;
+  line-height: 1.4;
+}
+/* line 90, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block.message.message_three_blocks {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  width: 100%;
+  background-color: #ee7600;
+  color: #fff;
+  padding-right: 400px;
+  position: absolute;
+  margin: 0;
+  top: 19px;
+  left: 19px;
+  height: calc(100% - 38px);
+  width: calc(100% - 38px);
+}
+/* line 101, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block.message.message_three_blocks h3 {
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+/* line 105, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block.message.message_three_blocks p {
+  line-height: 1.4;
+  padding-right: 100px;
+}
+/* line 117, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_header {
+  display: inline-block;
+  height: 128px;
+  width: 192px;
+  padding: 7px 15px;
+  position: relative;
+  width: 100%;
+}
+/* line 122, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_header h3 {
+  line-height: 1.2;
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+  min-height: 26px;
+  margin-bottom: 4px;
+  text-overflow: ellipsis;
+}
+/* line 132, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_header .block_more {
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+}
+/* line 134, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_header .block_more:after {
+  content: "\00bb";
+  padding-left: 5px;
+}
+/* line 136, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_header .block_edit {
+  position: absolute;
+  right: 15px;
+  bottom: 12px;
+}
+/* line 140, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_header > div {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+/* line 141, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_header .star-rating {
+  cursor: default;
+}
+/* line 142, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_header .rating_wrapper {
+  left: 95%;
+}
+/* line 147, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_giveback {
+  text-align: justify;
+  -ms-text-justify: distribute;
+  /* old versions of firefox and opera */
+  text-justify: distribute;
+  /* interner exploret */
+  padding: 5px 17px;
+  height: 50px;
+  border-top: 1px solid #aaa;
+  color: #fff;
+}
+/* line 9, ../../sass/bigpie/components/globals/_horizontal-align.scss */
+.block .block_giveback:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+/* line 17, ../../sass/bigpie/components/globals/_horizontal-align.scss */
+.block .block_giveback > * {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 153, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_giveback h4 {
+  width: 100%;
+}
+/* line 154, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_giveback p {
+  display: inline-block;
+  width: 52%;
+  text-align: justify;
+  -ms-text-justify: distribute;
+  /* old versions of firefox and opera */
+  text-justify: distribute;
+  /* interner exploret */
+}
+/* line 9, ../../sass/bigpie/components/globals/_horizontal-align.scss */
+.block .block_giveback p:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+/* line 17, ../../sass/bigpie/components/globals/_horizontal-align.scss */
+.block .block_giveback p > * {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 157, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_giveback p + p {
+  width: 42%;
+}
+/* line 159, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_giveback span {
+  vertical-align: baseline;
+}
+/* line 160, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_giveback span + span {
+  font-size: 16px;
+}
+/* line 161, ../../sass/bigpie/layout/directories/_blocks_wrapper.scss */
+.block .block_giveback.block_giveback_bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 5, ../../sass/bigpie/layout/directories/_block.scss */
+.block {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  min-width: 300px;
+}
+/* line 11, ../../sass/bigpie/layout/directories/_block.scss */
+.block .block_header {
+  padding-right: 0;
+}
+/* line 13, ../../sass/bigpie/layout/directories/_block.scss */
+.block .block_header > div {
+  position: static;
+  float: left;
+  width: 81.5%;
+}
+/* line 17, ../../sass/bigpie/layout/directories/_block.scss */
+.block .block_header > div h3 {
+  margin: 3px 0 0 0;
+  line-height: 23px;
+  font-size: 26px;
+  color: #EE7600;
+  margin: 0;
+  font-weight: normal;
+  font-family: "Roboto Condensed", "Roboto", "Arial", sans-serif;
+}
+/* line 26, ../../sass/bigpie/layout/directories/_block.scss */
+.block .block_header > div p {
+  color: #727272;
+  line-height: 20px;
+  font-size: 18px;
+  font-family: "Roboto Condensed", "Roboto", "Arial", sans-serif;
+}
+/* line 33, ../../sass/bigpie/layout/directories/_block.scss */
+.block .block_header .profile_img {
+  text-align: center;
+  width: 18.5%;
+  float: right;
+  line-height: 12px;
+}
+/* line 38, ../../sass/bigpie/layout/directories/_block.scss */
+.block .block_header .profile_img small {
+  color: #5e5e5e;
+  font-size: 10px;
+}
+/* line 43, ../../sass/bigpie/layout/directories/_block.scss */
+.block .block_header .profile_img img {
+  width: 30px;
+  height: 33px;
+}
+/* line 48, ../../sass/bigpie/layout/directories/_block.scss */
+.block .block_header .profile_img .joined_year {
+  font-size: 14px;
+}
+/* line 55, ../../sass/bigpie/layout/directories/_block.scss */
+.block .block_footer {
+  -moz-border-radius: 0 0 4px 4px;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 4px 4px;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  bottom: 0;
+}
+/* line 65, ../../sass/bigpie/layout/directories/_block.scss */
+.block .first_row {
+  display: block;
+  width: 100%;
+  color: #fff;
+  background: #808080;
+}
+/* line 71, ../../sass/bigpie/layout/directories/_block.scss */
+.block .first_row > div {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 77, ../../sass/bigpie/layout/directories/_block.scss */
+.block .first_row .active_merchant {
+  font-size: 12px;
+  padding: 3px 5px 0;
+  line-height: 13px;
+  width: 16.5%;
+}
+/* line 85, ../../sass/bigpie/layout/directories/_block.scss */
+.block .first_row .visit_page {
+  background: #EE7600;
+  font-size: 16px;
+  width: 81.5%;
+}
+/* line 90, ../../sass/bigpie/layout/directories/_block.scss */
+.block .first_row .visit_page:hover {
+  cursor: pointer !important;
+}
+/* line 95, ../../sass/bigpie/layout/directories/_block.scss */
+.block .first_row .visit_page .block_more {
+  border-right: 1px solid #fff;
+  padding: 6px 0 4px 18px;
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  width: 100%;
+}
+/* line 104, ../../sass/bigpie/layout/directories/_block.scss */
+.block .first_row .visit_page i {
+  margin: -1px 10px 0 0;
+  float: right;
+}
+/* line 113, ../../sass/bigpie/layout/directories/_block.scss */
+.block .first_row.has_matches .active_merchant {
+  width: 39%;
+}
+/* line 116, ../../sass/bigpie/layout/directories/_block.scss */
+.block .first_row.has_matches .visit_page {
+  width: 59%;
+}
+/* line 123, ../../sass/bigpie/layout/directories/_block.scss */
+.block .new_middle_row {
+  background: #075A9E;
+  color: #fff;
+  padding: 6px 18px;
+}
+/* line 127, ../../sass/bigpie/layout/directories/_block.scss */
+.block .new_middle_row span > span {
+  font-size: 12px;
+  margin: 0 0 0 4px;
+}
+/* line 131, ../../sass/bigpie/layout/directories/_block.scss */
+.block .new_middle_row .life_time {
+  float: right;
+}
+/* line 135, ../../sass/bigpie/layout/directories/_block.scss */
+.block .new_middle_row span.year-to-date {
+  font-size: 10px;
+}
+/* line 139, ../../sass/bigpie/layout/directories/_block.scss */
+.block .new_middle_row span.total-giveback {
+  margin-right: 5px;
+}
+/* line 145, ../../sass/bigpie/layout/directories/_block.scss */
+.block .second_row {
+  min-height: 20px;
+  background: #555555;
+  border-top: 1px solid #fff;
+  font-family: "Roboto Condensed", "Roboto", "Arial", sans-serif;
+}
+/* line 151, ../../sass/bigpie/layout/directories/_block.scss */
+.block .second_row .nonprofit_goal {
+  border-top: 0;
+  min-height: 25px;
+  height: auto;
+  padding: 5px 0 5px 17px;
+}
+/* line 156, ../../sass/bigpie/layout/directories/_block.scss */
+.block .second_row .nonprofit_goal > span {
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: top;
+  padding: 0 5px 0 0;
+  line-height: 18px;
+}
+/* line 162, ../../sass/bigpie/layout/directories/_block.scss */
+.block .second_row .nonprofit_goal > span > span {
+  display: block;
+  font-size: 15px;
+}
+/* line 168, ../../sass/bigpie/layout/directories/_block.scss */
+.block .second_row .goal_name {
+  display: inline-block;
+  width: 186px;
+  font-size: 12px;
+  border-left: 1px solid #fff;
+  padding: 0 0 0 7px;
+  line-height: 18px;
+}
+/* line 176, ../../sass/bigpie/layout/directories/_block.scss */
+.block .second_row .goal_name .goal_title {
+  display: block;
+}
+/* line 180, ../../sass/bigpie/layout/directories/_block.scss */
+.block .second_row .goal_name .raised {
+  font-size: 10px;
+  color: #C8C8C8;
+}
+/* line 183, ../../sass/bigpie/layout/directories/_block.scss */
+.block .second_row .goal_name .raised span {
+  font-size: 12px;
+}
+
+/* line 9, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .block_header_instore b {
+  opacity: 0.7;
+  color: #7ab732;
+  font-size: 1.25em;
+}
+/* line 18, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .rating_wrapper {
+  left: 100%;
+  width: 100px;
+  text-align: right;
+}
+/* line 22, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .rating_wrapper .rating-container {
+  font-size: 20px;
+}
+/* line 23, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .rating_wrapper .rating-stars {
+  color: #ee8615;
+}
+/* line 24, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .rating_wrapper a {
+  color: #428BCA;
+  font-size: 12px;
+  display: block;
+  text-align: right;
+  margin-top: -5px;
+  margin-right: 3px;
+}
+/* line 36, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .block_giveback {
+  background: #428BCA;
+  position: relative;
+}
+/* line 43, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .block_matching {
+  background: #ee7600;
+  position: relative;
+  color: #fff;
+  padding: 5px 17px;
+}
+/* line 48, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .block_matching h4 {
+  margin-bottom: 5px;
+}
+/* line 49, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .block_matching .block_matching_info {
+  text-align: justify;
+  -ms-text-justify: distribute;
+  /* old versions of firefox and opera */
+  text-justify: distribute;
+  /* interner exploret */
+  height: 18px;
+}
+/* line 9, ../../sass/bigpie/components/globals/_horizontal-align.scss */
+.block_nonprofit .block_matching .block_matching_info:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+/* line 17, ../../sass/bigpie/components/globals/_horizontal-align.scss */
+.block_nonprofit .block_matching .block_matching_info > * {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 57, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .nonprofit_goal {
+  color: #fff;
+  padding: 5px 17px;
+  height: 48px;
+  background: #5e5e5e;
+  border-top: 2px solid #aaa;
+  position: relative;
+}
+/* line 64, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .nonprofit_goal > h4 {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+/* line 68, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .nonprofit_goal p {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+/* line 74, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .nonprofit_goal meter {
+  width: 100px;
+}
+/* line 78, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .nonprofit_goal .block_more {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -9px;
+  font-size: 15px;
+  color: #fff;
+}
+/* line 83, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit .nonprofit_goal .block_more:after {
+  content: "\00bb";
+  padding-left: 5px;
+}
+/* line 88, ../../sass/bigpie/layout/directories/_block_nonprofit.scss */
+.block_nonprofit a.ratings_organizations {
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+/* line 6, ../../sass/bigpie/layout/directories/_block_merchant.scss */
+.block.block_merchant .block_giveback {
+  background: #777;
+}
+/* line 7, ../../sass/bigpie/layout/directories/_block_merchant.scss */
+.block.block_merchant .block_giveback + .block_giveback {
+  background: #7ab732;
+}

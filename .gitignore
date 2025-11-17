@@ -1,0 +1,13 @@
+# WordPress core
+/wp-admin/
+/wp-includes/
+/wp-content/uploads/
+/wp-content/cache/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build artifacts
+*.log
+.DS_Store

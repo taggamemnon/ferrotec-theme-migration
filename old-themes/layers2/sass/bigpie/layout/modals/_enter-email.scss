@@ -1,0 +1,22 @@
+.modal-dialog.enter_email {
+	.modal-header {
+		p {
+			color: #8AA4C6;
+		}
+	}
+	.modal-body {
+		padding: 0 40px 35px;
+		.form-group {
+			margin-bottom: 22px;
+			&:last-child { margin-bottom: 46px; }
+			input, label {	vertical-align: middle;}
+		}
+		.get_started_button_holder {
+			text-align: right !important;
+			.btn_style_jumbo.right_arrow {
+				margin-right: 25px;
+				padding: 18px 39px;
+			}
+		}
+	} 
+}

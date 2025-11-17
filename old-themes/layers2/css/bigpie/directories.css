@@ -1,0 +1,930 @@
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300);
+@import url(//fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+/* line 8, ../../sass/bigpie/base/_general.scss */
+body.page {
+  font: 400 14px/1.2 "Roboto", "Arial", sans-serif;
+}
+
+/* line 12, ../../sass/bigpie/base/_general.scss */
+.full-width {
+  width: 100%;
+}
+
+/* line 14, ../../sass/bigpie/base/_general.scss */
+.hidden {
+  visibility: hidden;
+}
+
+/* line 16, ../../sass/bigpie/base/_general.scss */
+.sweet-alert p {
+  font-size: 22px;
+}
+
+/* line 18, ../../sass/bigpie/base/_general.scss */
+.fa-empty + span {
+  font-size: 0;
+  color: transparent;
+}
+
+/* line 23, ../../sass/bigpie/base/_general.scss */
+.float-right {
+  float: right !important;
+}
+
+/* line 27, ../../sass/bigpie/base/_general.scss */
+.unaproved h1 {
+  text-align: center;
+}
+
+/* line 29, ../../sass/bigpie/base/_general.scss */
+.align_right {
+  text-align: right !important;
+}
+
+/* line 31, ../../sass/bigpie/base/_general.scss */
+textarea {
+  line-height: 1.2;
+}
+
+/* line 33, ../../sass/bigpie/base/_general.scss */
+.error_message {
+  color: red;
+}
+
+/* line 37, ../../sass/bigpie/base/_general.scss */
+input::-ms-clear {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* line 43, ../../sass/bigpie/base/_general.scss */
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* line 48, ../../sass/bigpie/base/_general.scss */
+select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 #000;
+}
+
+/*
+Helper to ease the use of inline-blocks -
+The faster, more usable and more sane use of aligning elements horizontally.
+*/
+/* HTML FORMAT:
+<label class="form_checkbox">
+    <input type="checkbox">
+    <i class="fa fa-check"></i>
+    <span>Some Label Text.</span>
+</label>
+*/
+/* line 1, ../../sass/bigpie/components/globals/_nouislider.scss */
+no-ui-slider {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  min-height: 120px;
+}
+
+/* line 9, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 20, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-target {
+  position: relative;
+  direction: ltr;
+  border-radius: 4px;
+  border: 1px solid #D3D3D3;
+  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+}
+/* line 27, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-target.noUi-connect {
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #BBB;
+}
+
+/* line 33, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-base {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 9;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 45, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+/* line 53, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-stacking + .noUi-origin {
+    /* Fix stacking order in IE7, which incorrectly
+		 creates a new context for the origins. */
+  *z-index: -1;
+}
+/* line 59, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: left 0.3s, top 0.3s;
+  transition: left 0.3s, top 0.3s;
+}
+
+/* line 66, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-handle {
+  position: relative;
+  z-index: 1;
+  border: 1px solid #D9D9D9;
+  border-bottom: 0;
+  border-radius: 5px;
+  background: #FFF;
+  cursor: pointer;
+  z-index: 1;
+}
+/* line 79, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-stacking .noUi-handle {
+  z-index: 10;
+}
+
+/* line 84, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* line 88, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-horizontal {
+  height: 18px;
+}
+/* line 91, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-horizontal .noUi-handle {
+  width: 34px;
+  height: 28px;
+  left: -17px;
+  top: -6px;
+}
+
+/* line 99, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical {
+  width: 18px;
+}
+/* line 102, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 20px;
+  left: -6px;
+  top: -17px;
+}
+
+/* line 110, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-background {
+  background: #FAFAFA;
+  box-shadow: inset 0 1px 1px #f0f0f0;
+}
+
+/* line 115, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-connect {
+  background: #3FB8AF;
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45);
+  -webkit-transition: background 450ms;
+  transition: background 450ms;
+}
+
+/* Handles and cursors;
+ */
+/* line 124, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-dragable {
+  cursor: w-resize;
+}
+/* line 127, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-dragable {
+  cursor: n-resize;
+}
+
+/* line 132, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-active {
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
+}
+
+/* line 136, ../../sass/bigpie/components/globals/_nouislider.scss */
+.caret {
+  position: relative;
+  top: 25px;
+  left: 7px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid rgba(255, 255, 255, 0);
+  border-right: 10px solid transparent;
+  border-top: 10px solid #4d4d4d;
+  z-index: 10;
+}
+
+/* Handle stripes;
+ */
+/* line 150, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-handle:before {
+  content: "||||";
+  display: block;
+  position: absolute;
+  height: 8px;
+  color: #E8E7E6;
+  font-size: 11px;
+  left: 6px;
+  top: 4px;
+  letter-spacing: 4px;
+  font-weight: lighter;
+}
+
+/* line 168, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+  width: 14px;
+  height: 1px;
+  left: 6px;
+  top: 14px;
+}
+
+/* line 176, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-handle:after {
+  top: 17px;
+}
+
+/* Disabled state;
+ */
+/* line 182, ../../sass/bigpie/components/globals/_nouislider.scss */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+  background: #B8B8B8;
+}
+
+/* line 187, ../../sass/bigpie/components/globals/_nouislider.scss */
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+
+/* Base;
+ *
+ */
+/* line 194, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips,
+.noUi-pips * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 200, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips {
+  position: absolute;
+  font: 400 12px Arial;
+  color: #999;
+}
+
+/* Values;
+ *
+ */
+/* line 209, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value {
+  width: 40px;
+  position: absolute;
+  text-align: center;
+}
+
+/* line 215, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-sub {
+  color: #ccc;
+  font-size: 10px;
+}
+
+/* Markings;
+ *
+ */
+/* line 223, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker {
+  position: absolute;
+  background: #CCC;
+}
+
+/* line 228, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-sub {
+  background: #AAA;
+}
+
+/* line 232, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-large {
+  background: #AAA;
+}
+
+/* Horizontal layout;
+ *
+ */
+/* line 239, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips-horizontal {
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 10px 0;
+}
+
+/* line 247, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-horizontal {
+  padding-top: 20px;
+  margin-left: -20px;
+}
+
+/* line 252, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-horizontal.noUi-value-sub {
+  padding-top: 15px;
+}
+
+/* line 256, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-horizontal.noUi-marker {
+  width: 2px;
+  height: 5px;
+  margin-left: -1px;
+}
+
+/* line 262, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-horizontal.noUi-marker-sub {
+  height: 10px;
+}
+
+/* line 266, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-horizontal.noUi-marker-large {
+  height: 15px;
+}
+
+/* Vertical layout;
+ *
+ */
+/* line 273, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips-vertical {
+  top: 0;
+  left: 100%;
+  height: 100%;
+  padding: 0 10px;
+}
+
+/* line 280, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-vertical {
+  width: 15px;
+  margin-top: -5px;
+  margin-left: 20px;
+}
+
+/* line 286, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-vertical.noUi-marker {
+  width: 5px;
+  height: 2px;
+  margin-top: -1px;
+}
+
+/* line 292, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-vertical.noUi-marker-sub {
+  width: 10px;
+}
+
+/* line 296, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-vertical.noUi-marker-large {
+  width: 15px;
+}
+
+/* line 301, ../../sass/bigpie/components/globals/_nouislider.scss */
+.slider_tooltip {
+  position: absolute;
+  top: -60px;
+  left: -12px;
+  line-height: 24px;
+  text-align: center;
+}
+/* line 308, ../../sass/bigpie/components/globals/_nouislider.scss */
+.slider_tooltip small {
+  display: block;
+  text-align: left;
+  font-size: 12px;
+  padding-left: 2px;
+}
+/* line 314, ../../sass/bigpie/components/globals/_nouislider.scss */
+.slider_tooltip small.dollars {
+  text-align: center;
+}
+
+/* line 1, ../../sass/bigpie/layout/directories/_general.scss */
+#nonprofit_directory {
+  text-align: justify;
+  -ms-text-justify: distribute;
+  /* old versions of firefox and opera */
+  text-justify: distribute;
+  /* interner exploret */
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+/* line 5, ../../sass/bigpie/layout/directories/_general.scss */
+#nonprofit_directory .container_main {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+/* line 13, ../../sass/bigpie/layout/directories/_general.scss */
+#nonprofit_directory .left_align {
+  text-align: left;
+}
+/* line 17, ../../sass/bigpie/layout/directories/_general.scss */
+#nonprofit_directory label {
+  font-weight: normal;
+}
+/* line 21, ../../sass/bigpie/layout/directories/_general.scss */
+#nonprofit_directory p {
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+/* line 27, ../../sass/bigpie/layout/directories/_general.scss */
+#nonprofit_directory h1, #nonprofit_directory h2, #nonprofit_directory h3, #nonprofit_directory h4, #nonprofit_directory h5, #nonprofit_directory h6 {
+  letter-spacing: 0;
+}
+
+/* line 1, ../../sass/bigpie/layout/directories/_pagination.scss */
+.pagination_wrapper {
+  clear: both;
+  width: 100%;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+/* line 8, ../../sass/bigpie/layout/directories/_pagination.scss */
+.pagination {
+  text-align: center;
+  width: 100%;
+  font-size: initial;
+}
+/* line 12, ../../sass/bigpie/layout/directories/_pagination.scss */
+.pagination li {
+  display: inline-block;
+  margin-right: 3px;
+}
+/* line 16, ../../sass/bigpie/layout/directories/_pagination.scss */
+.pagination a {
+  display: inline-block;
+  line-height: 1.5em;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 4px 12px;
+  text-decoration: none;
+  border-radius: 3px;
+  color: #4a4a4a;
+  outline: 0;
+  font-size: 14px;
+}
+/* line 26, ../../sass/bigpie/layout/directories/_pagination.scss */
+.pagination a:hover {
+  background-color: #bebebe;
+  color: #fff;
+}
+/* line 30, ../../sass/bigpie/layout/directories/_pagination.scss */
+.pagination a:focus {
+  border: 1px solid #ddd;
+}
+/* line 33, ../../sass/bigpie/layout/directories/_pagination.scss */
+.pagination a:active {
+  background: rgba(190, 190, 190, 0.75);
+}
+/* line 36, ../../sass/bigpie/layout/directories/_pagination.scss */
+.pagination a.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+/* line 40, ../../sass/bigpie/layout/directories/_pagination.scss */
+.pagination a.active {
+  color: #fff;
+  background-color: #bebebe;
+}
+
+/* line 5, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters {
+  position: relative;
+  color: red;
+}
+/* line 9, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters label {
+  display: inline-block;
+  margin-right: 10px;
+  background: #fff;
+  font-size: 18px;
+}
+/* line 14, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters label span {
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  background: #9b9b9b;
+  padding: 0 5px;
+  color: #fff;
+}
+/* line 20, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters label select, .form_filters label input {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  outline: none;
+  height: 38px;
+}
+/* line 26, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters label input {
+  padding: 5px 10px;
+}
+/* line 31, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters .name_filter {
+  width: 394px;
+}
+/* line 35, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters .type_filter {
+  max-width: 298px;
+}
+/* line 39, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters .filter_search,
+.form_filters .filter_export {
+  line-height: 0px;
+  height: 38px;
+  padding: 8px;
+  font-size: 18px;
+  vertical-align: top;
+}
+/* line 48, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters .filter_export {
+  position: absolute;
+  right: 0;
+  margin-right: 11px;
+}
+
+/* line 55, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters_indicators {
+  position: relative;
+  height: 38px;
+}
+/* line 59, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters_indicators .indicator {
+  margin: 5px 11px;
+}
+/* line 63, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters_indicators .indicator_name {
+  position: absolute;
+  left: 0;
+}
+/* line 68, ../../sass/bigpie/layout/directories/_form-filters.scss */
+.form_filters_indicators .indicator_counter {
+  position: absolute;
+  right: 0;
+}
+
+/* line 5, ../../sass/bigpie/layout/directories/_empty_block.scss */
+.block_empty {
+  background: #D5D5D5;
+}
+/* line 7, ../../sass/bigpie/layout/directories/_empty_block.scss */
+.block_empty .block_header {
+  display: inline-block;
+  text-align: center;
+  height: 188px;
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  background: #fff;
+  border-bottom: 1px solid #b3b3b3;
+  color: #878787;
+}
+/* line 8, ../../sass/bigpie/components/globals/_vertical-align.scss */
+.block_empty .block_header:before {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+/* line 15, ../../sass/bigpie/components/globals/_vertical-align.scss */
+.block_empty .block_header > * {
+  vertical-align: middle;
+  display: inline-block;
+}
+/* line 14, ../../sass/bigpie/layout/directories/_empty_block.scss */
+.block_empty .block_header > div {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+}
+/* line 22, ../../sass/bigpie/layout/directories/_empty_block.scss */
+.msie9_0 .block_empty .block_header > div {
+  top: 30px;
+}
+/* line 26, ../../sass/bigpie/layout/directories/_empty_block.scss */
+.block_empty .block_header h3 {
+  max-height: none;
+  text-align: center;
+}
+/* line 30, ../../sass/bigpie/layout/directories/_empty_block.scss */
+.block_empty .block_header p {
+  width: 210px;
+  font-size: 15px;
+  margin: 0 auto;
+}
+
+/* line 1, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section {
+  padding: 0 calc((100% - 1000px) / 2);
+  background: #ee7600;
+  position: relative;
+  margin: 0 0 30px 0;
+  color: #fff;
+}
+/* line 8, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section:before {
+  content: '';
+  background: #6D6E70;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: calc((100% - 1000px) / 2);
+}
+/* line 17, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .filter_wrapper {
+  display: inline-block;
+  vertical-align: top;
+  height: 89px;
+  width: 742px;
+  padding: 8px 0 0 0;
+  color: #fff;
+}
+/* line 22, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .filter_wrapper h2 {
+  font-weight: 500;
+  font-size: 24px;
+  margin: 4px 0 1px 0;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+/* line 29, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .filter_wrapper h2 span {
+  font-weight: 400;
+  margin: 0 0 0 5px;
+}
+/* line 35, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .filter_wrapper .form_filters {
+  margin: 5px 0 0 0;
+}
+/* line 38, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .filter_wrapper .form_filters label, .filter_search_section .filter_wrapper .form_filters input, .filter_search_section .filter_wrapper .form_filters select, .filter_search_section .filter_wrapper .form_filters option {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #5e5e5e;
+  font-size: 14px;
+  height: 32px;
+}
+/* line 45, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .filter_wrapper .form_filters button {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  line-height: 0px;
+  width: 68px;
+  height: 31px;
+  padding: 8px;
+  font-size: 18px;
+  vertical-align: top;
+  font-size: 14px;
+  border: 1px solid #aaa;
+  background: #fff;
+  color: #5e5e5e;
+}
+/* line 59, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .filter_wrapper .form_filters .name_filter {
+  width: 350px;
+}
+/* line 62, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .filter_wrapper .form_filters .label_select {
+  margin: 0 28px 0 0;
+}
+/* line 64, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .filter_wrapper .form_filters .label_select select {
+  min-width: 259px;
+}
+/* line 72, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .matching_raised {
+  display: inline-block;
+  vertical-align: top;
+  height: 89px;
+  width: 258px;
+  background: #6D6E70;
+  padding: 11px 0 0 14px;
+  float: right;
+}
+/* line 78, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .matching_raised > i {
+  display: block;
+  font-size: 16px;
+  font-weight: 200;
+  margin: 0 0 11px 0;
+}
+/* line 87, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .matching_raised > div > span {
+  float: right;
+  font-size: 29px;
+  color: #fff;
+  margin: 3px 7px 0 0;
+}
+/* line 94, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .matching_raised > div .numbers {
+  float: right;
+}
+/* line 97, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .matching_raised > div .numbers .brack {
+  margin: 0;
+  display: inline-block;
+  width: 1px;
+}
+/* line 102, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .matching_raised > div .numbers .brack:after {
+  position: relative;
+  top: 7px;
+  left: -2px;
+  font-size: 32px;
+  content: ",";
+}
+/* line 109, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .matching_raised > div .numbers .num_block {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  height: 38px;
+  width: 24px;
+  line-height: 39px;
+  position: relative;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #EFEEEE;
+  font-size: 32px;
+  color: #5e5e5e;
+  font-width: 400;
+  margin: 0;
+}
+/* line 119, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .matching_raised > div .numbers .num_block:before {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  height: 1px;
+  width: 25px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #5e5e5e;
+  content: '';
+}
+/* line 131, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .indicator {
+  position: relative;
+  right: 0;
+  bottom: -8px;
+  font-size: 13px;
+  float: right;
+  color: #999;
+}
+/* line 140, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .odometer.matching_funds_odometer {
+  font-size: 32px;
+  margin-top: -2px;
+}
+/* line 144, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .odometer.matching_funds_odometer .odometer-digit {
+  background: #EFEEEE !important;
+  color: #5e5e5e !important;
+  font-family: "Roboto Condensed", "Roboto", "Arial", sans-serif;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  height: 38px;
+  width: 24px;
+  line-height: 39px;
+  position: relative;
+  -moz-border-radius: 2px !important;
+  -webkit-border-radius: 2px !important;
+  border-radius: 2px !important;
+  font-size: 32px;
+  font-width: 400;
+  margin: 0;
+}
+/* line 163, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .odometer.matching_funds_odometer .odometer-digit:before {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  height: 1px;
+  width: 25px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #5e5e5e;
+  content: '';
+}
+/* line 176, ../../sass/bigpie/layout/directories/_filter-search-section.scss */
+.filter_search_section .odometer.matching_funds_odometer .odometer-formatting-mark {
+  position: relative;
+  top: 9px;
+  font-size: 32px;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+/* line 1, ../../sass/bigpie/layout/directories/_blocks-wrapper-shadow.scss */
+.blocks_wrapper_shadow .section_content {
+  border: 1px solid #999;
+  position: relative;
+}
+/* line 4, ../../sass/bigpie/layout/directories/_blocks-wrapper-shadow.scss */
+.blocks_wrapper_shadow .section_content:before, .blocks_wrapper_shadow .section_content:after {
+  display: inline-block;
+  height: 27px;
+  width: 100%;
+  content: '';
+  z-index: 1;
+}
+/* line 9, ../../sass/bigpie/layout/directories/_blocks-wrapper-shadow.scss */
+.blocks_wrapper_shadow .section_content:before {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjM5Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.39)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 13, ../../sass/bigpie/layout/directories/_blocks-wrapper-shadow.scss */
+.blocks_wrapper_shadow .section_content:after {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4zOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.39)));
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.39));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.39));
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.39));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 1, ../../sass/bigpie/layout/directories/_footer.scss */
+.section_footer {
+  margin-top: 2em !important;
+  padding-top: 1em;
+  border-top: 1px solid #b1b1b1;
+}
+/* line 6, ../../sass/bigpie/layout/directories/_footer.scss */
+.section_footer aside {
+  float: right;
+}
+/* line 10, ../../sass/bigpie/layout/directories/_footer.scss */
+.section_footer h3 {
+  color: #ee7600;
+  font-family: "Roboto Condensed", "Roboto", "Arial", sans-serif;
+  font-weight: 500;
+}
+
+/* line 17, ../../sass/bigpie/layout/directories/_footer.scss */
+.cant_find {
+  clear: right;
+}
+/* line 19, ../../sass/bigpie/layout/directories/_footer.scss */
+.cant_find > div {
+  width: 80%;
+}
+
+/* line 25, ../../sass/bigpie/layout/directories/_footer.scss */
+.suggest_listing button {
+  padding: 6px 1em;
+}
+
+/* line 1, ../../sass/bigpie/layout/directories/_merchants.scss */
+#bp_merchants_directory {
+  background-color: #CAD5E0;
+}
+/* line 5, ../../sass/bigpie/layout/directories/_merchants.scss */
+#bp_merchants_directory iframe {
+  width: 100%;
+  height: 982px;
+}

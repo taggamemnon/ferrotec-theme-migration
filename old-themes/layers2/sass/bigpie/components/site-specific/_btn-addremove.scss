@@ -1,0 +1,26 @@
+// Block - Add/Remove/Close Button
+// ------------------------------------------------------------------------------------------------------------------------------
+.btn_addremove {
+  @include inline-block(23px,23px,center,middle,23px);
+  @include position(absolute, -8px -8px null null);
+  background: #999;
+  border-radius: 15px;
+  border: 1px solid #666;
+  padding: 0;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+  z-index: 19;
+  &.fa-times { line-height: 1; }
+
+  &.fa-minus {
+    background: $Orange;
+    border-color: $Orange;
+  }
+  &.fa-minus.disabled {
+    background: #999;
+    border-color: #666;
+    //pointer-events: none;
+    cursor: not-allowed;
+  }
+}

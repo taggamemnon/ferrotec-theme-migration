@@ -1,0 +1,92 @@
+.block_nonprofit {
+	.block_contents {
+//		cursor: pointer;
+	}
+
+	// Instore matches
+	.block_header_instore {
+		// Instore watermark
+		b {
+			opacity: 0.7;
+			color: $Green;
+			font-size: 1.25em;
+		}
+	}
+
+	// NonProfit Block - Star Rating
+	// ------------------------------------------------------------------------------------------------------------------------------
+	.rating_wrapper {
+		left: 100%;
+		width: 100px;
+		text-align: right;
+		.rating-container { font-size: 20px; }
+		.rating-stars { color: #ee8615; }
+		a {
+			color: $Blue;
+			font-size: 12px;
+			display: block;
+			text-align: right;
+			margin-top: -5px;
+			margin-right: 3px;
+		}
+	}
+
+	// NonProfit Block - Giveback
+	// ------------------------------------------------------------------------------------------------------------------------------
+	.block_giveback {
+		background: $Blue;
+		position: relative;
+	}
+
+	// NonProfit Block - Goals
+	// ------------------------------------------------------------------------------------------------------------------------------
+	.block_matching {
+		background: $Orange;
+		position: relative;
+		color: #fff;
+		padding: 5px 17px;
+		h4 { margin-bottom: 5px; }
+		.block_matching_info {
+			@include horizontal-align;
+			height: 18px;
+		}
+	}
+
+	// NonProfit Block - Fundraising Goal
+	// ------------------------------------------------------------------------------------------------------------------------------
+	.nonprofit_goal {
+		color: #fff;
+		padding: 5px 17px;
+		height: 48px;
+		background: $Gray;
+		border-top: 2px solid #aaa;
+		position: relative;
+		& > h4 {
+			font-size: 13px;
+			margin-bottom: 2px;
+		}
+		p {
+			@include inline-block(auto,auto,auto,middle,auto);
+			margin-right: 10px;
+			margin-bottom: 0;
+			font-size: 15px;
+		}
+		meter { width: 100px; }
+
+		// NonProfit Block - Show more
+		// ------------------------------------------------------------------------------------------------------------------------------
+		.block_more {
+			@include position(absolute, 50% 10px null null);
+			margin-top: -9px;
+			font-size: 15px;
+			color: #fff;
+			&:after { content:"\00bb"; padding-left: 5px; }
+		}
+	}
+
+
+	a.ratings_organizations {
+		margin-left: 20px;
+		margin-top: 5px;
+	}
+}

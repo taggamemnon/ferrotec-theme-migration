@@ -1,0 +1,8 @@
+// ******************************************************************************************************************************
+// Merchant Block Design
+// E.g. Patron -> My Giveback Page -> My Visited Merchants Section
+// ******************************************************************************************************************************
+.block.block_merchant {
+  .block_giveback { background: #777; }
+  .block_giveback + .block_giveback { background: $Green; }
+}

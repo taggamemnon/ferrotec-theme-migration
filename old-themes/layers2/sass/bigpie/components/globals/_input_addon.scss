@@ -1,0 +1,22 @@
+@mixin input_addon {
+  border: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  background-color: $LighterGray;
+  color: #fff;
+  display: inline-block;
+  float: left;
+  width: 25px;
+  position: relative;
+  & + input {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    //&.medium {
+    //  width: 115px;
+    //}
+  }
+  &:after {
+    //content: $content;
+    @include better-vertical-align();
+  }
+}
