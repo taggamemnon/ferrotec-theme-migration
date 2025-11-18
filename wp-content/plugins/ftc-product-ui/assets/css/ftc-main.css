@@ -1,0 +1,107 @@
+/**
+ * FTC Product UI - Main Stylesheet
+ *
+ * @package FTC_Product_UI
+ * @since 1.0.0
+ */
+
+/* Product Tabs
+   ========================================================================== */
+
+.ftc-product-tabs {
+    margin: 2rem 0;
+}
+
+.ftc-product-tabs .nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.ftc-product-tabs .nav-link {
+    color: #495057;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.ftc-product-tabs .nav-link:hover {
+    border-bottom-color: #6c757d;
+    color: #212529;
+}
+
+.ftc-product-tabs .nav-link.active {
+    color: #0d6efd;
+    border-bottom-color: #0d6efd;
+    background-color: transparent;
+}
+
+.ftc-product-tabs .tab-content {
+    padding: 2rem 0;
+}
+
+/* Product Specifications Table
+   ========================================================================== */
+
+.ftc-specs-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+}
+
+.ftc-specs-table th,
+.ftc-specs-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.ftc-specs-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    width: 40%;
+}
+
+.ftc-specs-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Chart Container
+   ========================================================================== */
+
+.ftc-chart-container {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+}
+
+.ftc-chart-container canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.ftc-chart-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+/* Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .ftc-product-tabs .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .ftc-specs-table th,
+    .ftc-specs-table td {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+}
