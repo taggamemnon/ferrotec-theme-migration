@@ -666,13 +666,149 @@ add_filter('relevanssi_excerpt_content', 'add_extra_content', 10, 2);
 
 ---
 
+## 📄 PHASE 3F: WooCommerce Template Overrides
+
+### Source: Child themes `woocommerce/` directories
+
+### Priority: **HIGH** - Product Display Customization
+
+All child themes have custom WooCommerce templates that need migration:
+
+#### 1. Archive Product Templates (Shop Pages) ⭐⭐⭐
+**Destination:** `ferrotec-woocommerce/woocommerce/archive-product.php` (or theme)
+
+**Files to Migrate:**
+```
+old-themes/child-corporate/woocommerce/archive-product.php
+old-themes/child-meivac/woocommerce/archive-product.php
+old-themes/child-thermalelectric/woocommerce/archive-product.php
+```
+
+**Features:**
+- Custom page banners with product line branding
+- Custom intro content per product line
+- Product category tiles/links
+- Custom layout with Bootstrap grid
+
+**Migration Strategy:**
+1. Create single archive-product.php template
+2. Add dynamic content based on product category
+3. Use ACF fields or filters for customization
+4. Consolidate into one template with variations
+
+#### 2. Single Product Templates ⭐⭐⭐
+**Destination:** `ferrotec-woocommerce/woocommerce/single-product.php`
+
+**Files to Migrate:**
+```
+old-themes/child-corporate/woocommerce/single-product.php
+old-themes/child-corporate/woocommerce/content-single-product.php
+old-themes/child-meivac/woocommerce/single-product.php
+old-themes/child-meivac/woocommerce/content-single-product.php
+old-themes/child-thermalelectric/woocommerce/single-product.php
+old-themes/child-thermalelectric/woocommerce/content-single-product.php
+```
+
+**Features:**
+- Custom product page layouts
+- Category-specific product displays
+- Integration with custom tabs (Phase 2A-1)
+- Integration with specs tables (Phase 2A-2)
+
+**Migration Strategy:**
+1. Merge into single template
+2. Use product category conditionals for variations
+3. Hook into tabs system (already migrating)
+4. Ensure compatibility with attribute tables
+
+---
+
+## 📄 PHASE 3G: Custom Page Templates
+
+### Priority: **MEDIUM** - Special Pages
+
+#### 1. WooCommerce-Based Page Templates ✅ **MIGRATE**
+**Destination:** `layers2025/page-templates/`
+
+**Templates to Migrate:**
+
+##### page-te_all_prods.php ⭐⭐ (Thermal Electric All Products)
+```
+Source: old-themes/child-thermalelectric/page-te_all_prods.php
+Template Name: Thermoelectric All Models Page
+```
+- **Already uses WooCommerce!** (WP_Query)
+- Displays all thermal electric products in sortable table
+- Tablesorter.js integration
+- 12 columns of product data
+
+**Migration Strategy:**
+1. Migrate to new theme page-templates/
+2. Update Bootstrap classes (v3 → v5)
+3. Verify tablesorter still works
+4. Test with actual TE products
+
+---
+
+#### 2. ACF-Based Page Templates ⚠️ **REVIEW**
+**May need rewriting or removal**
+
+##### page-teproducts.php (Single TE Product Page)
+```
+Source: old-themes/layers2/page-teproducts.php
+Template Name: Thermoelectric Product Page
+```
+- Uses ACF fields directly (not WooCommerce)
+- Raphael.js graphs for product specs
+- Modal popups for expanded graphs
+- **QUESTION:** Still needed if using WooCommerce single product template?
+
+**Migration Decision:**
+- If TE products are in WooCommerce, use single-product.php instead
+- If keeping, need to verify ACF field structure
+- Raphael.js dependency (consider Chart.js alternative)
+
+##### page-ferrofluidproducts.php
+```
+Source: old-themes/layers2/page-ferrofluidproducts.php
+Template Name: Ferrofluid Product Page
+```
+- Uses template part: content-ferrofluidproducts
+- **QUESTION:** Is this still used if ferrofluid products are in WooCommerce?
+
+**Migration Decision:** Review if needed
+
+---
+
+#### 3. Legacy fProducts Templates ❌ **DO NOT MIGRATE**
+
+**These use external fProducts database - skip migration:**
+
+```php
+❌ page-vfproducts.php           // VF product catalog (uses fProducts)
+❌ page-tecatalog.php            // TE catalog (uses fProducts)
+❌ page-ferrofluidcatalog.php    // Ferrofluid catalog (uses fProducts)
+❌ page-vfcatalog.php            // VF catalog (uses fProducts)
+❌ page-terecommend.php          // TE recommender tool (uses fProducts)
+```
+
+**Replacement:** Use WooCommerce shop pages and categories instead
+
+---
+
 ## 📁 Template Files Migration Summary
 
 ### WooCommerce Templates (Plugin)
 
-**Destination:** `ferrotec-woocommerce/templates/`
+**Destination:** `ferrotec-woocommerce/templates/` or `ferrotec-woocommerce/woocommerce/`
 
 ```
+WooCommerce Template Overrides (9 files):
+├── woocommerce/
+│   ├── archive-product.php              (consolidated from 3 child themes)
+│   ├── single-product.php               (consolidated from 3 child themes)
+│   └── content-single-product.php       (consolidated from 3 child themes)
+
 Product Tabs (9 files):
 ├── tabs/
 │   ├── description.php
@@ -698,27 +834,44 @@ Single Product (1 file):
     └── specs-table.php
 ```
 
-### Theme Template Parts
+### Theme Templates
 
-**Destination:** `layers2025/template-parts/`
+**Destination:** `layers2025/`
 
 ```
-Thermal Electric (2 files):
-├── thermal/
-│   ├── listing.php
-│   └── listing-type.php
+Page Templates (1 file):
+├── page-templates/
+│   └── page-te_all_prods.php           (Thermal Electric All Products listing)
 
-Content Types (varies):
-├── content/
-│   ├── [already migrated]
-│
-├── shortcodes/
-│   ├── block-content.php
-│   ├── menu-display.php
-│   ├── news-listing.php
-│   ├── pr-listing.php
-│   ├── events-webinars.php
-│   └── resource-accordion.php
+Template Parts:
+├── template-parts/
+│   ├── content/
+│   │   └── [already migrated]
+│   │
+│   └── shortcodes/
+│       ├── block-content.php
+│       ├── menu-display.php
+│       ├── news-listing.php
+│       ├── pr-listing.php
+│       ├── events-webinars.php
+│       └── resource-accordion.php
+```
+
+### Legacy Templates - DO NOT MIGRATE ❌
+
+**fProducts-based catalog pages (skip):**
+```
+❌ page-vfproducts.php           (VF product catalog - uses fProducts)
+❌ page-tecatalog.php            (TE catalog - uses fProducts)
+❌ page-ferrofluidcatalog.php    (Ferrofluid catalog - uses fProducts)
+❌ page-vfcatalog.php            (VF catalog - uses fProducts)
+❌ page-terecommend.php          (TE recommender - uses fProducts)
+```
+
+**ACF-based product pages (review before migration):**
+```
+⚠️ page-teproducts.php           (TE product page - uses ACF/Raphael.js)
+⚠️ page-ferrofluidproducts.php   (Ferrofluid product - uses template parts)
 ```
 
 ---
@@ -732,19 +885,23 @@ Content Types (varies):
 4. ✅ Custom Post Types (Phase 3A-1)
 
 ### HIGH (Do Second)
-5. ⬜ Ferrofluid & Feedthrough Shortcodes (Phase 2B-1, 2B-2)
-6. ⬜ Content Shortcodes (Phase 3A-2)
-7. ⬜ Search Customization (Phase 3B)
-8. ⬜ Helper Functions (Phase 2A-4)
+5. ⬜ WooCommerce Single Product Templates (Phase 3F-2)
+6. ⬜ WooCommerce Archive Templates (Phase 3F-1)
+7. ⬜ Ferrofluid & Feedthrough Shortcodes (Phase 2B-1, 2B-2)
+8. ⬜ Content Shortcodes (Phase 3A-2)
+9. ⬜ Helper Functions (Phase 2A-4)
 
 ### MEDIUM (Do Third)
-9. ⬜ Widget Areas (Phase 3D)
-10. ⬜ Excerpt/Read More Customization (Phase 3C-2)
-11. ⬜ SVG Upload Support (Phase 3C-3)
+10. ⬜ page-te_all_prods.php Template (Phase 3G-1)
+11. ⬜ Search Customization (Phase 3B)
+12. ⬜ Widget Areas (Phase 3D)
+13. ⬜ Excerpt/Read More Customization (Phase 3C-2)
 
 ### LOW (Do Last / Review)
-12. ⬜ Custom Indexing (Phase 3B-2) - Verify still needed
-13. ⬜ Password Reset Form (Phase 3E) - Investigate first
+14. ⬜ ACF-Based Product Pages (Phase 3G-2) - Review if needed
+15. ⬜ SVG Upload Support (Phase 3C-3)
+16. ⬜ Custom Indexing (Phase 3B-2) - Verify still needed
+17. ⬜ Password Reset Form (Phase 3E) - Investigate first
 
 ---
 
