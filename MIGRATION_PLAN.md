@@ -1193,12 +1193,520 @@ Template Parts:
 
 ## 🔄 Modern WordPress Improvements
 
-### Opportunities for Enhancement:
+### PHASE 4: Gutenberg Block Conversion (Optional Enhancement)
 
-1. **Convert Shortcodes to Blocks**
-   - [ ] [show_block] → Reusable Block pattern
-   - [ ] [show_recent_pr] → Query Loop block
-   - [ ] [show_events_and_webinars] → Custom ACF block
+**Priority:** OPTIONAL - Can be done after main migration
+
+Converting legacy shortcodes to native Gutenberg blocks provides better UX for content editors. Here's how to convert each type:
+
+---
+
+### **Conversion 1: [show_block] → Reusable Block Pattern** ⭐ **EASIEST**
+
+**Current:** Shortcode that displays auc_block post content
+```php
+[show_block id="123"]
+```
+
+**New Approach:** Use WordPress native Reusable Blocks (no code needed!)
+
+**Migration Steps:**
+
+1. **Manual Migration (Immediate):**
+   ```
+   - No code changes needed
+   - Edit page with [show_block id="123"]
+   - Copy content from auc_block post #123
+   - Paste into page as regular blocks
+   - Save as Reusable Block if needed multiple times
+   - Delete old auc_block post
+   ```
+
+2. **OR Keep Shortcode:** It still works! No migration required.
+
+3. **OR Create Block Pattern (Advanced):**
+   ```php
+   // In layers2025/inc/block-patterns.php
+
+   function layers2025_register_block_patterns() {
+       // Export auc_block posts as block patterns
+       $blocks = get_posts( array( 'post_type' => 'auc_block' ) );
+
+       foreach ( $blocks as $block ) {
+           register_block_pattern(
+               'layers2025/' . sanitize_title( $block->post_title ),
+               array(
+                   'title'       => $block->post_title,
+                   'description' => 'Reusable content: ' . $block->post_title,
+                   'content'     => $block->post_content,
+                   'categories'  => array( 'text' ),
+               )
+           );
+       }
+   }
+   add_action( 'init', 'layers2025_register_block_patterns' );
+   ```
+
+**Recommendation:** Use native Reusable Blocks - no code needed!
+
+---
+
+### **Conversion 2: [show_recent_pr] → Query Loop Block** ⭐⭐ **MEDIUM**
+
+**Current:** Shortcode that displays recent press releases
+```php
+[show_recent_pr items="5"]
+```
+
+**New Approach:** Use WordPress Core Query Loop block (WordPress 5.8+)
+
+**Migration Steps:**
+
+**Option A: Use Core Query Loop Block (No Code)** ✅ **RECOMMENDED**
+
+1. Remove `[show_recent_pr items="5"]` shortcode
+2. Add **Query Loop** block in Gutenberg
+3. Configure Query Loop settings:
+   ```
+   - Post Type: auc_press
+   - Posts per page: 5
+   - Order by: Date
+   - Order: Descending
+   ```
+4. Customize inner blocks:
+   ```
+   - Post Title
+   - Post Date
+   - Post Excerpt (optional)
+   - Read More button
+   ```
+5. Style with theme CSS or add custom classes
+
+**Option B: Create Block Variation (Code)** ⭐ **MORE REUSABLE**
+
+```javascript
+// In layers2025/assets/js/block-variations.js
+
+wp.blocks.registerBlockVariation( 'core/query', {
+    name: 'recent-press-releases',
+    title: 'Recent Press Releases',
+    description: 'Display recent press releases',
+    icon: 'megaphone',
+    attributes: {
+        query: {
+            postType: 'auc_press',
+            perPage: 5,
+            orderBy: 'date',
+            order: 'desc',
+        },
+        namespace: 'layers2025/recent-pr',
+    },
+    scope: [ 'inserter' ],
+    innerBlocks: [
+        [ 'core/post-template', {}, [
+            [ 'core/post-title', { isLink: true } ],
+            [ 'core/post-date' ],
+            [ 'core/post-excerpt' ],
+            [ 'core/separator' ],
+        ] ],
+    ],
+} );
+```
+
+```php
+// In layers2025/inc/enqueue-scripts.php
+
+function layers2025_enqueue_block_variations() {
+    wp_enqueue_script(
+        'layers2025-block-variations',
+        get_template_directory_uri() . '/assets/js/block-variations.js',
+        array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+        filemtime( get_template_directory() . '/assets/js/block-variations.js' )
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'layers2025_enqueue_block_variations' );
+```
+
+**Benefits:**
+- ✅ Appears in block inserter as "Recent Press Releases"
+- ✅ Pre-configured settings
+- ✅ Editors can still customize
+- ✅ No PHP code in theme
+
+**Backward Compatibility:**
+Keep shortcode working for old content:
+```php
+// Keep in layers2025/inc/shortcodes-content.php
+function show_recent_pr( $atts ) {
+    // Original shortcode code
+    // Add note: "Consider using Query Loop block instead"
+}
+add_shortcode( 'show_recent_pr', 'show_recent_pr' );
+```
+
+---
+
+### **Conversion 3: [show_events_and_webinars] → Custom ACF Block** ⭐⭐⭐ **ADVANCED**
+
+**Current:** Complex shortcode with filtering/sorting
+```php
+[show_events_and_webinars]
+```
+
+**New Approach:** Create custom ACF Block
+
+**Why ACF Block:**
+- Complex logic needs custom code
+- ACF provides great admin UX
+- Live preview in editor
+- Can expose settings to editors
+
+**Migration Steps:**
+
+**Step 1: Register ACF Block**
+
+```php
+// In layers2025/inc/acf-blocks.php OR layers2025/functions.php
+
+function layers2025_register_acf_blocks() {
+    if ( ! function_exists( 'acf_register_block_type' ) ) {
+        return;
+    }
+
+    acf_register_block_type( array(
+        'name'              => 'events-webinars',
+        'title'             => __( 'Events & Webinars', 'layers2025' ),
+        'description'       => __( 'Display upcoming events and webinars', 'layers2025' ),
+        'render_template'   => 'blocks/events-webinars/events-webinars.php',
+        'category'          => 'widgets',
+        'icon'              => 'calendar-alt',
+        'keywords'          => array( 'events', 'webinars', 'calendar' ),
+        'mode'              => 'preview',
+        'supports'          => array(
+            'align'           => array( 'wide', 'full' ),
+            'anchor'          => true,
+            'customClassName' => true,
+        ),
+        'example'  => array(
+            'attributes' => array(
+                'mode' => 'preview',
+                'data' => array(
+                    'is_preview' => true,
+                ),
+            ),
+        ),
+    ) );
+}
+add_action( 'acf/init', 'layers2025_register_acf_blocks' );
+```
+
+**Step 2: Create ACF Fields for Block Settings**
+
+```php
+// In layers2025/acf-json/group_events_webinars_block.json
+// OR create in ACF admin interface
+
+{
+    "key": "group_events_webinars_block",
+    "title": "Events & Webinars Block",
+    "fields": [
+        {
+            "key": "field_events_count",
+            "label": "Number of Events",
+            "name": "events_count",
+            "type": "number",
+            "default_value": 5,
+            "min": 1,
+            "max": 20
+        },
+        {
+            "key": "field_show_filter",
+            "label": "Show Filter Options",
+            "name": "show_filter",
+            "type": "true_false",
+            "default_value": 1,
+            "ui": 1
+        },
+        {
+            "key": "field_event_types",
+            "label": "Event Types to Display",
+            "name": "event_types",
+            "type": "checkbox",
+            "choices": {
+                "webinar": "Webinars",
+                "conference": "Conferences",
+                "training": "Training Sessions"
+            },
+            "default_value": ["webinar", "conference"]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/events-webinars"
+            }
+        ]
+    ]
+}
+```
+
+**Step 3: Create Block Template**
+
+```php
+// In layers2025/blocks/events-webinars/events-webinars.php
+
+<?php
+/**
+ * Events & Webinars Block Template
+ *
+ * @param array $block The block settings and attributes.
+ * @param string $content The block inner HTML (empty).
+ * @param bool $is_preview True during AJAX preview.
+ * @param int|string $post_id The post ID this block is saved to.
+ */
+
+// Get ACF field values
+$events_count = get_field( 'events_count' ) ?: 5;
+$show_filter  = get_field( 'show_filter' );
+$event_types  = get_field( 'event_types' ) ?: array( 'webinar', 'conference' );
+
+// Preview mode check
+$is_preview = isset( $block['data']['is_preview'] ) && $block['data']['is_preview'];
+
+// Block classes
+$class_name = 'events-webinars-block';
+if ( ! empty( $block['className'] ) ) {
+    $class_name .= ' ' . $block['className'];
+}
+if ( ! empty( $block['align'] ) ) {
+    $class_name .= ' align' . $block['align'];
+}
+
+// Query events
+$args = array(
+    'post_type'      => 'auc_events',
+    'posts_per_page' => $events_count,
+    'orderby'        => 'meta_value',
+    'meta_key'       => 'event_date',
+    'order'          => 'ASC',
+    'meta_query'     => array(
+        array(
+            'key'     => 'event_date',
+            'value'   => date( 'Y-m-d' ),
+            'compare' => '>=',
+            'type'    => 'DATE',
+        ),
+    ),
+);
+
+// Add event type filtering
+if ( ! empty( $event_types ) ) {
+    $args['meta_query'][] = array(
+        'key'     => 'event_type',
+        'value'   => $event_types,
+        'compare' => 'IN',
+    );
+}
+
+$events_query = new WP_Query( $args );
+?>
+
+<div class="<?php echo esc_attr( $class_name ); ?>">
+
+    <?php if ( $is_preview ) : ?>
+        <div style="padding: 20px; background: #f0f0f1; border: 1px dashed #ccc;">
+            <p><strong>Events & Webinars Block Preview</strong></p>
+            <p>Showing <?php echo esc_html( $events_count ); ?> upcoming events</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( $show_filter ) : ?>
+        <div class="events-filter">
+            <!-- Filter UI here -->
+            <button data-filter="all">All Events</button>
+            <button data-filter="webinar">Webinars</button>
+            <button data-filter="conference">Conferences</button>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( $events_query->have_posts() ) : ?>
+        <div class="events-list">
+            <?php while ( $events_query->have_posts() ) : $events_query->the_post(); ?>
+                <article class="event-item">
+                    <h3><?php the_title(); ?></h3>
+                    <div class="event-date">
+                        <?php
+                        $event_date = get_field( 'event_date' );
+                        echo $event_date ? date( 'F j, Y', strtotime( $event_date ) ) : '';
+                        ?>
+                    </div>
+                    <div class="event-excerpt">
+                        <?php the_excerpt(); ?>
+                    </div>
+                    <a href="<?php the_permalink(); ?>" class="event-link">
+                        Learn More →
+                    </a>
+                </article>
+            <?php endwhile; ?>
+        </div>
+    <?php else : ?>
+        <p>No upcoming events found.</p>
+    <?php endif; ?>
+
+    <?php wp_reset_postdata(); ?>
+
+</div>
+```
+
+**Step 4: Add Block Styles (Optional)**
+
+```css
+/* In layers2025/assets/css/blocks/events-webinars.css */
+
+.events-webinars-block {
+    margin: 2rem 0;
+}
+
+.events-filter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.events-filter button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.events-filter button:hover,
+.events-filter button.active {
+    background: var(--ft-blue);
+    color: white;
+    border-color: var(--ft-blue);
+}
+
+.events-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.event-item {
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.event-item h3 {
+    margin-top: 0;
+}
+
+.event-date {
+    color: var(--ft-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+```
+
+**Enqueue block styles:**
+```php
+function layers2025_enqueue_block_styles() {
+    wp_enqueue_style(
+        'layers2025-events-block',
+        get_template_directory_uri() . '/assets/css/blocks/events-webinars.css',
+        array(),
+        filemtime( get_template_directory() . '/assets/css/blocks/events-webinars.css' )
+    );
+}
+add_action( 'wp_enqueue_scripts', 'layers2025_enqueue_block_styles' );
+add_action( 'enqueue_block_editor_assets', 'layers2025_enqueue_block_styles' );
+```
+
+---
+
+### **Comparison: Shortcode vs Block**
+
+| Feature | Shortcode | Gutenberg Block |
+|---------|-----------|-----------------|
+| **Editor UX** | Text-based, no preview | Visual, live preview |
+| **Settings** | Must remember syntax | GUI with form fields |
+| **Flexibility** | Fixed in code | Customizable per instance |
+| **Learning Curve** | Low (type shortcode) | Medium (find block) |
+| **Future-proof** | Still supported | WordPress direction |
+| **SEO** | Content in shortcode | Content in blocks (better) |
+
+---
+
+### **Migration Priority for Block Conversion**
+
+**Now (During Migration):**
+- ✅ Keep all shortcodes working (backward compatibility)
+- ✅ Already created: Content Section ACF Block (done!)
+- ✅ Already created: Page Headers ACF fields (done!)
+
+**Phase 5 (After Launch - Optional):**
+- ⬜ Convert [show_recent_pr] → Query Loop variation
+- ⬜ Convert [show_events_and_webinars] → ACF block
+- ⬜ Create block patterns for common layouts
+- ⬜ Add editor guide for block usage
+
+**Don't Convert (Keep as Shortcodes):**
+- `[show_meivac_products]` - Complex product queries, shortcode is fine
+- `[ferrofluid_products]` - Product-specific, keep as shortcode
+- `[show_feedthroughs]` - Filtering logic, shortcode is better
+- Product-related shortcodes - These are fine as shortcodes!
+
+---
+
+### **Implementation Checklist: Gutenberg Blocks**
+
+```
+Phase 4 (Optional - Post-Launch):
+□ Create block variations for Query Loop
+  □ Recent PR variation
+  □ Recent News variation
+  □ Events listing variation
+
+□ Create ACF Blocks for complex shortcodes
+  □ Events & Webinars block
+  □ Resource Accordion block
+  □ Register ACF field groups
+  □ Create block templates
+  □ Add block styles
+
+□ Create Block Patterns
+  □ Export auc_block posts as patterns
+  □ Create common page layouts
+  □ Hero section patterns
+  □ CTA patterns
+
+□ Documentation
+  □ Block usage guide for editors
+  □ Migration guide from shortcodes
+  □ Video tutorials (optional)
+
+□ Backward Compatibility
+  □ Keep all shortcodes working
+  □ Add deprecation notices (optional)
+  □ Gradual content migration plan
+```
+
+---
+
+### **Resources & Documentation**
+
+- [Block Editor Handbook](https://developer.wordpress.org/block-editor/)
+- [ACF Blocks Documentation](https://www.advancedcustomfields.com/resources/blocks/)
+- [Block Patterns](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/)
+- [Query Loop Block](https://developer.wordpress.org/block-editor/reference-guides/core-blocks/#query-loop)
+
+---
+
+### **Other Modern Enhancements**
 
 2. **Replace String Concatenation**
    - Current: `$output .= '<div>...</div>';`
