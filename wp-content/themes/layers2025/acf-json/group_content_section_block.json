@@ -1,0 +1,79 @@
+{
+    "key": "group_content_section_block",
+    "title": "Content Section Block",
+    "fields": [
+        {
+            "key": "field_content_section_content",
+            "label": "Content",
+            "name": "content",
+            "type": "wysiwyg",
+            "instructions": "Add your content here. You can use headings, paragraphs, images, and more.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_content_section_bg_class",
+            "label": "Background Class",
+            "name": "background_class",
+            "type": "text",
+            "instructions": "Optional CSS class for background styling (e.g., bkg-gradient-green, bkg-gradient-red)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "bkg-gradient-green",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_content_section_bg_color",
+            "label": "Background Color",
+            "name": "background_color",
+            "type": "color_picker",
+            "instructions": "Optional custom background color. Leave empty to use the background class or default.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/content-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for the Content Section block. This block replaces the old ACF 'rows' repeater.",
+    "show_in_rest": 0
+}

@@ -15,43 +15,34 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Enqueue theme styles
  */
 function layers2025_enqueue_styles() {
-    // Main theme stylesheet
+    // Bootstrap 5 from CDN
     wp_enqueue_style(
-        'layers2025-style',
-        get_stylesheet_uri(),
+        'bootstrap',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
         array(),
+        '5.3.3'
+    );
+
+    // Ferrotec Custom Styles - Consolidated CSS (all custom styles from old themes)
+    // Use minified version in production for better performance
+    $ferrotec_css = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG )
+        ? 'ferrotec-custom.css'
+        : 'ferrotec-custom.min.css';
+
+    wp_enqueue_style(
+        'ferrotec-custom',
+        LAYERS2025_URI . '/assets/css/' . $ferrotec_css,
+        array( 'bootstrap' ),
         LAYERS2025_VERSION
     );
 
-    // Bootstrap grid (from assets)
-    if ( file_exists( LAYERS2025_DIR . '/assets/css/bootstrap-grid.css' ) ) {
-        wp_enqueue_style(
-            'layers2025-bootstrap-grid',
-            LAYERS2025_URI . '/assets/css/bootstrap-grid.css',
-            array(),
-            LAYERS2025_VERSION
-        );
-    }
-
-    // Main CSS file
-    if ( file_exists( LAYERS2025_DIR . '/assets/css/main.css' ) ) {
-        wp_enqueue_style(
-            'layers2025-main',
-            LAYERS2025_URI . '/assets/css/main.css',
-            array( 'layers2025-style' ),
-            LAYERS2025_VERSION
-        );
-    }
-
-    // Component styles
-    if ( file_exists( LAYERS2025_DIR . '/assets/css/components.css' ) ) {
-        wp_enqueue_style(
-            'layers2025-components',
-            LAYERS2025_URI . '/assets/css/components.css',
-            array( 'layers2025-main' ),
-            LAYERS2025_VERSION
-        );
-    }
+    // Main theme stylesheet (WordPress requirement, loaded last)
+    wp_enqueue_style(
+        'layers2025-style',
+        get_stylesheet_uri(),
+        array( 'ferrotec-custom' ),
+        LAYERS2025_VERSION
+    );
 }
 add_action( 'wp_enqueue_scripts', 'layers2025_enqueue_styles' );
 
@@ -59,6 +50,15 @@ add_action( 'wp_enqueue_scripts', 'layers2025_enqueue_styles' );
  * Enqueue theme scripts
  */
 function layers2025_enqueue_scripts() {
+    // Bootstrap 5 Bundle (includes Popper)
+    wp_enqueue_script(
+        'bootstrap-bundle',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js',
+        array(),
+        '5.3.3',
+        true
+    );
+
     // Navigation script
     if ( file_exists( LAYERS2025_DIR . '/assets/js/navigation.js' ) ) {
         wp_enqueue_script(

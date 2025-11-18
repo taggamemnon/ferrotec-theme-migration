@@ -62,3 +62,70 @@ if ( class_exists( 'WooCommerce' ) ) {
 if ( ! isset( $content_width ) ) {
     $content_width = 1140; // pixels
 }
+
+/**
+ * Register ACF Blocks
+ *
+ * Registers custom Gutenberg blocks powered by Advanced Custom Fields.
+ * These blocks replace the old ACF repeater fields for a better editing experience.
+ *
+ * @since 1.0.0
+ */
+function layers2025_register_acf_blocks() {
+    // Check if ACF function exists
+    if ( ! function_exists( 'acf_register_block_type' ) ) {
+        return;
+    }
+
+    /**
+     * Content Section Block
+     *
+     * Replaces the old 'rows' repeater field.
+     * Allows editors to add flexible content sections with optional background colors and classes.
+     */
+    acf_register_block_type( array(
+        'name'              => 'content-section',
+        'title'             => __( 'Content Section', 'layers2025' ),
+        'description'       => __( 'A flexible content section with optional background color and CSS class', 'layers2025' ),
+        'render_template'   => 'blocks/content-section/content-section.php',
+        'category'          => 'formatting',
+        'icon'              => 'layout',
+        'keywords'          => array( 'content', 'section', 'container', 'row' ),
+        'mode'              => 'preview',
+        'supports'          => array(
+            'align'             => array( 'wide', 'full' ),
+            'anchor'            => true,
+            'customClassName'   => true,
+            'jsx'               => true,
+        ),
+        'example'  => array(
+            'attributes' => array(
+                'mode' => 'preview',
+                'data' => array(
+                    'content'           => '<h3>Example Content Section</h3><p>This is a flexible content section. You can add any HTML content here.</p>',
+                    'background_class'  => 'bkg-gradient-green',
+                ),
+            ),
+        ),
+    ) );
+}
+add_action( 'acf/init', 'layers2025_register_acf_blocks' );
+
+/**
+ * Set ACF JSON save/load points
+ *
+ * Store ACF field groups as JSON in the theme for version control.
+ *
+ * @since 1.0.0
+ */
+function layers2025_acf_json_save_point( $path ) {
+    return LAYERS2025_DIR . '/acf-json';
+}
+add_filter( 'acf/settings/save_json', 'layers2025_acf_json_save_point' );
+
+function layers2025_acf_json_load_point( $paths ) {
+    unset( $paths[0] );
+    $paths[] = LAYERS2025_DIR . '/acf-json';
+    return $paths;
+}
+add_filter( 'acf/settings/load_json', 'layers2025_acf_json_load_point' );

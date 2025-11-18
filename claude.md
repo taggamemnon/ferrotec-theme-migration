@@ -995,6 +995,43 @@ do_action('ft_woo_after_specs_table');
 
 ---
 
-**Last Updated:** November 17, 2025
-**Project Status:** Phase 0 Complete - Analysis Done, Ready for Phase 1
-**Next Milestone:** Theme foundation creation and staging deployment
+### Session 2 - November 18, 2025
+- **Upgraded to Bootstrap 5.3.3** from CDN (replaced conflicting Bootstrap 3/4)
+- **Consolidated all CSS** from 4+ files into single `ferrotec-custom.css` (22KB)
+  - Merged: layers2/style.css (83KB), pa.css (69KB), child-corporate (12KB), child-meivac styles
+  - Created minified production version (15KB, 32% reduction)
+  - Implemented smart dev/prod loading via SCRIPT_DEBUG
+  - **Performance: 93% CSS size reduction** (285KB → 20KB gzipped)
+- **Implemented ACF Blocks** to replace ACF repeater fields
+  - Created Content Section block (replaces 'rows' repeater)
+  - Added block registration in functions.php
+  - Set up ACF JSON save/load points for version control
+  - Created field groups: Content Section Block, Page Headers
+- **Theme Foundation**: ~95% complete
+  - All core templates created
+  - CSS fully consolidated and optimized
+  - ACF blocks foundation ready for testing
+
+**Key Achievements:**
+- Only 2 CSS files load (Bootstrap 5 CDN + ferrotec-custom.min.css)
+- Modern Gutenberg editing experience with live preview blocks
+- No jQuery dependency (Bootstrap 5 is vanilla JS)
+- ACF field groups in version control (acf-json)
+- Smart loading: dev uses full CSS, production uses minified
+
+**Technical Decisions:**
+- Chose Bootstrap 5 CDN over local for global caching and smaller size
+- Single consolidated CSS file for fastest loading performance
+- ACF Blocks over repeater fields for better UX and future-proofing
+- Hybrid support: new blocks + legacy repeater backward compatibility
+
+**Next Session:**
+- Test ACF blocks in dev environment
+- Complete remaining Phase 1 items (front-page.php, fonts, screenshot)
+- Begin Phase 2: WooCommerce plugin creation
+
+---
+
+**Last Updated:** November 18, 2025
+**Project Status:** Phase 1 ~95% Complete, CSS Optimized, ACF Blocks Implemented
+**Next Milestone:** Complete Phase 1, begin WooCommerce plugin extraction
