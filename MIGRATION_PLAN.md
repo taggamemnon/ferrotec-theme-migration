@@ -221,72 +221,136 @@ old-themes/child-meivac/js/
 
 ---
 
-## 🎨 PHASE 2B: Thermal Electric Functions (Plugin or Theme?)
+## 🎨 PHASE 2B: Additional Product Shortcodes (WooCommerce)
 
-### Source: `old-themes/child-thermalelectric/functions.php`
+### Source: `old-themes/layers2/functions.php`
 
-### Decision Point: Plugin vs Theme?
-**Recommendation:** Keep in THEME initially, can extract to plugin later if needed.
+### Priority: **HIGH** - WooCommerce Product Listings
 
-#### 1. Thermal Electric Product Shortcodes ⭐⭐
-**Destination:** `layers2025/inc/shortcodes-thermal.php` OR `ferrotec-woocommerce/includes/class-ft-thermal-shortcodes.php`
+#### 1. Ferrofluid Products Shortcode ⭐⭐
+**Destination:** `ferrotec-woocommerce/includes/class-ft-woo-shortcodes.php`
 
 **Functions to Migrate:**
 ```php
-✓ show_thermalelectric_family()          // Lines 51-194
-  - Complex shortcode with custom DB queries
-  - Uses external class: fProducts (where is this defined??)
-  - Builds product tables with family-specific columns
-  - **DEPENDENCY ISSUE:** fProducts class not found in theme files
-
-✓ show_thermal_family()                  // Lines 196-246
-  - WP_Query based product listing
-  - Loads template part: 'teListing'
-  - More WordPress-native approach
+✓ show_ferrofluid_products()             // Lines 1027-1079
+  - WooCommerce product query by category
+  - Custom table output with ACF fields
+  - Already using WP_Query (modern approach!)
 ```
 
-**Shortcodes:**
+**Shortcode:**
 ```
-[show_thermalelectric family="14"]
-[show_thermal_family cat="product-category-slug"]
-```
-
-**Template Files:**
-```
-old-themes/child-thermalelectric/
-├── teListing.php                        → template-parts/thermal/listing.php
-└── teListing-type.php                   → template-parts/thermal/listing-type.php
+[ferrofluid_products family="product-category-slug"]
 ```
 
-**⚠️ BLOCKER: fProducts Class**
-- Line 56: `$results = new fProducts;`
-- NOT FOUND in theme files
-- Likely external dependency or custom class
-- **ACTION REQUIRED:** Locate fProducts class definition
+**Custom Table Columns:**
+- Ferrofluid Type
+- Gauss [CGS]
+- mT [SI]
+- cP [CGS]
+- mPa-s [SI]
+
+**ACF Fields Used:**
+```php
+'model'      // Ferrofluid model number
+'sat_guass'  // Saturation (Gauss)
+'sat_mt'     // Saturation (mT)
+'vis_cp'     // Viscosity (cP)
+'sat_mpa_s'  // Saturation (mPa-s)
+```
 
 **Migration Strategy:**
-1. **FIRST:** Locate fProducts class or rewrite using WP_Query
-2. Create shortcode handler
-3. Migrate template files
-4. Test with actual thermal product data
+1. Add to shortcode handler class
+2. Create template for ferrofluid table layout
+3. Verify ACF field names match WooCommerce products
+4. Update Bootstrap classes (v3 → v5)
+5. Add filters for customization
 
 ---
 
-#### 2. Raphael.js Graph Scripts ⭐
-**Destination:** `layers2025/inc/enqueue-scripts.php`
+#### 2. Vacuum Feedthrough Shortcode ⭐⭐⭐
+**Destination:** `ferrotec-woocommerce/includes/class-ft-woo-shortcodes.php`
 
-**Function to Migrate:**
+**Functions to Rewrite:**
 ```php
-✓ raphael2_scripts()                     // Lines 21-40
-  - Conditional script loading for thermal graph product pages
-  - Template: template-thermal-graph-product-page.php
-  - Scripts: raphael-min.js, g.ferrotec.js
+✓ show_vf_feedthroughs()                 // Lines 1083-1105
+  - Currently uses fProducts class (legacy)
+  - **MUST REWRITE** to use WooCommerce products
+  - Complex filtering UI (shaft type, mount, environment, temperature)
+  - Uses data attributes for JavaScript filtering
 ```
 
+**Shortcode:**
+```
+[show_feedthroughs] (no parameters needed)
+```
+
+**Filter Options:**
+- Shaft Type: Solid, Hollow
+- Mount Type: Cartridge, Flange, Nose, Nut, Compliant
+- Environment: Standard, Reactive Gas
+- Temperature: Standard, High-Temperature
+- Units Toggle: Imperial, Metric, Both
+
+**Table Columns:**
+- Appearance (thumbnail)
+- Model Number
+- Part Number
+- Shaft Type
+- Shaft Dimension
+- Mounting Type
+- Fluid
+
 **Migration Strategy:**
-1. Add to theme's enqueue-scripts.php
-2. Check if template exists in new theme
-3. Verify Raphael.js is still needed (consider modern alternatives)
+1. **Rewrite query** to use WooCommerce products instead of fProducts
+2. Convert product attributes to WooCommerce taxonomy terms:
+   - `shaft_type` → product attribute
+   - `mount_type` → product attribute
+   - `environment` → product attribute
+   - `temperature` → product attribute
+3. Create JavaScript for dynamic filtering
+4. Build responsive filter UI with Bootstrap 5
+5. Use WooCommerce product images instead of hardcoded paths
+6. Create template part for VF product table
+
+**WooCommerce Product Attributes Needed:**
+```php
+pa_shaft_type     // Solid Shaft, Hollow Shaft
+pa_mount_type     // Cartridge, Flange, Nose, Nut, Compliant
+pa_environment    // Standard, Reactive Gas
+pa_temperature    // Standard, High-Temperature
+pa_unit_system    // Imperial, Metric
+```
+
+**JavaScript File to Create:**
+```
+assets/js/vf-feedthrough-filter.js
+- Dynamic product filtering
+- Unit conversion toggle
+- Table row show/hide based on filters
+```
+
+---
+
+#### 3. Legacy Shortcodes to REMOVE ❌
+
+**DO NOT MIGRATE - Legacy fProducts-based:**
+
+```php
+❌ show_thermalelectric_family()         // Uses fProducts class
+   Shortcode: [show_thermalelectric family="14"]
+   Reason: Legacy external database, not WooCommerce
+
+❌ show_ferrofluid_family()              // Uses fProducts class
+   Shortcode: [show_ferrofluid]
+   Reason: Legacy external database, not WooCommerce
+```
+
+**Replacement:**
+Use WooCommerce-based shortcodes instead:
+- `[show_meivac_products]` pattern
+- `[ferrofluid_products]`
+- `[show_feedthroughs]` (after rewrite)
 
 ---
 
@@ -402,37 +466,7 @@ old-themes/child-thermalelectric/
 5. Add filters for customization
 6. Consider converting some to Gutenberg blocks
 
----
-
-#### 3. Product Family Shortcodes ⚠️ COMPLEX
-**Destination:** Depends on product data source
-
-##### [show_ferrofluid] - Ferrofluid Products
-```php
-✓ show_ferrofluid_family()               // Lines 909-1024
-  - Similar to thermal electric shortcodes
-  - Uses external class or custom DB queries
-  - **REQUIRES INVESTIGATION**
-```
-
-##### [ferrofluid_products] - Ferrofluid Listing
-```php
-✓ show_ferrofluid_products()             // Lines 1040-1079
-  - Product category based listing
-  - Usage: [ferrofluid_products cat="category-slug"]
-```
-
-##### [show_feedthroughs] - VF Products
-```php
-✓ show_vf_feedthroughs()                 // Lines 1081-1105
-  - Vacuum feedthrough product listings
-  - Usage: [show_feedthroughs cat="category-slug"]
-```
-
-**⚠️ INVESTIGATION NEEDED:**
-- Where does product data come from?
-- Is it WooCommerce products or external DB?
-- Are these still in use?
+**Note:** Product-related shortcodes ([ferrofluid_products], [show_feedthroughs]) are now in **Phase 2B** as WooCommerce shortcodes.
 
 ---
 
@@ -694,42 +728,42 @@ Content Types (varies):
 ### CRITICAL (Do First)
 1. ✅ WooCommerce Product Tabs (Phase 2A-1)
 2. ✅ Product Attribute Tables (Phase 2A-2)
-3. ✅ Product Listing Shortcodes (Phase 2A-3)
+3. ✅ MEI VAC Product Listing Shortcodes (Phase 2A-3)
 4. ✅ Custom Post Types (Phase 3A-1)
 
 ### HIGH (Do Second)
-5. ⬜ Content Shortcodes (Phase 3A-2)
-6. ⬜ Search Customization (Phase 3B)
-7. ⬜ Helper Functions (Phase 2A-4)
-8. ⬜ Widget Areas (Phase 3D)
+5. ⬜ Ferrofluid & Feedthrough Shortcodes (Phase 2B-1, 2B-2)
+6. ⬜ Content Shortcodes (Phase 3A-2)
+7. ⬜ Search Customization (Phase 3B)
+8. ⬜ Helper Functions (Phase 2A-4)
 
 ### MEDIUM (Do Third)
-9. ⬜ Thermal Electric Shortcodes (Phase 2B) - AFTER fProducts resolution
+9. ⬜ Widget Areas (Phase 3D)
 10. ⬜ Excerpt/Read More Customization (Phase 3C-2)
 11. ⬜ SVG Upload Support (Phase 3C-3)
 
 ### LOW (Do Last / Review)
-12. ⬜ Raphael.js Scripts (Phase 2B-2) - May be deprecated
-13. ⬜ Custom Indexing (Phase 3B-2) - Verify still needed
-14. ⬜ Password Reset Form (Phase 3E) - Investigate first
+12. ⬜ Custom Indexing (Phase 3B-2) - Verify still needed
+13. ⬜ Password Reset Form (Phase 3E) - Investigate first
 
 ---
 
 ## ⚠️ Blockers & Investigations Needed
 
-### 1. fProducts Class
-**Location:** Unknown
-**Used By:** `show_thermalelectric_family()`
-**Action:** Search entire codebase or rewrite using WP_Query
-
-### 2. Thermal Electric Product Data Source
-**Question:** WooCommerce products or external DB?
-**Action:** Investigate database structure
-
-### 3. Hardcoded Page IDs
+### 1. Hardcoded Page IDs
 **Location:** `meivac_scripts()` - Lines 24, 33
 **Pages:** 398, 53
 **Action:** Replace with page slugs or template detection
+
+### 2. WooCommerce Product Attributes for Feedthrough Products
+**Location:** `show_vf_feedthroughs()` rewrite
+**Action:** Verify or create WooCommerce attributes:
+- `pa_shaft_type`, `pa_mount_type`, `pa_environment`, `pa_temperature`, `pa_unit_system`
+
+### 3. ACF Fields for Ferrofluid Products
+**Location:** `show_ferrofluid_products()`
+**Action:** Verify WooCommerce products have ACF fields:
+- `model`, `sat_guass`, `sat_mt`, `vis_cp`, `sat_mpa_s`
 
 ### 4. Custom Database Queries
 **Location:** Multiple shortcodes
