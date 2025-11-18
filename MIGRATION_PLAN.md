@@ -672,54 +672,313 @@ add_filter('relevanssi_excerpt_content', 'add_extra_content', 10, 2);
 
 ### Priority: **HIGH** - Product Display Customization
 
-All child themes have custom WooCommerce templates that need migration:
+All child themes have custom WooCommerce templates that need migration.
+
+### 🎨 **Multi-Layout Architecture Strategy**
+
+**Challenge:** Each product family needs different layouts:
+- **Corporate/Thermal:** Custom banners, category tiles
+- **MEI VAC:** Spec-focused, technical data tables
+- **Thermal Electric:** Performance graphs, module configurations
+
+**Solution: Hybrid Approach** (Multiple options - choose based on complexity)
+
+---
+
+### **Option 1: WooCommerce Template Hierarchy** ⭐⭐⭐ **RECOMMENDED**
+
+**How it works:** WooCommerce supports taxonomy-based template files
+
+**Structure:**
+```
+ferrotec-woocommerce/woocommerce/
+├── archive-product.php                           (fallback/default)
+├── taxonomy-product_cat.php                      (all categories fallback)
+├── taxonomy-product_cat-meivac.php               (MEI VAC products)
+├── taxonomy-product_cat-thermal-modules.php      (Thermal Electric)
+├── taxonomy-product_cat-ferrofluid.php           (Ferrofluid)
+├── taxonomy-product_cat-vacuum-feedthrough.php   (VF products)
+│
+├── single-product.php                            (fallback/default)
+├── single-product-meivac.php                     (MEI VAC single)
+├── single-product-thermal.php                    (Thermal single)
+└── content-single-product.php                    (shared content)
+```
+
+**Benefits:**
+- ✅ Clean separation of layouts
+- ✅ WordPress native (no complex conditionals)
+- ✅ Easy to maintain per product family
+- ✅ Template overrideable by theme if needed
+- ✅ Each team can work on their product family independently
+
+**Implementation:**
+```php
+// Plugin registers custom template locations
+add_filter( 'woocommerce_locate_template', 'ft_woo_plugin_templates', 10, 3 );
+function ft_woo_plugin_templates( $template, $template_name, $template_path ) {
+    // Check if plugin has this template
+    $plugin_template = plugin_dir_path( __FILE__ ) . 'woocommerce/' . $template_name;
+
+    if ( file_exists( $plugin_template ) ) {
+        return $plugin_template;
+    }
+
+    return $template;
+}
+```
+
+---
+
+### **Option 2: Single Template with Product Category Conditionals** ⭐⭐
+
+**How it works:** One template file with `if/else` logic
+
+**Structure:**
+```php
+// In single-product.php or archive-product.php
+$product_cats = get_the_terms( get_the_ID(), 'product_cat' );
+$cat_slugs = wp_list_pluck( $product_cats, 'slug' );
+
+if ( in_array( 'meivac', $cat_slugs ) ) {
+    get_template_part( 'template-parts/product/meivac-layout' );
+} elseif ( in_array( 'thermal-modules', $cat_slugs ) ) {
+    get_template_part( 'template-parts/product/thermal-layout' );
+} elseif ( in_array( 'ferrofluid', $cat_slugs ) ) {
+    get_template_part( 'template-parts/product/ferrofluid-layout' );
+} else {
+    get_template_part( 'template-parts/product/default-layout' );
+}
+```
+
+**Benefits:**
+- ✅ Single entry point
+- ✅ Template parts still separated
+- ✅ Easy to add new product families
+
+**Drawbacks:**
+- ❌ More complex main template
+- ❌ All template parts must exist
+
+---
+
+### **Option 3: Hook-Based Layout System** ⭐⭐⭐ **MOST FLEXIBLE**
+
+**How it works:** Base template + hooks that inject category-specific content
+
+**Structure:**
+```php
+// Base template (single-product.php)
+do_action( 'ft_woo_before_product_content' );
+
+// Default product layout
+woocommerce_template_single_title();
+woocommerce_template_single_price();
+
+do_action( 'ft_woo_product_content' ); // Category-specific content here
+
+woocommerce_output_product_data_tabs();
+
+do_action( 'ft_woo_after_product_content' );
+```
+
+**Plugin registers category-specific hooks:**
+```php
+// In plugin class for MEI VAC
+add_action( 'ft_woo_product_content', 'ft_meivac_product_content', 10 );
+function ft_meivac_product_content() {
+    if ( ! ft_is_product_category( 'meivac' ) ) return;
+
+    // MEI VAC specific layout
+    include plugin_dir_path( __FILE__ ) . 'templates/meivac-content.php';
+}
+
+// In plugin class for Thermal
+add_action( 'ft_woo_product_content', 'ft_thermal_product_content', 10 );
+function ft_thermal_product_content() {
+    if ( ! ft_is_product_category( 'thermal-modules' ) ) return;
+
+    // Thermal specific layout
+    include plugin_dir_path( __FILE__ ) . 'templates/thermal-content.php';
+}
+```
+
+**Benefits:**
+- ✅ Extremely flexible
+- ✅ No template file duplication
+- ✅ Easy to extend
+- ✅ Can be combined with Options 1 or 2
+
+---
+
+### **Option 4: ACF Layout Fields** ⭐ **DATABASE-DRIVEN**
+
+**How it works:** Store layout preferences in ACF fields per category
+
+**Structure:**
+```php
+// Get category layout settings
+$term_id = get_queried_object_id();
+$layout_type = get_field( 'category_layout_type', 'product_cat_' . $term_id );
+
+switch ( $layout_type ) {
+    case 'technical':
+        // MEI VAC style - focus on specs
+        break;
+    case 'marketing':
+        // Corporate style - focus on benefits
+        break;
+    case 'performance':
+        // Thermal style - focus on graphs
+        break;
+}
+```
+
+**Benefits:**
+- ✅ Non-developers can change layouts
+- ✅ Very flexible
+- ✅ No code changes for layout switches
+
+**Drawbacks:**
+- ❌ More complex setup
+- ❌ Database-dependent
+
+---
+
+### **🎯 RECOMMENDED APPROACH: Hybrid (Option 1 + Option 3)**
+
+**Best of both worlds:**
+
+1. **Use WooCommerce template hierarchy** for major layout differences
+2. **Use hooks** for fine-tuning within each layout
+3. **Use ACF** for content customization (banners, colors, etc.)
+
+**Final Structure:**
+```
+ferrotec-woocommerce/
+├── woocommerce/
+│   ├── taxonomy-product_cat-meivac.php           (MEI VAC layout)
+│   ├── taxonomy-product_cat-thermal-modules.php  (Thermal layout)
+│   ├── taxonomy-product_cat-ferrofluid.php       (Ferrofluid layout)
+│   └── archive-product.php                       (default fallback)
+│
+├── includes/
+│   ├── class-ft-woo-meivac.php                   (MEI VAC hooks/functions)
+│   ├── class-ft-woo-thermal.php                  (Thermal hooks/functions)
+│   └── class-ft-woo-ferrofluid.php               (Ferrofluid hooks/functions)
+│
+└── templates/
+    ├── meivac/
+    │   ├── product-header.php
+    │   ├── specs-table.php
+    │   └── ordering-info.php
+    ├── thermal/
+    │   ├── product-header.php
+    │   ├── performance-graph.php
+    │   └── family-selector.php
+    └── ferrofluid/
+        ├── product-header.php
+        └── properties-table.php
+```
+
+---
 
 #### 1. Archive Product Templates (Shop Pages) ⭐⭐⭐
-**Destination:** `ferrotec-woocommerce/woocommerce/archive-product.php` (or theme)
+**Destination:** `ferrotec-woocommerce/woocommerce/`
 
 **Files to Migrate:**
 ```
-old-themes/child-corporate/woocommerce/archive-product.php
-old-themes/child-meivac/woocommerce/archive-product.php
-old-themes/child-thermalelectric/woocommerce/archive-product.php
+old-themes/child-corporate/woocommerce/archive-product.php    → taxonomy-product_cat-thermal-modules.php
+old-themes/child-meivac/woocommerce/archive-product.php       → taxonomy-product_cat-meivac.php
+old-themes/child-thermalelectric/woocommerce/archive-product.php → taxonomy-product_cat-thermal-modules.php (merge)
 ```
 
 **Features:**
-- Custom page banners with product line branding
-- Custom intro content per product line
-- Product category tiles/links
+- Custom page banners with product line branding (→ ACF fields)
+- Custom intro content per product line (→ ACF wysiwyg)
+- Product category tiles/links (→ template parts)
 - Custom layout with Bootstrap grid
 
 **Migration Strategy:**
-1. Create single archive-product.php template
-2. Add dynamic content based on product category
-3. Use ACF fields or filters for customization
-4. Consolidate into one template with variations
+1. Create taxonomy-based template files (WordPress native hierarchy)
+2. Extract common elements into shared template parts
+3. Store banner images/text in ACF category fields
+4. Use hooks for product family-specific customizations
+5. Test each product category independently
 
 #### 2. Single Product Templates ⭐⭐⭐
-**Destination:** `ferrotec-woocommerce/woocommerce/single-product.php`
+**Destination:** `ferrotec-woocommerce/woocommerce/`
 
 **Files to Migrate:**
 ```
-old-themes/child-corporate/woocommerce/single-product.php
-old-themes/child-corporate/woocommerce/content-single-product.php
-old-themes/child-meivac/woocommerce/single-product.php
-old-themes/child-meivac/woocommerce/content-single-product.php
-old-themes/child-thermalelectric/woocommerce/single-product.php
-old-themes/child-thermalelectric/woocommerce/content-single-product.php
+old-themes/child-corporate/woocommerce/single-product.php         → (analyze for thermal layout)
+old-themes/child-corporate/woocommerce/content-single-product.php → template-parts/thermal-content.php
+old-themes/child-meivac/woocommerce/single-product.php            → (analyze for MEI VAC layout)
+old-themes/child-meivac/woocommerce/content-single-product.php    → template-parts/meivac-content.php
+old-themes/child-thermalelectric/woocommerce/single-product.php   → (merge with corporate)
+old-themes/child-thermalelectric/woocommerce/content-single-product.php → (merge)
 ```
 
-**Features:**
-- Custom product page layouts
-- Category-specific product displays
-- Integration with custom tabs (Phase 2A-1)
-- Integration with specs tables (Phase 2A-2)
+**Product Family Specific Features:**
+
+**MEI VAC Products:**
+- Technical specs emphasis
+- Detailed attribute tables (already in Phase 2A-2)
+- Custom tabs: Description, Ordering, Downloads (already in Phase 2A-1)
+- Part number prominence
+- ACF fields for step files
+
+**Thermal Products:**
+- Performance data emphasis
+- Module configuration details
+- Family grouping/navigation
+- Temperature/power curves (graphs)
+- Dimensional drawings
+
+**Ferrofluid Products:**
+- Chemical properties tables
+- Saturation/viscosity data (ACF fields)
+- Application guidance
+- Safety/handling information
 
 **Migration Strategy:**
-1. Merge into single template
-2. Use product category conditionals for variations
-3. Hook into tabs system (already migrating)
-4. Ensure compatibility with attribute tables
+1. **Option A (Recommended):** Create category-specific single product templates:
+   - `single-product-meivac.php`
+   - `single-product-thermal.php`
+   - `single-product-ferrofluid.php`
+   - `single-product.php` (fallback)
+
+2. **Option B:** Single template with hooks:
+   ```php
+   // In single-product.php
+   do_action( 'ft_woo_single_product_before_content' );
+
+   woocommerce_template_single_title();
+   woocommerce_template_single_price();
+
+   // Product family-specific content injected here
+   do_action( 'ft_woo_single_product_content' );
+
+   woocommerce_output_product_data_tabs(); // Uses Phase 2A-1 tab system
+
+   do_action( 'ft_woo_single_product_after_content' );
+   ```
+
+3. Extract shared components:
+   - Product title formatting
+   - Price display
+   - Add to cart button
+   - Breadcrumbs
+
+4. Create family-specific template parts:
+   - `templates/meivac/single-product-content.php`
+   - `templates/thermal/single-product-content.php`
+   - `templates/ferrofluid/single-product-content.php`
+
+5. Integrate with existing systems:
+   - Custom tabs (Phase 2A-1)
+   - Attribute tables (Phase 2A-2)
+   - ACF fields per product family
 
 ---
 
