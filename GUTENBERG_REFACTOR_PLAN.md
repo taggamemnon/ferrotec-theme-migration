@@ -11,12 +11,13 @@
 
 This plan outlines a conservative, step-by-step approach to migrate from the legacy ACF repeater field system to modern Gutenberg ACF blocks. We will:
 
-1. Create a new theme `layers-gutenberg` (copy of `layers2025`)
-2. Ensure it properly handles Gutenberg block content
-3. Create a migration script to convert existing repeater data to Gutenberg blocks
-4. Test thoroughly before broader rollout
+1. Create a new theme `layers-gutenberg` (copy of `layers2` - the original/old theme)
+2. Add Gutenberg block support while keeping all existing functionality intact
+3. Update content rendering to support both repeater fields AND Gutenberg blocks
+4. Create a migration script to convert existing repeater data to Gutenberg blocks
+5. Test thoroughly before broader rollout
 
-This approach keeps the original theme intact and allows for safe testing and rollback.
+This approach keeps ALL original functionality (WooCommerce customizations, page templates, JavaScript, etc.) intact and only modernizes the content editing experience. The `layers2025` theme development can continue separately.
 
 ---
 
@@ -92,15 +93,25 @@ This approach keeps the original theme intact and allows for safe testing and ro
 
 ### Step 1.1: Copy Theme Structure
 
-**Action:** Create new theme folder as a copy of `layers2025`
+**Action:** Create new theme folder as a copy of `layers2` (the original theme)
 
 **Commands:**
 ```bash
 cd /home/user/ferrotec-theme-migration/wp-content/themes/
-cp -r layers2025 layers-gutenberg
+cp -r ../../../old-themes/layers2 ./layers-gutenberg
 ```
 
-**Files to Copy:** All files and directories from `layers2025/`
+**Files to Copy:** All files and directories from `old-themes/layers2/`
+
+**Note:** We're copying the ORIGINAL `layers2` theme, not `layers2025`. This preserves all existing functionality including:
+- WooCommerce customizations
+- Page templates (14+ templates)
+- JavaScript libraries (Table Sorter, Raphael, etc.)
+- Custom headers and footers
+- All child theme compatibility
+- Search customizations (Relevanssi)
+
+We're only adding Gutenberg block support on top of this existing foundation.
 
 ### Step 1.2: Update Theme Metadata
 
@@ -113,75 +124,234 @@ Theme Name: Layers Gutenberg
 Theme URI: https://ferrotec.com
 Author: AUC
 Author URI: https://ferrotec.com
-Description: Gutenberg block-based theme for Ferrotec (migration step from layers2025)
+Description: Original Layers theme with Gutenberg block support. Preserves all legacy functionality while modernizing content editing.
 Version: 1.0.0
-Requires at least: 6.0
+Template: (leave empty - this is a standalone theme, not a child theme)
+Requires at least: 5.0
 Tested up to: 6.4
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: layers-gutenberg
-Tags: gutenberg, blocks, woocommerce, bootstrap
+Tags: gutenberg, blocks, woocommerce, bootstrap, custom-templates
 */
 ```
 
-### Step 1.3: Update Theme Constants
+### Step 1.3: Update Theme Text Domain and Function Names
 
 **File:** `layers-gutenberg/functions.php`
 
-**Changes:**
-```php
-// Update line 17-19
-define( 'LAYERS_GUTENBERG_VERSION', '1.0.0' );
-define( 'LAYERS_GUTENBERG_DIR', get_template_directory() );
-define( 'LAYERS_GUTENBERG_URI', get_template_directory_uri() );
-```
+**Find and replace throughout all PHP files:**
+- Text domain: `'ferrotec'` → `'layers-gutenberg'`
+- Function prefix: `ferrotec_` → `layers_gutenberg_`
+- Package name: `@package ferrotec` → `@package Layers_Gutenberg`
 
-**Find and replace throughout:**
-- `LAYERS2025_` → `LAYERS_GUTENBERG_`
-- `layers2025` → `layers-gutenberg`
-- Text domain: `'layers2025'` → `'layers-gutenberg'`
+**Key function renames needed:**
+- `ferrotec_setup()` → `layers_gutenberg_setup()`
+- `ferrotec_scripts()` → `layers_gutenberg_scripts()`
+- `ferrotec_widgets_init()` → `layers_gutenberg_widgets_init()`
+- Any other `ferrotec_*` functions
 
-### Step 1.4: Update ACF JSON Path
+**Note:** The original theme doesn't use constants - it's an older structure. We'll add modern practices as we add Gutenberg support.
+
+### Step 1.4: Add Gutenberg Block Registration
 
 **File:** `layers-gutenberg/functions.php`
 
-**Changes:**
+**Action:** Add this code at the END of functions.php (after all existing code)
+
 ```php
-// Update lines 133-145
+/**
+ * Register ACF Blocks
+ *
+ * Registers custom Gutenberg blocks powered by Advanced Custom Fields.
+ * These blocks replace the old ACF repeater fields for a better editing experience.
+ */
+function layers_gutenberg_register_acf_blocks() {
+    // Check if ACF function exists
+    if ( ! function_exists( 'acf_register_block_type' ) ) {
+        return;
+    }
+
+    /**
+     * Content Section Block
+     *
+     * Replaces the old 'rows' repeater field.
+     */
+    acf_register_block_type( array(
+        'name'              => 'content-section',
+        'title'             => __( 'Content Section', 'layers-gutenberg' ),
+        'description'       => __( 'A flexible content section with optional background color and CSS class', 'layers-gutenberg' ),
+        'render_template'   => 'blocks/content-section/content-section.php',
+        'category'          => 'formatting',
+        'icon'              => 'layout',
+        'keywords'          => array( 'content', 'section', 'container', 'row' ),
+        'mode'              => 'preview',
+        'supports'          => array(
+            'align'             => array( 'wide', 'full' ),
+            'anchor'            => true,
+            'customClassName'   => true,
+            'jsx'               => true,
+        ),
+        'example'  => array(
+            'attributes' => array(
+                'mode' => 'preview',
+                'data' => array(
+                    'content'           => '<h3>Example Content Section</h3><p>This is a flexible content section.</p>',
+                    'background_class'  => 'bkg-gradient-green',
+                ),
+            ),
+        ),
+    ) );
+}
+add_action( 'acf/init', 'layers_gutenberg_register_acf_blocks' );
+
+/**
+ * Set ACF JSON save/load points for theme fields
+ */
 function layers_gutenberg_acf_json_save_point( $path ) {
-    return LAYERS_GUTENBERG_DIR . '/acf-json';
+    return get_template_directory() . '/acf-json';
 }
 add_filter( 'acf/settings/save_json', 'layers_gutenberg_acf_json_save_point', 5 );
 
 function layers_gutenberg_acf_json_load_point( $paths ) {
-    $paths[] = LAYERS_GUTENBERG_DIR . '/acf-json';
+    $paths[] = get_template_directory() . '/acf-json';
     return $paths;
 }
 add_filter( 'acf/settings/load_json', 'layers_gutenberg_acf_json_load_point', 5 );
 ```
 
-### Step 1.5: Update Block Registration
+### Step 1.5: Create Block Template Directory and File
 
-**File:** `layers-gutenberg/functions.php`
+**Action:** Create the block template structure
 
-**Changes:**
-```php
-// Update line 74
-function layers_gutenberg_register_acf_blocks() {
-    // ... rest of function stays the same
-}
-add_action( 'acf/init', 'layers_gutenberg_register_acf_blocks' );
+**Commands:**
+```bash
+cd /home/user/ferrotec-theme-migration/wp-content/themes/layers-gutenberg
+mkdir -p blocks/content-section
 ```
 
-### Step 1.6: Verify Template Files
+**File:** `blocks/content-section/content-section.php`
 
-**Files to check:**
-- `page.php` - Should render Gutenberg blocks via `the_content()`
-- `single.php` - Should render Gutenberg blocks
-- `template-parts/content/content-page.php` - Should use `the_content()`
+**Contents:**
+```php
+<?php
+/**
+ * Content Section Block Template
+ *
+ * Replaces the old ACF 'rows' repeater field with a modern Gutenberg block.
+ *
+ * @package Layers_Gutenberg
+ */
 
-**Expected:** All templates should call `the_content()` which will render Gutenberg blocks
+// Get ACF field values
+$content_html = get_field( 'content' );
+$bk_color     = get_field( 'background_color' );
+$bk_class     = get_field( 'background_class' );
+
+// Support for block alignment
+$align_class = ! empty( $block['align'] ) ? 'align' . $block['align'] : '';
+
+// Support for custom anchor ID
+$anchor = '';
+if ( ! empty( $block['anchor'] ) ) {
+    $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
+}
+
+// Support for custom CSS class
+$class_name = '';
+if ( ! empty( $block['className'] ) ) {
+    $class_name = $block['className'];
+}
+
+// Build inline styles
+$style = '';
+if ( $bk_color ) {
+    $style = 'style="background-color:' . esc_attr( $bk_color ) . '"';
+}
+
+// Build wrapper classes
+$wrapper_classes = array(
+    'container-wrapper',
+    'content-padding',
+    $bk_class,
+    $align_class,
+    $class_name,
+);
+$wrapper_classes = array_filter( $wrapper_classes );
+$wrapper_class_string = implode( ' ', $wrapper_classes );
+?>
+
+<div <?php echo $anchor; ?>class="<?php echo esc_attr( $wrapper_class_string ); ?>" <?php echo $style; ?>>
+    <div class="container">
+        <?php if ( $content_html ) : ?>
+            <?php echo wp_kses_post( $content_html ); ?>
+        <?php else : ?>
+            <p style="color: #999; font-style: italic;">
+                <?php esc_html_e( 'Add content to this section...', 'layers-gutenberg' ); ?>
+            </p>
+        <?php endif; ?>
+    </div>
+</div>
+```
+
+### Step 1.6: Create ACF JSON Directory and Field Group
+
+**Action:** Create ACF JSON directory and copy the content-section block field group
+
+**Commands:**
+```bash
+cd /home/user/ferrotec-theme-migration/wp-content/themes/layers-gutenberg
+mkdir -p acf-json
+```
+
+**File:** `acf-json/group_content_section_block.json`
+
+**Contents:** Copy from `layers2025/acf-json/group_content_section_block.json`
+
+### Step 1.7: Update content-page.php to Support Both Repeaters AND Blocks
+
+**File:** `layers-gutenberg/content-page.php`
+
+**Action:** Update the template to render BOTH repeater fields (for backwards compatibility) AND Gutenberg blocks
+
+**Changes:** Update the section after `</div><!-- .entry-content -->` (around line 42):
+
+```php
+</div>
+<!-- .entry-content -->
+
+<?php
+// Render Gutenberg blocks if they exist in post_content
+// This will render any acf/content-section blocks that have been added
+?>
+
+<?php
+// Legacy support: Render repeater fields if they still exist
+// This allows gradual migration - pages work before AND after migration
+if (have_rows('rows')): ?>
+    <?php while (have_rows('rows')): the_row();
+        $content  = get_sub_field( 'content' );
+        $bk_color = get_sub_field('background-color');
+        $bk_class = get_sub_field('background-class');
+    ?>
+        <div class="container-wrapper content-padding <?php echo $bk_class ?>" <?php if ($bk_color) {
+            echo 'style="background-color:' . $bk_color . '"';
+        } ?> >
+            <div class="container">
+                <?php echo $content; ?>
+            </div>
+        </div>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+</article>
+```
+
+**Note:** This hybrid approach ensures pages work whether they use:
+- Old repeater fields (before migration)
+- New Gutenberg blocks (after migration)
+- Or a mix of both during transition
 
 ---
 
