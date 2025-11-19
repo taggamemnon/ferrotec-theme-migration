@@ -1,0 +1,18 @@
+Screenshot Required
+==================
+
+WordPress themes require a screenshot.png file for the theme appearance admin page.
+
+Specifications:
+- Filename: screenshot.png
+- Dimensions: 1200 x 900 pixels (4:3 ratio)
+- Format: PNG
+- Shows: Homepage or representative theme layout
+
+TODO: Create screenshot.png showing:
+- Ferrotec branding
+- Clean, professional layout
+- Product display example
+- Bootstrap 5 responsive design
+
+Temporary: Theme will function without screenshot but won't show preview in admin.

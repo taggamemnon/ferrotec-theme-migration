@@ -23,6 +23,14 @@ function layers2025_enqueue_styles() {
         '5.3.3'
     );
 
+    // Custom web fonts (Helvetica Neue LT)
+    wp_enqueue_style(
+        'layers2025-fonts',
+        LAYERS2025_URI . '/assets/fonts/fonts.css',
+        array(),
+        LAYERS2025_VERSION
+    );
+
     // Ferrotec Custom Styles - Consolidated CSS (all custom styles from old themes)
     // Use minified version in production for better performance
     $ferrotec_css = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG )
