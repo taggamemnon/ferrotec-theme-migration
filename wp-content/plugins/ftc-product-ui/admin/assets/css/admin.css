@@ -1,0 +1,475 @@
+/**
+ * FTC Product UI - Admin Styles
+ *
+ * @package FTC_Product_UI
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.ftc-admin-wrap {
+	max-width: 1400px;
+	margin: 20px 0;
+}
+
+.ftc-admin-title {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.ftc-network-badge {
+	display: inline-block;
+	padding: 4px 12px;
+	background: #2271b1;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	border-radius: 3px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.ftc-admin-header {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 15px 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.ftc-site-info {
+	margin: 0;
+	font-size: 14px;
+}
+
+.ftc-site-url {
+	color: #646970;
+	font-size: 13px;
+}
+
+.ftc-admin-container {
+	display: grid;
+	grid-template-columns: 1fr 350px;
+	gap: 20px;
+}
+
+.ftc-admin-main {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.ftc-admin-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+	.ftc-admin-container {
+		grid-template-columns: 1fr;
+	}
+
+	.ftc-admin-sidebar {
+		order: -1;
+	}
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.ftc-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	overflow: hidden;
+}
+
+.ftc-card-header {
+	padding: 20px;
+	border-bottom: 1px solid #c3c4c7;
+}
+
+.ftc-card-header h2,
+.ftc-card-header h3 {
+	margin: 0 0 5px 0;
+	font-size: 18px;
+	line-height: 1.4;
+}
+
+.ftc-card-header .description {
+	margin: 5px 0 0 0;
+	color: #646970;
+}
+
+.ftc-card-body {
+	padding: 20px;
+}
+
+.ftc-card-footer {
+	padding: 15px 20px;
+	background: #f6f7f7;
+	border-top: 1px solid #c3c4c7;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+/* ==========================================================================
+   Tabs Table
+   ========================================================================== */
+
+.ftc-tabs-table th {
+	width: 250px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.ftc-tabs-table td {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.ftc-tabs-table tr:not(:last-child) {
+	border-bottom: 1px solid #f0f0f1;
+}
+
+/* ==========================================================================
+   Toggle Switch
+   ========================================================================== */
+
+.ftc-toggle {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 28px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.ftc-toggle input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.ftc-toggle-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #dcdcde;
+	transition: 0.3s;
+	border-radius: 28px;
+}
+
+.ftc-toggle-slider:before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	transition: 0.3s;
+	border-radius: 50%;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ftc-toggle input:checked + .ftc-toggle-slider {
+	background-color: #2271b1;
+}
+
+.ftc-toggle input:focus + .ftc-toggle-slider {
+	box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.25);
+}
+
+.ftc-toggle input:checked + .ftc-toggle-slider:before {
+	transform: translateX(22px);
+}
+
+.ftc-toggle input:disabled + .ftc-toggle-slider {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Badges
+   ========================================================================== */
+
+.ftc-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	font-size: 11px;
+	font-weight: 600;
+	border-radius: 3px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-left: 8px;
+	vertical-align: middle;
+}
+
+.ftc-badge-recommended {
+	background: #d5e8d4;
+	color: #2d7016;
+}
+
+.ftc-badge-coming-soon {
+	background: #fff3cd;
+	color: #856404;
+}
+
+/* ==========================================================================
+   Tab Info
+   ========================================================================== */
+
+.ftc-tab-info {
+	margin: 0;
+}
+
+.ftc-tab-info dt {
+	font-weight: 600;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	color: #1d2327;
+}
+
+.ftc-tab-info dt:first-child {
+	margin-top: 0;
+}
+
+.ftc-tab-info dd {
+	margin: 0 0 10px 0;
+	color: #646970;
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+/* ==========================================================================
+   Status Card
+   ========================================================================== */
+
+.ftc-status-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0 0 12px 0;
+	font-size: 13px;
+}
+
+.ftc-status-item:last-child {
+	margin-bottom: 0;
+}
+
+.ftc-status-item .dashicons {
+	color: #2271b1;
+	flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Stats
+   ========================================================================== */
+
+.ftc-stat {
+	text-align: center;
+	padding: 20px;
+	background: #f6f7f7;
+	border-radius: 4px;
+}
+
+.ftc-stat-number {
+	font-size: 32px;
+	font-weight: 700;
+	color: #2271b1;
+	line-height: 1;
+	margin-bottom: 8px;
+}
+
+.ftc-stat-label {
+	font-size: 13px;
+	color: #646970;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-weight: 600;
+}
+
+/* ==========================================================================
+   Network Settings
+   ========================================================================== */
+
+.ftc-network-sites {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+	gap: 20px;
+	margin-bottom: 30px;
+}
+
+.ftc-site-card .ftc-card-header h3 {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0;
+}
+
+.ftc-site-domain {
+	margin: 5px 0 0 0;
+	color: #646970;
+	font-size: 13px;
+	font-family: monospace;
+}
+
+.ftc-site-stats {
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.ftc-stat-item {
+	font-size: 14px;
+}
+
+.ftc-enabled-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.ftc-tab-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 4px 10px;
+	background: #f0f0f1;
+	border-radius: 3px;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.ftc-tab-enabled {
+	background: #d5e8d4;
+	color: #2d7016;
+}
+
+.ftc-tab-enabled .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+/* ==========================================================================
+   Network Summary
+   ========================================================================== */
+
+.ftc-network-summary {
+	margin-top: 30px;
+}
+
+.ftc-summary-table {
+	margin-top: 0;
+}
+
+.ftc-summary-table th,
+.ftc-summary-table td {
+	padding: 12px;
+}
+
+.ftc-progress-bar {
+	display: inline-block;
+	width: 200px;
+	height: 20px;
+	background: #f0f0f1;
+	border-radius: 10px;
+	overflow: hidden;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.ftc-progress-fill {
+	height: 100%;
+	background: linear-gradient(to right, #2271b1, #4f94d4);
+	transition: width 0.3s ease;
+}
+
+.ftc-percentage {
+	display: inline-block;
+	min-width: 45px;
+	font-weight: 600;
+	color: #2271b1;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.ftc-reset-defaults {
+	margin-left: 10px;
+}
+
+.ftc-reset-defaults:hover {
+	color: #d63638;
+	border-color: #d63638;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+	.ftc-network-sites {
+		grid-template-columns: 1fr;
+	}
+
+	.ftc-progress-bar {
+		width: 100px;
+	}
+
+	.ftc-tabs-table th {
+		width: 180px;
+	}
+}
+
+/* ==========================================================================
+   Loading States
+   ========================================================================== */
+
+.ftc-card.ftc-loading {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.ftc-card.ftc-loading::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 32px;
+	height: 32px;
+	margin: -16px 0 0 -16px;
+	border: 3px solid #f0f0f1;
+	border-top-color: #2271b1;
+	border-radius: 50%;
+	animation: ftc-spin 0.6s linear infinite;
+}
+
+@keyframes ftc-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* ==========================================================================
+   Help Card
+   ========================================================================== */
+
+.ftc-help-card .ftc-card-body p:last-child {
+	margin-bottom: 0;
+}

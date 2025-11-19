@@ -1,0 +1,306 @@
+{
+    "key": "group_thermal_product_fields",
+    "title": "Thermal Product Fields",
+    "fields": [
+        {
+            "key": "field_thermal_current_max",
+            "label": "Maximum Current (Imax)",
+            "name": "thermal_current_max",
+            "type": "number",
+            "instructions": "Maximum current rating in Amps",
+            "required": 0,
+            "wrapper": {
+                "width": "25"
+            },
+            "default_value": "",
+            "placeholder": "3.5",
+            "prepend": "",
+            "append": "A",
+            "min": 0,
+            "max": "",
+            "step": 0.1
+        },
+        {
+            "key": "field_thermal_voltage_max",
+            "label": "Maximum Voltage (Vmax)",
+            "name": "thermal_voltage_max",
+            "type": "number",
+            "instructions": "Maximum voltage rating in Volts",
+            "required": 0,
+            "wrapper": {
+                "width": "25"
+            },
+            "default_value": "",
+            "placeholder": "15.4",
+            "prepend": "",
+            "append": "V",
+            "min": 0,
+            "max": "",
+            "step": 0.1
+        },
+        {
+            "key": "field_thermal_delta_t_max",
+            "label": "Maximum Temperature Difference (ΔTmax)",
+            "name": "thermal_delta_t_max",
+            "type": "number",
+            "instructions": "Maximum temperature difference in Celsius",
+            "required": 0,
+            "wrapper": {
+                "width": "25"
+            },
+            "default_value": "",
+            "placeholder": "67",
+            "prepend": "",
+            "append": "°C",
+            "min": 0,
+            "max": "",
+            "step": 1
+        },
+        {
+            "key": "field_thermal_cooling_capacity_max",
+            "label": "Maximum Cooling Capacity (Qcmax)",
+            "name": "thermal_cooling_capacity_max",
+            "type": "number",
+            "instructions": "Maximum cooling capacity in Watts",
+            "required": 0,
+            "wrapper": {
+                "width": "25"
+            },
+            "default_value": "",
+            "placeholder": "50",
+            "prepend": "",
+            "append": "W",
+            "min": 0,
+            "max": "",
+            "step": 0.1
+        },
+        {
+            "key": "field_thermal_base_width",
+            "label": "Base Width",
+            "name": "thermal_base_width",
+            "type": "number",
+            "instructions": "Base width in millimeters",
+            "required": 0,
+            "wrapper": {
+                "width": "20"
+            },
+            "default_value": "",
+            "placeholder": "40",
+            "prepend": "",
+            "append": "mm",
+            "min": 0,
+            "max": "",
+            "step": 0.1
+        },
+        {
+            "key": "field_thermal_base_length",
+            "label": "Base Length",
+            "name": "thermal_base_length",
+            "type": "number",
+            "instructions": "Base length in millimeters",
+            "required": 0,
+            "wrapper": {
+                "width": "20"
+            },
+            "default_value": "",
+            "placeholder": "40",
+            "prepend": "",
+            "append": "mm",
+            "min": 0,
+            "max": "",
+            "step": 0.1
+        },
+        {
+            "key": "field_thermal_top_width",
+            "label": "Top Width",
+            "name": "thermal_top_width",
+            "type": "number",
+            "instructions": "Top width in millimeters",
+            "required": 0,
+            "wrapper": {
+                "width": "20"
+            },
+            "default_value": "",
+            "placeholder": "40",
+            "prepend": "",
+            "append": "mm",
+            "min": 0,
+            "max": "",
+            "step": 0.1
+        },
+        {
+            "key": "field_thermal_top_length",
+            "label": "Top Length",
+            "name": "thermal_top_length",
+            "type": "number",
+            "instructions": "Top length in millimeters",
+            "required": 0,
+            "wrapper": {
+                "width": "20"
+            },
+            "default_value": "",
+            "placeholder": "40",
+            "prepend": "",
+            "append": "mm",
+            "min": 0,
+            "max": "",
+            "step": 0.1
+        },
+        {
+            "key": "field_thermal_height",
+            "label": "Height",
+            "name": "thermal_height",
+            "type": "number",
+            "instructions": "Module height in millimeters",
+            "required": 0,
+            "wrapper": {
+                "width": "20"
+            },
+            "default_value": "",
+            "placeholder": "3.4",
+            "prepend": "",
+            "append": "mm",
+            "min": 0,
+            "max": "",
+            "step": 0.1
+        },
+        {
+            "key": "field_thermal_performance_data",
+            "label": "Performance Data (for Charts)",
+            "name": "thermal_performance_data",
+            "type": "repeater",
+            "instructions": "Add performance curve datasets for Chart.js rendering",
+            "required": 0,
+            "layout": "table",
+            "button_label": "Add Dataset",
+            "sub_fields": [
+                {
+                    "key": "field_dataset_label",
+                    "label": "Dataset Label",
+                    "name": "dataset_label",
+                    "type": "text",
+                    "instructions": "e.g., \"Th = 25°C\" or \"Imax\"",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "20"
+                    }
+                },
+                {
+                    "key": "field_x_values",
+                    "label": "X Values",
+                    "name": "x_values",
+                    "type": "text",
+                    "instructions": "Comma-separated values (e.g., \"0,10,20,30,40,50,60,67\")",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "25"
+                    }
+                },
+                {
+                    "key": "field_y_values",
+                    "label": "Y Values",
+                    "name": "y_values",
+                    "type": "text",
+                    "instructions": "Comma-separated values (e.g., \"50,45,40,35,30,25,20,0\")",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "25"
+                    }
+                },
+                {
+                    "key": "field_x_axis_label",
+                    "label": "X Axis Label",
+                    "name": "x_axis_label",
+                    "type": "text",
+                    "instructions": "e.g., \"Temperature Difference (°C)\"",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "15"
+                    },
+                    "default_value": "Temperature Difference (°C)"
+                },
+                {
+                    "key": "field_y_axis_label",
+                    "label": "Y Axis Label",
+                    "name": "y_axis_label",
+                    "type": "text",
+                    "instructions": "e.g., \"Cooling Capacity (W)\"",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "15"
+                    },
+                    "default_value": "Cooling Capacity (W)"
+                },
+                {
+                    "key": "field_line_color",
+                    "label": "Line Color",
+                    "name": "line_color",
+                    "type": "color_picker",
+                    "instructions": "Chart line color",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "10"
+                    },
+                    "default_value": "#0066cc"
+                }
+            ]
+        },
+        {
+            "key": "field_thermal_modeling_content",
+            "label": "Modeling Tab Content",
+            "name": "thermal_modeling_content",
+            "type": "wysiwyg",
+            "instructions": "Introduction text for the modeling tab",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_thermal_modeling_notes",
+            "label": "Modeling Notes",
+            "name": "thermal_modeling_notes",
+            "type": "wysiwyg",
+            "instructions": "Additional notes or disclaimers for performance data",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            },
+            {
+                "param": "product_cat",
+                "operator": "==",
+                "value": "thermal-modules"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            },
+            {
+                "param": "product_cat",
+                "operator": "==",
+                "value": "peltier-coolers"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Product specifications for thermal electric modules (stored in plugin)",
+    "show_in_rest": 0
+}
