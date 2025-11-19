@@ -112,20 +112,34 @@ function layers2025_register_acf_blocks() {
 add_action( 'acf/init', 'layers2025_register_acf_blocks' );
 
 /**
- * Set ACF JSON save/load points
+ * Set ACF JSON save/load points for THEME fields
  *
  * Store ACF field groups as JSON in the theme for version control.
+ *
+ * IMPORTANT: This handles THEME-specific fields only (page/content presentation):
+ * - Page banners (banner images, colors, text)
+ * - Flexible content rows (page layout)
+ * - Resource/event fields (if used in theme templates)
+ *
+ * PRODUCT DATA fields are handled by the ftc-product-ui plugin:
+ * - Product specifications (thermal, seal, ferrofluid, meivac)
+ * - Product files (CAD, datasheets)
+ * - Performance data
+ *
+ * This separation allows product data to remain independent of the theme.
  *
  * @since 1.0.0
  */
 function layers2025_acf_json_save_point( $path ) {
+    // Save THEME field groups to theme/acf-json/
     return LAYERS2025_DIR . '/acf-json';
 }
-add_filter( 'acf/settings/save_json', 'layers2025_acf_json_save_point' );
+add_filter( 'acf/settings/save_json', 'layers2025_acf_json_save_point', 5 );
 
 function layers2025_acf_json_load_point( $paths ) {
-    unset( $paths[0] );
+    // Load THEME field groups from theme/acf-json/
+    // Note: Plugin fields are loaded by ftc-product-ui at priority 10
     $paths[] = LAYERS2025_DIR . '/acf-json';
     return $paths;
 }
-add_filter( 'acf/settings/load_json', 'layers2025_acf_json_load_point' );
+add_filter( 'acf/settings/load_json', 'layers2025_acf_json_load_point', 5 );

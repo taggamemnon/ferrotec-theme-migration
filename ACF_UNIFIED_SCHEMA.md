@@ -7,15 +7,47 @@ This document defines the unified ACF field schema to be used across all Ferrote
 
 ---
 
+## ⚠️ CRITICAL: Field Storage Separation
+
+### Theme ACF Fields (`wp-content/themes/layers2025/acf-json/`)
+
+**Page/Content Presentation Fields:**
+- Page banners, flexible content, layouts
+- Resource/event display fields
+- Theme-specific presentation logic
+
+**Why in theme?**
+- Presentation layer concerns
+- Theme can be swapped without affecting product data
+- Version controlled with theme code
+
+### Plugin ACF Fields (`wp-content/plugins/ftc-product-ui/acf-json/`)
+
+**Product Data/Business Logic Fields:**
+- Product specifications (thermal, seal, ferrofluid, meivac)
+- Product files (CAD, datasheets)
+- Performance data, dimensions
+
+**Why in plugin?**
+- Product data independent of theme
+- Portable across different themes
+- Business logic, not presentation
+- Can use with any WooCommerce-compatible theme
+
+---
+
 ## Table of Contents
 
 - [Naming Conventions](#naming-conventions)
-- [Shared Product Fields (All Sites)](#shared-product-fields-all-sites)
-- [Thermal Electric Fields](#thermal-electric-fields)
-- [Vacuum Seal/Feedthrough Fields](#vacuum-sealfeedthrough-fields)
-- [Ferrofluid Fields](#ferrofluid-fields)
-- [MEI VAC Fields](#mei-vac-fields)
-- [Page/Content Fields (Shared)](#pagecontent-fields-shared)
+- [PLUGIN FIELDS: Product Data](#plugin-fields-product-data)
+  - [Shared Product Fields (All Sites)](#shared-product-fields-all-sites)
+  - [Thermal Electric Fields](#thermal-electric-fields)
+  - [Vacuum Seal/Feedthrough Fields](#vacuum-sealfeedthrough-fields)
+  - [Ferrofluid Fields](#ferrofluid-fields)
+  - [MEI VAC Fields](#mei-vac-fields)
+- [THEME FIELDS: Page/Content](#theme-fields-pagecontent)
+  - [Page/Content Fields (Shared)](#pagecontent-fields-shared)
+  - [Resource/Event/News Fields](#resourceeventnews-fields)
 
 ---
 
@@ -48,6 +80,14 @@ Fields are organized into ACF Field Groups by:
 - **Select** - Dropdown selection
 - **Repeater** - Repeating field group
 - **WYSIWYG** - Rich text editor
+
+---
+
+# PLUGIN FIELDS: Product Data
+
+**Storage Location:** `/wp-content/plugins/ftc-product-ui/acf-json/`
+
+All product-related fields below are stored in the **ftc-product-ui plugin** and remain independent of the theme.
 
 ---
 
@@ -328,6 +368,14 @@ These fields are available on ALL WooCommerce products across all subsites.
 
 ---
 
+# THEME FIELDS: Page/Content
+
+**Storage Location:** `/wp-content/themes/layers2025/acf-json/`
+
+All page and content presentation fields below are stored in the **layers2025 theme** and control presentation/layout, not product data.
+
+---
+
 ## Page/Content Fields (Shared)
 
 **Location Rule:** `post_type == 'page'` OR `post_type == 'product'` (archive pages)
@@ -406,20 +454,45 @@ These fields are available on ALL WooCommerce products across all subsites.
 
 ## Implementation Notes
 
-### ACF JSON Location
+### ACF JSON Storage Locations
 
-All field groups will be stored in: `/wp-content/plugins/ftc-product-ui/acf-json/`
+#### Plugin Field Groups (`/wp-content/plugins/ftc-product-ui/acf-json/`)
 
-### Field Group Structure
+**PRODUCT DATA** - Business logic, independent of theme:
 
 - `group_shared_product_fields.json` - Applied to ALL products
 - `group_thermal_product_fields.json` - Thermal products only
 - `group_seal_product_fields.json` - Vacuum feedthrough products only
 - `group_ferrofluid_product_fields.json` - Ferrofluid products only
 - `group_meivac_product_fields.json` - MEI VAC products only
-- `group_page_banner_fields.json` - Page banners
-- `group_page_content_rows.json` - Flexible content
-- `group_resource_fields.json` - Resources/events/news
+
+#### Theme Field Groups (`/wp-content/themes/layers2025/acf-json/`)
+
+**PRESENTATION/LAYOUT** - Theme-specific display:
+
+- `group_page_banner_fields.json` - Page banners (images, colors, text)
+- `group_page_content_rows.json` - Flexible content rows (replaces old "rows" repeater)
+- `group_resource_fields.json` - Resources/events/news display
+
+### Filter Priority (Loading Order)
+
+Both theme and plugin register ACF JSON load points with different priorities:
+
+```php
+// THEME: Priority 5 (loads first)
+add_filter( 'acf/settings/save_json', 'layers2025_acf_json_save_point', 5 );
+add_filter( 'acf/settings/load_json', 'layers2025_acf_json_load_point', 5 );
+
+// PLUGIN: Priority 10 (loads second)
+add_filter( 'acf/settings/save_json', array( $this, 'acf_json_save_point' ), 10 );
+add_filter( 'acf/settings/load_json', array( $this, 'acf_json_load_point' ), 10 );
+```
+
+**Result:** ACF loads field groups from BOTH locations:
+- Theme fields: Banners, flexible content, resources
+- Plugin fields: Product specifications, dimensions, performance data
+
+**No conflicts** because field groups have different names and location rules.
 
 ### Location Rules
 
@@ -430,9 +503,9 @@ Use ACF conditional logic to show field groups based on:
 
 ### Migration Priority
 
-**Phase 1 (Week 2):** Thermal fields only
-**Phase 2 (Week 3):** Seals, Ferrofluid, MEI VAC
-**Phase 3 (Week 5):** Page fields, Resources
+**Phase 1 (Week 2):** Thermal fields only (PLUGIN)
+**Phase 2 (Week 3):** Seals, Ferrofluid, MEI VAC (PLUGIN)
+**Phase 3 (Week 5):** Page fields, Resources (THEME)
 
 ---
 
