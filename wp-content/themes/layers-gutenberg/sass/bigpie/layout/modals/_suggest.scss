@@ -1,0 +1,61 @@
+#suggestModal {
+
+  .modal-header {
+    padding: 20px 40px;
+    margin: 0;
+  }
+
+  .suggest_healine {
+    font-size: 50px;
+    font-family: sans-serif;
+    font-style: italic;
+    line-height: 1;
+    text-align: left;
+  }
+
+  .get_started_button_holder {
+    text-align: center;
+    button {
+      border-radius: 11px;
+      padding: 23px 48px;
+      border-color: #fff;
+    }
+  }
+
+  h5 {
+    line-height: 1.1;
+    width: 90px;
+    font-size: 22px;
+    font-family: sans-serif;
+    margin-right: 40px;
+    &.two_lines_fix{
+      position: relative;
+      top: 9px;
+    }
+  }
+
+  label {
+    display: inline-block;
+  }
+
+  input, select {
+    height: 56px;
+    font-family: sans-serif;
+    display: inline-block;
+    width: 334px;
+    &.invalid {
+      border: 3px solid red;
+    }
+  }
+
+  select {
+    width: 100px;
+    border-radius: 0px;
+  }
+}
+
+#errorModal {
+  .modal-content {
+    background: #e01a24;
+  }
+}

@@ -1,0 +1,121 @@
+/* BUTTONS */
+button, input {
+	outline: none !important;
+}
+.btn {
+	font-family: "helvetica_neue_lt_std53Ex", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 1.428571429;
+	border-radius: 20px;
+	padding-right: 2em;
+	padding-left: 2em;
+	outline: 0 !important;
+}
+
+.btn:hover, .btn:focus {
+	color: #fff;
+}
+
+.btn-default {
+	text-shadow: none;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZhNzYxOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjZTQ3MDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background-image: -webkit-linear-gradient(top, #FA7618 0%, #CE4700 100%);
+	background-image: linear-gradient(to bottom, #FA7618 0%, #CE4700 100%);
+	background-repeat: repeat-x;
+	border: none;
+	border-width: 0;
+	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FA7618', endColorstr='#CE4700', GradientType=0);*/
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.contact .marketing .btn-default {
+	text-shadow: none;
+	background: #878788;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg3ODc4OCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MzQ0NDgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background-image: -webkit-linear-gradient(top, #878788 0%, #434448 100%);
+	background-image: linear-gradient(to bottom, #878788 0%, #434448 100%);
+	background-repeat: repeat-x;
+	border: none;
+	border-width: 0;
+	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#878788', endColorstr='#434448', GradientType=0);*/
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn-default:hover, .btn-default:focus, .navbar-default .navbar-nav > li > a.btn-default:hover, .navbar-default .navbar-nav > li > a.btn-default:focus {
+	background-position: 0 0;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+}
+
+.contact .marketing .btn-default:hover {
+	background-color: #434448;
+}
+
+.btn-default:active, .btn-default.active {
+	background-color: #FA7618;
+	border-color: #dbdbdb;
+}
+
+.btn-square {
+	@extend .btn;
+	font-family: Roboto, Arial, sans-serif;
+	@include border-radius(5px);
+	background: $Orange;
+	padding: 12px 17px;
+	border: 0;
+	color: #fff;
+}
+.btn-link {
+	font-family: Roboto, Arial, sans-serif;
+	background: none;
+	border: 0;
+	color: $Gray;
+}
+.btn_style_jumbo {
+	background: #ee7600;
+	padding: 12px;
+	border-radius: 6px;
+	border: 1px solid #e47100;
+	font-size: 18px;
+	outline: none !important;
+	color: white;
+	padding: 18px 60px;
+	font-size: 28px;
+	font-weight: 400;
+	border: 1px solid #fff;
+	&:hover {
+		background: #ff8a18;
+		cursor: pointer;
+	}
+}
+.right_arrow {
+	position: relative;
+	&:before, &:after  {
+		background: #fff;
+		content: "";
+		height: 53px;
+		margin-top: 0;
+		position: absolute;
+		right: -24px;
+		top: 8px;
+		width: 54px;
+		z-index: 1;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+		-moz-border-radius: .4em;
+		-webkit-border-radius: .4em;
+		border-radius: 7px;
+	}
+	&:after {
+		right: -22px;
+		background: #ee7600;
+	}
+	&:hover:after {
+		background: #ff8a18;
+	}
+}

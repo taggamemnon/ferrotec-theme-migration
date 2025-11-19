@@ -1,0 +1,135 @@
+.register_modal {
+	top: 0;
+	height: 100%;
+	overflow-y: auto;
+	margin-right: -30px;
+	padding-right: 30px;
+
+	.modal-content {
+		background-color: #fff;
+		border-radius: 10px;
+		padding: 15px;
+	}
+
+	.modal-body {
+		background-color: #4F75AB;
+		background-image: url(../../img/bigpie/slidebg-merchant.png);
+		background-position: bottom center;
+		background-repeat: no-repeat;
+		border-radius: 12px;
+		border-bottom: 9px solid #506380;
+		display: inline-block;
+		width: 100%;
+		padding: 24px 18px 12px;
+
+		.title {
+			color: #fff;
+			margin: 14px 0 38px 0;
+			font-size: 26px;
+			text-align: center;
+		}
+		section {
+			margin: 0 0 37px 0;
+		}
+
+		.link:hover {
+			@include box-shadow(inset 0px 3px 34px 0px rgba(224, 224, 224, 1));
+			text-decoration: none;
+			background: #e9e5e5;
+
+			> p {
+				background: #F28A0F;
+			}
+		}
+
+		.link {
+			@include transition(all 0.2s ease);
+			background: #fff;
+			border-radius: 6px;
+			padding: 0;
+			vertical-align: top;
+			overflow: hidden;
+			color: #fff;
+			display: block;
+			margin: 10px 0;
+
+			img {
+				vertical-align: middle;
+				text-align: center;
+				padding: 0;
+				margin: auto;
+				display: block;
+				margin-bottom: 25px;
+				padding-top: 19px;
+			}
+			> p {
+				@include transition(all 0.3s ease);
+				background: #F6931D;
+				padding: 8px 0;
+				text-align: center;
+				color: #fff;
+				font-family: "helvetica_neue_lt_std53Ex", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				font-size: 17px;
+				line-height: 24px;
+			}
+		}
+
+		.click-here {
+			color: #fff;
+		}
+
+		.title {
+			font-family: $helvetica;
+		}
+	}
+}
+
+
+#register-success-html-modal-success h1,
+#register-success-html-modal-success h2,
+#register-success-html-modal-success h3,
+#register-success-html-modal h1,
+#register-success-html-modal h2,
+#register-success-html-modal h3 {
+	color: white;
+}
+
+#register-success-html-modal-success h2,
+#register-success-html-modal h2 {
+	font-size: 24px;
+}
+
+#register-success-html-modal-success h3,
+#register-success-html-modal h3 {
+	font-size: 18px;
+}
+
+#register-success-html-modal-success .footer,
+#register-success-html-modal .footer {
+	height: 170px;
+}
+
+#register-success-html-modal-success .modal-header,
+#register-success-html-modal .modal-header {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.notify-me {
+	position: relative;
+}
+
+.notify-me .register_error {
+	position: absolute;
+	margin-left: 23px;
+}
+
+.notify-me.text-right .register_error {
+	right: 0;
+}
+
+.accountEmail.invalid {
+	border: 3px solid red;
+}
+

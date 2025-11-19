@@ -1,0 +1,28 @@
+.section_footer {
+	margin-top: 2em !important;
+	padding-top: 1em;
+	border-top: 1px solid $LightGray;
+
+	aside {
+		float: right;
+	}
+	
+	h3 {
+		color: $Orange;
+		font-family: $fontCondensed;
+		font-weight: 500;
+	}
+}
+
+.cant_find {
+	clear: right;
+	> div {
+		width: 80%;
+	}
+}
+
+.suggest_listing {
+	button {
+		padding: 6px 1em;
+	}
+}

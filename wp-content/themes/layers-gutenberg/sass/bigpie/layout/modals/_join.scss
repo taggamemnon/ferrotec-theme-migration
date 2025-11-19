@@ -1,0 +1,208 @@
+.join_bigpie {
+// Modal Header 
+// ================================================================================
+	.modal-header {
+		padding: 25px 35px;
+		h1 {
+			font: 400 54px/1 "Roboto", "Arial", sans-serif;
+			font-style: italic;
+			margin: 0 0 17px 0;
+		}
+		p {
+			font: 600 20px/28px "Roboto", "Arial", sans-serif;
+			margin: 0;
+		}
+	}
+
+// Modal Content
+// ================================================================================
+	.modal-body {
+		padding: 20px 40px 45px;
+		.form-group {
+			margin-bottom: 35px;
+			label {
+				@include inline-block(20%, auto, auto, top, auto);
+				font: 600 20px/23px "Roboto", "Arial", sans-serif;
+			}
+			input {
+				@include inline-block(67%, auto, auto, top, auto);
+				padding: 12px;
+				&:focus { outline: none; }
+
+              &.two_digits {
+                @include inline-block(10%, auto, auto, top, auto);
+              }
+              &.seven_digits {
+                @include inline-block(22%, auto, auto, top, auto);
+              }
+			}
+
+            .hyphen {
+              font-size: 39px;
+            }
+		}
+		.get_started_button_holder {
+			text-align: center;
+			.btn_style_jumbo {
+				padding: 18px 60px;
+				font-size: 28px;
+				font-weight: 400;
+				border: 1px solid #fff;
+			}
+		}
+
+	  	// Input placeholder color:
+	  	// ==============================================================================
+		::-webkit-input-placeholder {
+		  opacity: 0.5;
+		  color: #e47100;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+		  opacity: 0.5;
+		  color: #e47100;
+		}
+
+		::-moz-placeholder {  /* Firefox 19+ */
+		  opacity: 0.5;
+		  color: #e47100;
+		}
+
+		:-ms-input-placeholder {
+			color: rgba(228, 113, 0, 0.5);
+		}
+	}	
+// Modal Footer	
+// ================================================================================
+	.modal-footer {
+		font: 400 16px/1 "Roboto", "Arial", sans-serif;
+		@include border-radius(0 0 11px 11px);
+		border-top: 1px solid #fff;
+		background: #241F20;
+		padding: 15px 35px;
+		font-style: italic;
+		text-align: left;
+		> div { 
+			margin: 0 0 17px 0; 
+			font-size: 20px;
+		}
+		button {
+			font: 600 14px/1 "Roboto", "Arial", sans-serif;
+			border: 1px solid #fff;
+			float: right;
+			background: #58595B;
+			border-radius: 5px;
+			padding: 11px 5px;
+			margin: 0 0 0 23px;
+			&:hover {
+				background: #737373;
+			}
+		}
+	}
+
+// Modal Validations
+// ================================================================================
+  .invalid {
+	border: 3px solid red !important;
+  }
+
+
+// ************************************************************************************
+// Join For Merchent Modal
+// ************************************************************************************
+	&.join_for_merchent { 
+		.get_started_button_holder {
+			text-align: right !important;
+			padding: 0 20px 0 0;
+			.right_arrow { padding: 18px 41px !important; }
+		}
+	}
+
+
+// ************************************************************************************
+// Join For Patron Modal
+// ************************************************************************************
+	&.join_for_patron {
+		.get_started_button_holder {
+			text-align: right !important;
+			padding: 0 20px 0 0;
+			.right_arrow { padding: 18px 41px !important; }
+			.without_tax {
+				font: 600 19px/21px "Roboto", "Arial", sans-serif !important;
+				padding: 16px 38px 12px !important;
+				border-color: #E6E7E8;
+				background: #414042;
+				color:#E6E7E8;
+				width: 189px;
+				float: left;
+				&:hover {
+					background: #545454;
+				}
+			}
+		}
+		.modal-footer {
+			> div {
+				display: inline-block;
+				padding: 8px 0 0 0;
+				margin: 0;
+			}
+
+
+		}
+	}
+}
+
+#claimModal,
+#bp_joinPatronForgotPassword,
+#bp_joinCreateNonprofitModal,
+#bp_joinPatronModal,
+#bp_joinNonprofitModal,
+#bp_joinMerchantModal,
+#bp_joinListringAlreadyClaimedModal ,
+#bp_joinPleaseConfirmModal, {
+
+  // Modal Validations
+  // ================================================================================
+  .invalid {
+	border: 3px solid red !important;
+  }
+
+  .input_error {
+	text-align: center;
+	top: 11px;
+	position: relative;
+	color: red;
+	font-weight: 600;
+  }
+}
+
+#bp_joinListringAlreadyClaimedModal,
+#bp_joinPleaseConfirmModal {
+  .input_error {
+	margin: 0;
+	font-size: 16px;
+	text-align: left;
+	height: 0px;
+	top: 5px;
+  }
+}
+
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+	.modal-dialog {
+	  margin-top: 30px;
+	}
+
+	.form-group {
+	  label {
+		display: block !important;
+	  }
+
+	  input {
+		width: 100% !important;
+	  }
+	}
+}

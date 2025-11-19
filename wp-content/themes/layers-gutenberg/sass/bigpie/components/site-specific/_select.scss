@@ -1,0 +1,44 @@
+select {
+  border: 1px solid #ccc;
+  height: 26px;
+  line-height: 18px;
+  margin: 0;
+  padding: 3px;
+  background: transparent none no-repeat;
+  cursor: pointer;
+  outline: none !important;
+  option { outline: none !important; }
+}
+
+.label_select select {
+  width: 200px;
+}
+
+@media screen and (min-width: 0) {
+  /* for relatively modern browsers including IE 8+ */
+  select {
+    border-radius: 4px;
+    background-image: url("data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAYAAACkVDyJAAAAlElEQVRIx+2VwQ3AIAhFwTiFi7KC7uYGHo1z0Et7MWkjaEiaQOJBDzy/wgdqrXwHWKyAiGAZDnSgHBhC+IfCUgqbKXxgGqhY4QyRQkUK35KLoK01iZd+xZKXRuEfbvdQPPGkAABEhMeLhohE5yfaAufk93791r13zQDmnLNqcOMYg1NKmoJgTRHtmDeaWZvPQweaAi8PXSmZJU3QRAAAAABJRU5ErkJggg==");
+    background-position: -50px -50px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* for Webkit */
+  select {
+    -webkit-appearance: none;
+    background-position: right center;
+    padding: 3px 32px 3px 5px;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* for IE10+ */
+  select::-ms-expand {
+    display: none;
+  }
+  select {
+    background-position: right center;
+    padding-right: 30px;
+  }
+}

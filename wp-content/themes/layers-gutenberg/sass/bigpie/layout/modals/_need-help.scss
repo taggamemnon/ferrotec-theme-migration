@@ -1,0 +1,50 @@
+.need_help {
+	// Modal Header
+	// ================================================================================
+		.modal-header {
+		}
+	// Modal Body
+	// ================================================================================
+	.modal-content {
+		.modal-body {
+			padding-top: 10px;
+			h5 {
+				font: 600 18px/20px "Roboto", "Arial", sans-serif;
+				margin: 0 0 15px 0;
+				text-align: center;
+			}
+			.btn_style_jumbo.right_arrow {
+				font-size: 23px;
+				padding: 0 8px;
+				height: 71px;
+				margin-top: 23px;
+				span {
+					position: relative;
+					z-index: 999;
+				}
+
+			}
+			label {
+				display: block !important;
+				width: 100% !important;
+				margin: 0 0 5px 0 !important;
+				font: 600 15px/1 "Roboto", "Arial", sans-serif !important;
+			}
+			input {
+				border: 1px solid #ee7600;
+				padding: 14px;
+				width: 100%;
+				color: #ee7600;
+				font-size: 20px;
+			}
+			.not_me { width: 244px; }
+			.form-group { margin: 0 !important; }
+
+            .hyphen {
+              position: relative;
+              bottom: 5px;
+            }
+		}
+	}
+}
+

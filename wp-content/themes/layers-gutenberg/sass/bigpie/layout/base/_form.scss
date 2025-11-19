@@ -1,0 +1,49 @@
+/* FORMS */
+.form-control {
+	font-family: "helvetica_neue_lt_std43LtEx", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	height: 40px;
+	padding: 6px 20px;
+	font-size: 17px;
+	line-height: 1.428571429;
+	color: #ffffff;
+	background-color: #4C4C4C;
+	border: none;
+	border-radius: 25px;
+	@include box-shadow(none);
+	@include transition(none);
+}
+
+.form-group {
+	label {
+		font: 15px "helvetica_neue_lt_std33ThEx", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		margin-left: 13px;
+		margin-top: 4px;
+
+		span {
+			font-size: 17px;
+		}
+	}
+}
+
+.message {
+	padding: 10px;
+	font-size: 1em;
+	font-family: $helvetica;
+
+	&.success {
+		color: green;
+	}
+
+	&.error {
+		color: red;
+	}
+}
+
+.orange_input {
+	@include border-radius(3px);
+	border: 1px solid $Orange;
+	padding: 14px;
+	width: 100%;
+	color: $Orange;
+	font-size: 20px;
+}

@@ -1,0 +1,63 @@
+.confirm {
+	// Modal Header
+	// ================================================================================
+		.modal-header {
+			padding: 0;
+			min-height: inherit;
+		}
+	// Modal Body
+	// ================================================================================
+	.modal-content {
+		.modal-body {
+
+			h1 {
+				font: 400 54px/1.1 "Roboto", "Arial", sans-serif;
+				font-style: italic;
+				margin: 0 0 7px 0;
+			}
+			> p {
+				font: 600 18px/25px "Roboto", "Arial", sans-serif;
+				margin: 0 0 20px 0;
+				color: #fff;
+			}
+
+          .form-group {
+            input {
+              &.two_digits {
+                @include inline-block(10%, auto, auto, top, auto);
+              }
+              &.seven_digits {
+                @include inline-block(22%, auto, auto, top, auto);
+              }
+            }
+          }
+
+          .hyphen {
+            font-size: 28px;
+          }
+		}
+		.block {
+			min-width: 286px;
+			height: 188px;
+			float: none;
+			.block_header > div p {font-weight: 400;line-height: 25px;}
+		}
+		.row {
+			margin: 37px 14px 0 0;
+			button {
+				padding: 18px 38px 18px 18px;
+				float: right;
+				&:first-child {
+					@include border-radius(7px);
+					font: 600 19px/21px "Roboto", "Arial", sans-serif !important;
+					padding: 16px 38px 12px !important;
+					border: 1px solid #E6E7E8;
+					background: #414042;
+					color: #E6E7E8;
+					width: 189px;
+					float: left;
+				}
+			}
+		}
+	}
+}

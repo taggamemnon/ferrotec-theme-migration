@@ -1,0 +1,68 @@
+.merchant_tables {
+	@include border-radius(5px);
+	background: $Orange;
+	max-height: none;
+	padding: 10px;
+	color: #fff;
+}
+
+.merchant_table {
+	vertical-align: top;
+	width: 100%;
+	margin: 0 0 11px 0;
+	th, td {
+		text-align: right;
+		padding: 5px;
+	}
+
+	th {
+		font-size: 13px;
+		font-weight: normal;
+		vertical-align: bottom;
+		&:first-child {
+			text-align: left;
+			font-size: 21px;
+			width: 335px;
+		}
+	}
+
+	td {
+		font-size: 16px;
+		color: white;
+		vertical-align: middle;
+		&:first-child {
+			text-align: left;
+			color: white;
+		}
+	}
+
+	thead tr {
+		border-bottom: 2px solid #fff;
+	}
+
+	tbody tr {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+		&:last-child {
+			border: 0;
+		}
+	}
+
+	.remaining {
+		font-size: 24px;
+	}
+}
+
+.merchant_top_table {
+	display: inline-block;
+	&.half-width {
+		width: 50%;
+	}
+
+	tr {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	}
+
+	td {
+		color: white;
+	}
+}

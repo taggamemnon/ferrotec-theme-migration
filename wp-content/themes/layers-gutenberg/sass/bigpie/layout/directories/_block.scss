@@ -1,0 +1,191 @@
+// ******************************************************************************************************************************
+// NonProfit Directory New Block Design
+// ******************************************************************************************************************************
+
+.block {
+	@include border-radius(5px);
+	min-width: 300px;
+
+	// Block Heder
+	// ------------------------------------------------------------------------------------------------------------------------------
+	.block_header {
+		padding-right: 0;
+		> div {
+			position: static;
+			float: left;
+			width: 81.5%;
+			h3 {
+				margin: 3px 0 0 0;
+				line-height: 23px;
+				font-size: 26px;
+				color: $BPOrange;
+				margin: 0;
+				font-weight: normal;
+				font-family: $fontCondensed;
+			}
+			p {
+				color: $BPTextGrey;
+				line-height: 20px;
+				font-size: 18px;
+				font-family: $fontCondensed;
+			}
+		}
+		.profile_img {
+			text-align: center;
+			width: 18.5%;
+			float: right;
+			line-height: 12px;
+			small {
+				color: $Gray;
+			  font-size: 10px;
+			}
+
+		  	img {
+			  width: 30px;
+			  height: 33px;
+			}
+
+			.joined_year {
+				font-size: 14px;
+			}
+		}
+	}
+	// Block Footer Information Section
+	// ------------------------------------------------------------------------------------------------------------------------------
+	.block_footer {
+		@include border-radius(0 0 4px 4px);
+		position: absolute;
+		width: 100%;
+		overflow: hidden;
+		bottom: 0;
+	}
+
+	// Footer First Row - Visit Page Button & Active MerchantMatches
+	// ------------------------------------------------------------------------------------------------------------------------------
+	.first_row {
+		display: block;
+		width: 100%;
+		color: #fff;
+		background: $BPMediumGrey;
+
+		> div {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		// The active merchant
+		.active_merchant {
+			font-size: 12px;
+			padding: 3px 5px 0;
+			line-height: 13px;
+			width: 16.5%;
+		}
+
+		// The visit page link
+		.visit_page {
+			background: $BPOrange;
+			font-size: 16px;
+			width: 81.5%;
+
+            &:hover {
+              cursor: pointer !important;
+            }
+
+			// &:hover {background: #ff8a18;}
+			.block_more {
+				border-right: 1px solid #fff;
+				padding: 6px 0 4px 18px;
+				display: inline-block;
+				font-weight: 400;
+				color: #fff;
+				width: 100%;
+			}
+
+			i {
+				margin: -1px 10px 0 0;
+				float: right;
+				// @include inline-block(46px,46px,auto,auto,auto);
+			}
+		}
+
+		// when the np has matches, extend the size
+		&.has_matches {
+			.active_merchant {
+				width: 39%;
+			}
+			.visit_page {
+				width: 59%;
+			}
+		}
+	}
+	// My giveback - year to date (Total giveback year to date)
+	// ------------------------------------------------------------------------------------------------------------------------------
+	.new_middle_row {
+		background: #075A9E;
+		color: #fff;
+		padding: 6px 18px;
+		span > span { 
+			font-size: 12px; 
+			margin: 0 0 0 4px; 
+		}
+		.life_time {
+			float: right;
+		}
+
+		span.year-to-date {
+			font-size: 10px;
+		}
+
+		span.total-giveback {
+			margin-right: 5px;
+		}
+	}
+	// Footer Secont Row - Current Goal & Upgrade Library
+	// ------------------------------------------------------------------------------------------------------------------------------
+	.second_row {
+		min-height: 20px;
+		background: $BPDarkGrey;
+		border-top: 1px solid #fff;
+		font-family: $fontCondensed;
+
+		.nonprofit_goal {
+			border-top: 0;
+			min-height: 25px;
+			height: auto;
+			padding: 5px 0 5px 17px;
+			> span {
+				display: inline-block;
+				font-size: 12px;
+				vertical-align: top;
+				padding: 0 5px 0 0;
+				line-height: 18px;
+				> span {
+					display: block;
+					font-size: 15px;
+				}
+			}
+		}
+		.goal_name {
+			display: inline-block;
+			width: 186px;
+			font-size: 12px;
+			border-left: 1px solid #fff;
+			padding: 0 0 0 7px;
+			line-height: 18px;
+
+			.goal_title {
+				display: block;
+			}
+
+			.raised {
+				font-size: 10px;
+				color: $BPLightGrey;
+				span {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+
+
+}

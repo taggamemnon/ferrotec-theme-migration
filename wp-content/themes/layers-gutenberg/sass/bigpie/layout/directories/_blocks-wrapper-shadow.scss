@@ -1,0 +1,17 @@
+.blocks_wrapper_shadow .section_content {
+  border: 1px solid #999;
+  position: relative;
+  &:before, &:after {
+    @include inline-block(100%, 27px, auto, auto, auto);
+    content: '';
+    z-index: 1;
+  }
+  &:before {
+    @include background-image(linear-gradient(rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0)));
+    @include position(absolute, 0 0 null null);
+  }
+  &:after {
+    @include background-image(linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.39)));
+    @include position(absolute, null null 0 0);
+  }
+}

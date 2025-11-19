@@ -1,0 +1,37 @@
+// ******************************************************************************************************************************
+// Variables
+// ******************************************************************************************************************************
+$LightGray: #b1b1b1;
+$LighterGray: #D5D5D5;
+$LightestGray: #EAEAEA;
+$Grayish: #7f7f80;
+$Gray: #5e5e5e;
+$TextGray: #727272;
+$Orange: #ee7600;
+$LightOrange: lighten($Orange, 8%);
+$DarkOrange: darken($Orange, 8%);
+$Green: #7ab732;
+$Greenish: #19C482;
+$LimeGreen: #62D7AA;
+$Blue: #428BCA;
+
+$SectionSidebar: 230px;
+$SectionContent: 580px;
+$ContentPadding: calc((100% - 1000px) / 2);
+// $ContentPadding: calc((100% - 1000px) / 2);
+$push_width: 220px;
+$short_width: 140px;
+$medium_width: 208px;
+$long_width: 351px;
+$margin_top: 22px;
+$margin_left: 10px;
+
+$BPOrange: #EE7600;
+$BPTextGrey: #727272;
+$BPLightGrey: #C8C8C8;
+$BPDarkGrey: #555555;
+$BPMediumGrey: #808080;
+
+$helvetica: "helvetica_neue_lt_std43LtEx", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font: 'Roboto', 'Arial', sans-serif;
+$fontCondensed: 'Roboto Condensed', 'Roboto', 'Arial', sans-serif;

@@ -1,0 +1,122 @@
+$claimModalWidth: 630px;
+$claimModalBg: #1A4D8A;
+$claimModalColor: #fff;
+$claimModalFontSize: 14px;
+$claimModalHeadingColor: #809CBE;
+$claimModalHeadingSize: 60px;
+
+.modal.in .modal-dialog.claim_modal {
+	max-width: $claimModalWidth;
+	@include translateY(3vh);
+}
+
+.claim_modal {
+
+	.modal-content {
+		font-family: $font;
+		font-size: $claimModalFontSize;
+		line-height: 1.2;
+		background: $claimModalBg;
+		border: 1px solid #fff;
+		@include border-radius(10px);
+		color: $claimModalColor;
+
+		.title {
+			font-size: $claimModalHeadingSize;
+			font-weight: 100;
+			font-style: italic;
+		}
+
+		.sub_title {
+			font-size: 2em;
+			color: $claimModalHeadingColor;
+			margin: 6px 0 20px 0;
+		}
+
+		label {
+			font-weight: 400;
+			font-size: 18px;
+			display: block;
+			margin: 10px 0;
+
+		}
+
+		> div {
+			margin: 0 0 20px 0;
+		}
+
+		input {
+			@include border-radius(3px);
+			border: 1px solid $Orange;
+			padding: 14px;
+			width: 100%;
+			color: $Orange;
+			font-size: 20px;
+		}
+
+		input:focus { outline: none; }
+
+		.submit_btn {
+			display: block;
+			width: 230px;
+			background: $Orange;
+			height: 77px;
+			@include border-radius(5px);
+			border: 1px solid #fff;
+			margin: 39px auto 0;
+			font-size: 30px;
+			font-weight: 100;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background: darken($Orange, 20%);
+			}
+		}
+
+		.claim_error {
+			color: red;
+			font-family: $font;
+			font-size: 1.5em;
+			margin: 0;
+		}
+	}
+
+}
+
+@media (max-width: 550px) {
+	.claim_modal .modal-body {
+		padding: 20px 30px 40px;
+	}
+	.claim_modal .modal-content {
+		font-size: 17px;
+		line-height: 24px;
+	}
+	.claim_modal .modal-content .title {
+		font-size: 48px;
+		line-height: 65px;
+	}
+	.claim_modal .modal-content .sub_title {
+		font-size: 20px;
+		color: $claimModalHeadingColor;
+		margin: 0 0 20px 0;
+	}
+	.claim_modal .modal-content form input {
+		width: 100%;
+		padding: 10px;
+	}
+}
+
+@media (max-width: 450px) {
+	.claim_modal .modal-content .title {
+		font-size: 34px;
+		line-height: 45px;
+	}
+}
+
+@media (max-width: 320px) {
+	.claim_modal .modal-content .title {
+		font-size: 27px;
+		line-height: 35px;
+	}
+}

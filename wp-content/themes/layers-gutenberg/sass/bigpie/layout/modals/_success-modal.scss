@@ -1,0 +1,43 @@
+.success_modal {
+	width: 560px;
+// Modal Header 
+// ================================================================================
+	.modal-header {
+		padding: 0;
+		min-height: inherit;
+	}
+// Modal Body
+// ================================================================================
+	h1 {
+		font: 400 54px/1 "Roboto", "Arial", sans-serif;
+		font-style: italic;
+		margin: 5px 0 16px 0;
+	}
+	p, a {
+		font: 100 19px/25px "Roboto", "Arial", sans-serif;
+		margin: 0 0 24px 0;
+		color: #fff;
+		&:last-child { margin: 0; }
+		strong {
+			font-weight: 400;
+		}
+		span {
+			font-weight: 600;
+
+		}
+	}
+  	a {
+	  text-decoration: none;
+	  font-weight: 600;
+	}
+	.button_holder {
+		text-align: center;
+		.btn_style_jumbo {
+			border: 1px solid #fff;
+			background: #58595B;
+			padding: 18px 26px; 
+			margin: 0 0 17px 0;
+			&:hover { background: #737373; }
+		}
+	}
+}

@@ -1,0 +1,185 @@
+.filter_search_section {
+	padding: 0 $ContentPadding;
+	background: $Orange;
+	position: relative;
+	margin: 0 0 30px 0;
+	color: #fff;
+
+	&:before {
+		content: '';
+		background: #6D6E70;
+		position: absolute;
+		right: 0;
+		height: 100%;
+		width: $ContentPadding;
+	}
+
+	.filter_wrapper {
+		@include inline-block(742px, 89px, auto, top, auto);
+		padding: 8px 0 0 0;
+		color: #fff;
+
+		h2 {
+			font-weight: 500;
+			font-size: 24px;
+			margin: 4px 0 1px 0;
+			line-height: 26px;
+			letter-spacing: 0;
+
+			span {
+				font-weight: 400;
+				margin: 0 0 0 5px;
+			}
+		}
+
+		.form_filters {
+			margin: 5px 0 0 0;
+
+			label, input, select, option {
+				@include border-radius(5px);
+				color: #5e5e5e;
+				font-size: 14px;
+				height: 32px;
+			}
+
+			button {
+				@include border-radius(5px);
+				line-height: 0px;
+				width: 68px;
+				height: 31px;
+				padding: 8px;
+				font-size: 18px;
+				vertical-align: top;
+				font-size: 14px;
+				border: 1px solid #aaa;
+				background: #fff;
+				color: #5e5e5e;
+			}
+
+			.name_filter {
+				width: 350px
+			}
+			.label_select {
+				margin: 0 28px 0 0;
+				select {
+					min-width: 259px;
+				}
+			}
+
+		}
+
+	}
+	.matching_raised {
+		@include inline-block(258px, 89px, auto, top, auto);
+		background: #6D6E70;
+		padding: 11px 0 0 14px;
+		float: right;
+
+		> i {
+			display: block;
+			font-size: 16px;
+			font-weight: 200;
+			margin: 0 0 11px 0;
+		}
+
+		> div {
+
+			> span {
+				float: right;
+				font-size: 29px;
+				color: #fff;
+				margin: 3px 7px 0 0;
+			}
+
+			.numbers {
+				float: right;
+
+				.brack {
+					margin: 0;
+					display: inline-block;
+					width: 1px;
+
+					&:after {
+						@include position(relative, 7px null null -2px);
+						font-size: 32px;
+						content: ",";
+					}
+				}
+
+				.num_block {
+					@include inline-block(24px, 38px, center, top, 39px);
+					@include position(relative, null null null null);
+					@include border-radius(2px);
+					background: #EFEEEE;
+					font-size: 32px;
+					color: #5e5e5e;
+					font-width: 400;
+					margin: 0;
+
+					&:before {
+						@include inline-block(25px, 1px, center, top, auto);
+						@include position(absolute, 50% null null 0);
+						background: #5e5e5e;
+						content: '';
+					}
+				}
+			}
+		}
+
+	}
+
+	.indicator {
+		@include position(relative, null 0 -8px null);
+		font-size: 13px;
+		float: right;
+		color: #999;
+	}
+
+	.odometer {
+
+		&.matching_funds_odometer {
+			font-size: 32px;
+			margin-top: -2px;
+
+			.odometer-digit {
+				background: #EFEEEE !important;
+				color: #5e5e5e !important;
+				font-family: "Roboto Condensed", "Roboto", "Arial", sans-serif;
+				display: inline-block;
+				vertical-align: top;
+				text-align: center;
+				height: 38px;
+				width: 24px;
+				line-height: 39px;
+				position: relative;
+				-moz-border-radius: 2px !important;
+				-webkit-border-radius: 2px !important;
+				border-radius: 2px !important;
+				font-size: 32px;
+				font-width: 400;
+				margin: 0;
+			}
+
+			.odometer-digit:before {
+				display: inline-block;
+				vertical-align: top;
+				text-align: center;
+				height: 1px;
+				width: 25px;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				background: #5e5e5e;
+				content: '';
+			}
+
+			.odometer-formatting-mark {
+				position: relative;
+				top: 9px;
+				font-size: 32px;
+				padding-left: 1px;
+				padding-right: 1px;
+			}
+		}
+	}
+}

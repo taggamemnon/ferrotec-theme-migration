@@ -1,0 +1,22 @@
+#nonprofit_directory {
+	margin-bottom: 40px;
+	font-family: $fontCondensed;
+
+	.nonprofit_info {
+		position: relative;
+		top: -20px;
+	}
+
+	.no_results {
+		height: 405px;
+		position: relative;
+		p {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			font-size: 20px;
+			text-align: center;
+		}
+	}
+}

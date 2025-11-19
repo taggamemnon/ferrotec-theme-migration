@@ -1,0 +1,106 @@
+.info_header {
+	width: auto;
+	margin-bottom: 0;
+
+	h1 {
+		font-size: 4em;
+		margin-bottom: 5px;
+		color: $Orange;
+		font-weight: 400;
+	}
+
+	p {
+		font-size: 1.75em;
+		line-height: 1.5;
+		font-weight: 400;
+		color: $BPTextGrey;
+		margin: 0;
+	}
+
+	.info_title {
+		width: 71%;
+		min-height: 190px;
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+	}
+
+	.action_menu {
+		width: 28%;
+		display: inline-block;
+		vertical-align: top;
+
+		div:first-child {
+			//border-bottom: 1px solid $Gray;
+			display: inline-block;
+			width: 100%;
+			padding: 7px 0 10px 0;
+			margin: 0 0 5px 0;
+
+			.nptype {
+				width: 80%;
+				text-align: left;
+			}
+
+		  	.categoryIcon {
+			  	width: 35px;
+			  	height: 35px;
+			}
+
+			img {
+				float: right;
+				margin: 6px 0 0;
+			}
+
+		}
+
+		div:first-child > span {
+			color: $Gray;
+			float: left;
+			text-align: right;
+			font-size: 14px;
+			margin: 8px 0 -2px 0;
+			font-weight: 400;
+			//border-right: 1px solid $Gray;
+			padding: 0 20px 0 0;
+
+			span {
+				color: $Gray;
+				display: block;
+				font-size: 25px;
+				margin: -2px 0 0 0;
+			}
+		}
+	}
+}
+
+.info_header .drop_down {
+
+	a {
+		font-size: 16px;
+		font-weight: 400;
+		color: #fff;
+		display: block;
+	}
+
+	ul li a {
+		padding: 7px 10px;
+		background: #fff;
+		border-bottom: 1px solid #ccc;
+		color: $Gray;
+		&:hover {
+			background: $Orange;
+			color: #fff;
+		}
+	}
+
+	&.small > a {
+		padding: 7px 31px 7px 10px;
+		background: #fff;
+		color: $Gray;
+		font-size: 14px !important;
+		&:after {
+			border-top: 7px solid $Gray;
+		}
+	}
+}

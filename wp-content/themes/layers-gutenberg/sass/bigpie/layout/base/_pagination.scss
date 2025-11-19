@@ -1,0 +1,9 @@
+nav.pagination_wrapper {
+	.pagination>li>a, .pagination>li>span {
+		color: #fff;
+		background: #ee7600;
+		&:hover {
+			background: #E4770C;
+		}
+	}
+}

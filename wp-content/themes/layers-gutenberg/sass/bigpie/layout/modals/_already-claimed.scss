@@ -1,0 +1,71 @@
+.already_claimed {
+	// Modal Header
+	// ================================================================================
+		.modal-header {
+			padding: 0;
+			min-height: inherit;
+		}
+	// Modal Body
+	// ================================================================================
+	.modal-content {
+		h1 {
+			font: 400 54px/1.1 "Roboto", "Arial", sans-serif;
+			font-style: italic;
+			margin: 0 0 27px 0;
+		}
+		.block {
+			min-width: 286px;
+			height: 188px;
+			float: none;
+			.block_header > div p {font-weight: 400;line-height: 25px;}
+		}
+		> p, a {
+		  	color: #fff;
+			font: 600 20px/1 "Roboto", "Arial", sans-serif;
+			text-align: center;
+			margin: 0 0 40px 0;
+		}
+	}
+}
+.not_me {
+	@include inline-block(214px, auto, auto, top, auto);
+	@include border-radius(7px);
+	border: 1px solid #89A3C6;
+	padding: 11px;
+	p {
+		font: 600 20px/1 "Roboto", "Arial", sans-serif;
+		color: #89A3C6 !important;
+		&.title {
+			color: #fff !important;
+		}
+	}
+	form, .form-group { margin: 0 }
+	input {
+		padding: 5px !important;
+		width: 100%;
+
+        &.two_digits {
+          width: 20% !important;
+        }
+        &.seven_digits {
+          width: 55% !important;
+        }
+	}
+	label {
+		font: 600 15px/1 "Roboto", "Arial", sans-serif;
+		margin: 22px 0 3px 0;
+		color: #89A3C6;
+		display: block;
+	}
+	.btn_style_jumbo {
+		border: 0;
+		font: 600 15px/1 "Roboto", "Arial", sans-serif;
+		padding: 7px 15px;
+		margin: 9px auto 0;
+		display: block;
+	}
+
+    .hyphen {
+      font-size: 28px;
+    }
+}

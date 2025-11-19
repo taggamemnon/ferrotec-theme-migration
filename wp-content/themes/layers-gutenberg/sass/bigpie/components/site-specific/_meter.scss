@@ -1,0 +1,52 @@
+meter {
+  // display: block;
+  // margin: 0 auto;
+  // width: 50%;
+  height: 14px;
+  border: 1px solid #505050;
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  position: relative;
+
+  /* Firefox */
+  background: none; /* Required to get rid of the default background prop. */
+  background-color: #fff;
+  box-shadow: none;
+
+  span {
+    vertical-align: top;
+    display: inline-block;
+    height: 12px;
+    background: $Green;
+    border-radius: 6px;
+  }
+
+  &::-webkit-meter-bar {
+    background: none; /* Important to get rid of default background. */
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: none;
+  }
+  &::-webkit-meter-optimum-value {
+    transition: width .5s;
+    border-radius: 6px;
+    background-size: 100% 100%;
+    background: $Green;
+  }
+  &::-moz-meter-bar {
+    border-radius: 6px;
+    background: $Green;
+    background-size: 100% 100%;
+  }
+
+  // IE Overrides
+  .msie & {
+
+    span {
+      top: 0;
+      left: 0;
+    }
+  }
+}
