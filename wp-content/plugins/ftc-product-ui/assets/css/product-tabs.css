@@ -1,0 +1,547 @@
+/**
+ * Product Tabs Styling
+ *
+ * Styles for custom WooCommerce product tabs
+ *
+ * @package FTC_Product_UI
+ * @since 1.0.0
+ */
+
+/* ============================================
+   Tab Container
+   ============================================ */
+
+.woocommerce-tabs.wc-tabs-wrapper {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.woocommerce-tabs ul.tabs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	border-bottom: 2px solid #e0e0e0;
+}
+
+.woocommerce-tabs ul.tabs li {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
+}
+
+.woocommerce-tabs ul.tabs li a {
+	display: block;
+	padding: 0.75rem 1.5rem;
+	background-color: #f5f5f5;
+	color: #333;
+	text-decoration: none;
+	border: 1px solid #e0e0e0;
+	border-bottom: none;
+	border-radius: 4px 4px 0 0;
+	font-weight: 500;
+	transition: all 0.3s ease;
+}
+
+.woocommerce-tabs ul.tabs li a:hover {
+	background-color: #e8e8e8;
+	color: #000;
+}
+
+.woocommerce-tabs ul.tabs li.active a {
+	background-color: #fff;
+	color: #0066cc;
+	border-color: #0066cc;
+	border-bottom-color: #fff;
+	position: relative;
+	bottom: -2px;
+}
+
+.woocommerce-tabs .woocommerce-Tabs-panel {
+	padding: 2rem 1rem;
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	border-top: none;
+	min-height: 300px;
+}
+
+/* ============================================
+   Specifications Tab
+   ============================================ */
+
+.ftc-specs-tab h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	color: #333;
+	border-bottom: 2px solid #0066cc;
+	padding-bottom: 0.5rem;
+}
+
+.ftc-specs-tab h3:first-child {
+	margin-top: 0;
+}
+
+.ftc-specs-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 2rem;
+}
+
+.ftc-specs-table th,
+.ftc-specs-table td {
+	padding: 0.75rem 1rem;
+	text-align: left;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.ftc-specs-table th {
+	width: 40%;
+	font-weight: 600;
+	background-color: #f9f9f9;
+	color: #555;
+}
+
+.ftc-specs-table td {
+	width: 60%;
+	color: #333;
+}
+
+.ftc-specs-table tr:last-child th,
+.ftc-specs-table tr:last-child td {
+	border-bottom: none;
+}
+
+.ftc-specs-table tr:hover {
+	background-color: #f5f5f5;
+}
+
+.ftc-additional-info {
+	margin-top: 1.5rem;
+	padding: 1rem;
+	background-color: #f9f9f9;
+	border-left: 4px solid #0066cc;
+}
+
+/* ============================================
+   Features Tab
+   ============================================ */
+
+.ftc-features-tab h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	color: #333;
+}
+
+.ftc-features-tab h3:first-child {
+	margin-top: 0;
+}
+
+.ftc-features-section,
+.ftc-benefits-section,
+.ftc-applications-section,
+.ftc-seal-features-section,
+.ftc-seal-support-section {
+	margin-bottom: 2rem;
+}
+
+.ftc-features-content ul,
+.ftc-benefits-content ul,
+.ftc-applications-content ul,
+.ftc-seal-features-content ul,
+.ftc-seal-support-content ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.ftc-features-content ul li,
+.ftc-benefits-content ul li,
+.ftc-applications-content ul li,
+.ftc-seal-features-content ul li,
+.ftc-seal-support-content ul li {
+	padding-left: 1.5rem;
+	margin-bottom: 0.5rem;
+	position: relative;
+}
+
+.ftc-features-content ul li:before,
+.ftc-benefits-content ul li:before,
+.ftc-applications-content ul li:before,
+.ftc-seal-features-content ul li:before,
+.ftc-seal-support-content ul li:before {
+	content: "✓";
+	position: absolute;
+	left: 0;
+	color: #0066cc;
+	font-weight: bold;
+}
+
+.ftc-no-features {
+	padding: 2rem;
+	text-align: center;
+	color: #999;
+}
+
+/* ============================================
+   Modeling Tab (Chart.js)
+   ============================================ */
+
+.ftc-modeling-tab {
+	padding: 1rem 0;
+}
+
+.ftc-modeling-intro {
+	margin-bottom: 2rem;
+	padding: 1rem;
+	background-color: #f9f9f9;
+	border-left: 4px solid #0066cc;
+}
+
+.ftc-performance-charts h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+	color: #333;
+}
+
+.ftc-chart-container {
+	position: relative;
+	height: 400px;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+}
+
+.ftc-chart-container canvas {
+	max-width: 100%;
+	height: auto;
+}
+
+.ftc-modeling-notes {
+	margin-top: 2rem;
+	padding: 1rem;
+	background-color: #fffbea;
+	border-left: 4px solid #ffc107;
+}
+
+.ftc-modeling-notes h4 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	color: #856404;
+}
+
+.ftc-no-performance-data {
+	padding: 2rem;
+	text-align: center;
+	color: #999;
+}
+
+/* ============================================
+   Ordering Tab
+   ============================================ */
+
+.ftc-ordering-tab h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	color: #333;
+}
+
+.ftc-ordering-tab h3:first-child {
+	margin-top: 0;
+}
+
+.ftc-part-number {
+	margin-bottom: 2rem;
+}
+
+.ftc-part-number-value {
+	font-size: 1.25rem;
+	color: #0066cc;
+	margin: 0.5rem 0;
+}
+
+.ftc-stock-status {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+.ftc-stock-status.in-stock {
+	background-color: #d4edda;
+	color: #155724;
+}
+
+.ftc-stock-status.out-of-stock {
+	background-color: #f8d7da;
+	color: #721c24;
+}
+
+.ftc-purchase-section,
+.ftc-quote-section {
+	margin-bottom: 2rem;
+	padding: 1.5rem;
+	background-color: #f9f9f9;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+}
+
+.ftc-quote-button {
+	display: inline-block;
+	margin: 1rem 0;
+}
+
+.ftc-contact-options {
+	margin-top: 1.5rem;
+}
+
+.ftc-contact-info {
+	margin-top: 1rem;
+	padding: 1rem;
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+}
+
+.ftc-contact-info p {
+	margin: 0.5rem 0;
+}
+
+.ftc-related-products-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.ftc-related-product-item {
+	text-align: center;
+	padding: 1rem;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	transition: box-shadow 0.3s ease;
+}
+
+.ftc-related-product-item:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ftc-related-product-item h4 {
+	font-size: 0.9rem;
+	margin-top: 0.5rem;
+}
+
+/* ============================================
+   Downloads Tab
+   ============================================ */
+
+.ftc-downloads-tab h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	color: #333;
+}
+
+.ftc-downloads-tab h3:first-child {
+	margin-top: 0;
+}
+
+.ftc-download-section {
+	margin-bottom: 2rem;
+}
+
+.ftc-download-item {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem;
+	background-color: #f9f9f9;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	margin-bottom: 0.5rem;
+	transition: background-color 0.3s ease;
+}
+
+.ftc-download-item:hover {
+	background-color: #f0f0f0;
+}
+
+.ftc-file-icon {
+	font-size: 2rem;
+	color: #0066cc;
+	flex-shrink: 0;
+}
+
+.ftc-file-info {
+	flex-grow: 1;
+}
+
+.ftc-file-link {
+	text-decoration: none;
+	color: #0066cc;
+	font-weight: 600;
+}
+
+.ftc-file-link:hover {
+	text-decoration: underline;
+}
+
+.ftc-file-size {
+	color: #999;
+	font-size: 0.9rem;
+	margin-left: 0.5rem;
+}
+
+.ftc-download-button {
+	flex-shrink: 0;
+}
+
+.ftc-no-downloads {
+	padding: 2rem;
+	text-align: center;
+	color: #999;
+}
+
+/* ============================================
+   Spare Parts Tab
+   ============================================ */
+
+.ftc-spare-parts-tab h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	color: #333;
+}
+
+.ftc-spare-parts-intro {
+	margin-bottom: 2rem;
+	padding: 1rem;
+	background-color: #f9f9f9;
+	border-left: 4px solid #0066cc;
+}
+
+.ftc-spare-parts-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 2rem;
+}
+
+.ftc-spare-parts-table th,
+.ftc-spare-parts-table td {
+	padding: 0.75rem 1rem;
+	text-align: left;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.ftc-spare-parts-table thead th {
+	background-color: #f0f0f0;
+	font-weight: 600;
+	color: #555;
+}
+
+.ftc-spare-parts-table tbody tr:hover {
+	background-color: #f9f9f9;
+}
+
+.ftc-spare-parts-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.ftc-spare-parts-note {
+	margin-top: 2rem;
+	padding: 1rem;
+	background-color: #e7f3ff;
+	border-left: 4px solid #0066cc;
+	border-radius: 4px;
+}
+
+.ftc-note-text {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin: 0;
+	color: #004085;
+}
+
+.ftc-no-spare-parts {
+	padding: 2rem;
+	text-align: center;
+	color: #999;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+	.woocommerce-tabs ul.tabs {
+		flex-direction: column;
+	}
+
+	.woocommerce-tabs ul.tabs li a {
+		border-radius: 0;
+	}
+
+	.woocommerce-tabs ul.tabs li.active a {
+		border-left: 4px solid #0066cc;
+		border-bottom-color: #e0e0e0;
+	}
+
+	.ftc-specs-table th,
+	.ftc-specs-table td {
+		display: block;
+		width: 100%;
+	}
+
+	.ftc-specs-table th {
+		padding-bottom: 0.25rem;
+		border-bottom: none;
+	}
+
+	.ftc-specs-table td {
+		padding-top: 0.25rem;
+		padding-bottom: 1rem;
+	}
+
+	.ftc-chart-container {
+		height: 300px;
+	}
+
+	.ftc-download-item {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.ftc-download-button {
+		width: 100%;
+		text-align: center;
+	}
+
+	.ftc-spare-parts-table {
+		font-size: 0.9rem;
+	}
+
+	.ftc-related-products-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 480px) {
+	.ftc-related-products-grid {
+		grid-template-columns: 1fr;
+	}
+}

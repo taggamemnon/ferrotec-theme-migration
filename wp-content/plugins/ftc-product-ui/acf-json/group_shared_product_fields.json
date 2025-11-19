@@ -1,0 +1,231 @@
+{
+    "key": "group_shared_product_fields",
+    "title": "Product Fields (All Products)",
+    "fields": [
+        {
+            "key": "field_product_model",
+            "label": "Product Model / Part Number",
+            "name": "product_model",
+            "type": "text",
+            "instructions": "Full product model number or part number",
+            "required": 0,
+            "wrapper": {
+                "width": "50"
+            },
+            "default_value": "",
+            "placeholder": "e.g., 9500/127/050B"
+        },
+        {
+            "key": "field_product_legacy_model",
+            "label": "Legacy Model Number",
+            "name": "product_legacy_model",
+            "type": "text",
+            "instructions": "Old or alternative model number (if applicable)",
+            "required": 0,
+            "wrapper": {
+                "width": "50"
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_product_features",
+            "label": "Features",
+            "name": "product_features",
+            "type": "wysiwyg",
+            "instructions": "Product features and highlights",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_product_benefits",
+            "label": "Benefits",
+            "name": "product_benefits",
+            "type": "wysiwyg",
+            "instructions": "Product benefits",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_product_applications",
+            "label": "Applications",
+            "name": "product_applications",
+            "type": "wysiwyg",
+            "instructions": "Typical applications and use cases",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_product_additional_specs",
+            "label": "Additional Specifications",
+            "name": "product_additional_specs",
+            "type": "wysiwyg",
+            "instructions": "Any additional technical specifications not covered above",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0
+        },
+        {
+            "key": "field_product_datasheet",
+            "label": "Product Datasheet (PDF)",
+            "name": "product_datasheet",
+            "type": "file",
+            "instructions": "Upload product datasheet PDF",
+            "required": 0,
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "pdf"
+        },
+        {
+            "key": "field_product_cad_file",
+            "label": "CAD File (STEP/STP)",
+            "name": "product_cad_file",
+            "type": "file",
+            "instructions": "Upload CAD file (STEP, STP, DWG, DXF)",
+            "required": 0,
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "step,stp,dwg,dxf,stl"
+        },
+        {
+            "key": "field_product_drawing",
+            "label": "Technical Drawing",
+            "name": "product_drawing",
+            "type": "file",
+            "instructions": "Upload technical drawing (PDF, PNG, JPG)",
+            "required": 0,
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "pdf,png,jpg,jpeg"
+        },
+        {
+            "key": "field_product_manual",
+            "label": "User Manual",
+            "name": "product_manual",
+            "type": "file",
+            "instructions": "Upload user manual or installation guide",
+            "required": 0,
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "pdf"
+        },
+        {
+            "key": "field_product_certificate",
+            "label": "Certificate of Compliance",
+            "name": "product_certificate",
+            "type": "file",
+            "instructions": "Upload certificate (RoHS, CE, etc.)",
+            "required": 0,
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "pdf"
+        },
+        {
+            "key": "field_product_additional_files",
+            "label": "Additional Files",
+            "name": "product_additional_files",
+            "type": "repeater",
+            "instructions": "Add any additional downloadable files",
+            "required": 0,
+            "layout": "table",
+            "button_label": "Add File",
+            "sub_fields": [
+                {
+                    "key": "field_additional_file",
+                    "label": "File",
+                    "name": "file",
+                    "type": "file",
+                    "required": 1,
+                    "return_format": "array",
+                    "library": "all"
+                },
+                {
+                    "key": "field_additional_file_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "text",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "50"
+                    }
+                }
+            ]
+        },
+        {
+            "key": "field_product_ordering_info",
+            "label": "Ordering Information",
+            "name": "product_ordering_info",
+            "type": "wysiwyg",
+            "instructions": "Custom ordering information, lead times, MOQ, etc.",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_product_lead_time",
+            "label": "Lead Time",
+            "name": "product_lead_time",
+            "type": "text",
+            "instructions": "Typical lead time for this product",
+            "required": 0,
+            "wrapper": {
+                "width": "33"
+            },
+            "placeholder": "e.g., 4-6 weeks"
+        },
+        {
+            "key": "field_product_min_order_quantity",
+            "label": "Minimum Order Quantity",
+            "name": "product_min_order_quantity",
+            "type": "number",
+            "instructions": "Minimum order quantity (if applicable)",
+            "required": 0,
+            "wrapper": {
+                "width": "33"
+            },
+            "default_value": 1,
+            "min": 1,
+            "step": 1
+        },
+        {
+            "key": "field_product_quote_required",
+            "label": "Quote Required",
+            "name": "product_quote_required",
+            "type": "true_false",
+            "instructions": "Check if this product requires a custom quote",
+            "required": 0,
+            "wrapper": {
+                "width": "34"
+            },
+            "message": "This product requires a quote",
+            "default_value": 0,
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Shared fields for all WooCommerce products across all subsites (stored in plugin)",
+    "show_in_rest": 0
+}
