@@ -40,8 +40,31 @@ remove_filter( 'acf_the_content', 'wpautop' );
 		?>
 	</div>
 	<!-- .entry-content -->
+
+	<?php
+	/**
+	 * Gutenberg Block Rendering
+	 *
+	 * Gutenberg blocks are automatically rendered via the_content() above (line 29).
+	 * Any acf/content-section blocks added in the editor will display here.
+	 */
+	?>
+
+	<?php
+	/**
+	 * Legacy ACF Repeater Support
+	 *
+	 * This section maintains backward compatibility with pages using the old 'rows'
+	 * repeater field. Pages work before AND after migration to Gutenberg blocks.
+	 *
+	 * Migration path:
+	 * 1. Existing pages continue to use repeater fields (rendered below)
+	 * 2. Use migration script to convert repeater data to Gutenberg blocks
+	 * 3. After migration, blocks render via the_content() and this section is empty
+	 */
+	?>
 	<?php if (have_rows('rows')): ?>
- 
+
 		<?php while (have_rows('rows')): the_row();
 			// vars
 			$content  = get_sub_field( 'content' );
@@ -56,8 +79,6 @@ remove_filter( 'acf_the_content', 'wpautop' );
 				</div>
 			</div>
 		<?php endwhile; ?>
-
-		</ul>
 
 	<?php endif; ?>
 

@@ -1533,3 +1533,69 @@ function add_reCaptcha_to_submit( $button, $form ) {
     </div>' . $button;
     return $btn;
 }
+
+/**
+ * Register ACF Blocks
+ *
+ * Registers custom Gutenberg blocks powered by Advanced Custom Fields.
+ * These blocks replace the old ACF repeater fields for a better editing experience.
+ *
+ * @since 1.0.0
+ */
+function layers_gutenberg_register_acf_blocks() {
+    // Check if ACF function exists
+    if ( ! function_exists( 'acf_register_block_type' ) ) {
+        return;
+    }
+
+    /**
+     * Content Section Block
+     *
+     * Replaces the old 'rows' repeater field.
+     * Allows editors to add flexible content sections with optional background colors and classes.
+     */
+    acf_register_block_type( array(
+        'name'              => 'content-section',
+        'title'             => __( 'Content Section', 'layers-gutenberg' ),
+        'description'       => __( 'A flexible content section with optional background color and CSS class', 'layers-gutenberg' ),
+        'render_template'   => 'blocks/content-section/content-section.php',
+        'category'          => 'formatting',
+        'icon'              => 'layout',
+        'keywords'          => array( 'content', 'section', 'container', 'row' ),
+        'mode'              => 'preview',
+        'supports'          => array(
+            'align'             => array( 'wide', 'full' ),
+            'anchor'            => true,
+            'customClassName'   => true,
+            'jsx'               => true,
+        ),
+        'example'  => array(
+            'attributes' => array(
+                'mode' => 'preview',
+                'data' => array(
+                    'content'           => '<h3>Example Content Section</h3><p>This is a flexible content section.</p>',
+                    'background_class'  => 'bkg-gradient-green',
+                ),
+            ),
+        ),
+    ) );
+}
+add_action( 'acf/init', 'layers_gutenberg_register_acf_blocks' );
+
+/**
+ * Set ACF JSON save/load points for theme fields
+ *
+ * Store ACF field groups as JSON in the theme for version control.
+ *
+ * @since 1.0.0
+ */
+function layers_gutenberg_acf_json_save_point( $path ) {
+    return get_template_directory() . '/acf-json';
+}
+add_filter( 'acf/settings/save_json', 'layers_gutenberg_acf_json_save_point', 5 );
+
+function layers_gutenberg_acf_json_load_point( $paths ) {
+    $paths[] = get_template_directory() . '/acf-json';
+    return $paths;
+}
+add_filter( 'acf/settings/load_json', 'layers_gutenberg_acf_json_load_point', 5 );
