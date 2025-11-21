@@ -1,0 +1,218 @@
+// The default bigpie buttons
+.btn_style {
+	background: $Orange;
+	padding: 12px;
+	border-radius: 6px;
+	border: 1px solid darken($Orange, 2%);
+	font-size: 18px;
+	outline: none !important;
+	color: white;
+	&:hover,
+	&:active {
+		background: $LightOrange;
+		cursor: pointer;
+	}
+	&.disabled:hover {
+		cursor: default;
+	}
+
+	&[disabled] {
+		background: none;
+		background-color: $LighterGray;
+		border-color: $LightGray;
+		color: #a3a3a3;
+		cursor: default !important;
+	}
+
+	&.blank {
+		background: transparent;
+		color: $LightGray;
+		border: 0;
+		&:hover {
+			background: $LightestGray;
+			&:active {
+				padding-top: 2px;
+				padding-left: 62px;
+				padding-right: 58px;
+			}
+		}
+	}
+
+	// Cancel button styles
+	&.btn_cancel {
+		background-color: $LightestGray;
+		border-color: $LightGray;
+		color: $Gray;
+
+		&:active,
+		&:hover {
+			background: white;
+		}
+
+		&[disabled] {
+			border-color: $LightGray;
+		}
+	}
+
+	&.aside {
+		position: absolute;
+		&.left {
+			right: 50%;
+			left: auto;
+			@include translate(-50%, 0);
+		}
+		&.right {
+			right: auto;
+			left: 50%;
+			@include translate(50%, 0);
+		}
+	}
+}
+
+.btn_style_mini {
+	@extend .btn_style;
+	padding: 6px 30px;
+	font-size: 16px;
+}
+
+.btn_style_jumbo {
+	@extend .btn_style;
+	font-size: 26px;
+	font-weight: lighter;
+}
+
+.btn_style_big {
+	@extend .btn_style;
+	@include inline-block(192px, 37px, auto, auto, 37px);
+	padding: 0;
+	font-size: 17px;
+	border-color: #b9b9b9;
+	border-radius: 20px;
+	background: #fff;
+	color: #000000;
+	outline: none;
+}
+
+.giant_btn {
+	background: $Orange;
+	border: 2px solid $Orange;
+	border-radius: 10px;
+	color: white;
+	font-size: 36px;
+	font-weight: lighter;
+	height: 86px;
+	outline: none;
+	vertical-align: top;
+	position: relative;
+	padding: 0 58px;
+	z-index: 1;
+
+	&[disabled] {
+		background: $LightestGray;
+		border: 2px solid $LighterGray;
+		opacity: 1;
+		color: $Gray;
+		pointer-events: auto;
+
+		&:hover {
+			background: white;
+			border: 2px solid $LightestGray;
+		}
+
+		&.next, &.back {
+			background: $LightestGray;
+
+			&:after, &:before {
+				background: $LightestGray;
+			}
+		}
+	}
+
+	&.next {
+		background: $Orange;
+		&:hover, &:hover:after {
+			background-color: $LightOrange;
+		}
+
+		&:active, &:active:after {
+			background-color: $DarkOrange;
+		}
+
+		// Shape up the next as an arrow button
+		&:after {
+			content: ' ';
+			width: 64px;
+			height: 64px;
+			background: $Orange;
+			position: absolute;
+			right: -26px;
+			top: 9px;
+			border-radius: 10px;
+			z-index: -1;
+			@include transform(rotate(45deg));
+		}
+
+		// When disabled show white on gray border
+		&[disabled] {
+			&:hover {
+				background: transparent;
+				border-top: 2px solid $LightestGray;
+				border-left: 2px solid $LightestGray;
+				border-bottom: 2px solid $LightestGray;
+				border-right: 2px solid white;
+			}
+
+			&:hover:after {
+				background: transparent;
+				border-top: 2px solid $LightestGray;
+				border-right: 2px solid $LightestGray;
+			}
+		}
+	}
+
+	// back button
+	&.back {
+		background-color: $Orange;
+		&:hover, &:hover:before {
+			background: $LightOrange;
+		}
+
+		&:active, &:active:before {
+			background-color: $DarkOrange;
+		}
+
+		// Shape up the back as an arrow button
+		&:before {
+			content: ' ';
+			width: 64px;
+			height: 64px;
+			background: $Orange;
+			position: absolute;
+			left: -26px;
+			top: 9px;
+			border-radius: 10px;
+			z-index: -1;
+			@include transform(rotate(-45deg));
+
+			border-top: 2px solid $LighterGray;
+			border-left: 2px solid $LighterGray;
+		}
+
+		// When disabled show transparent on gray border
+		&[disabled] {
+			&:hover {
+				background: transparent;
+				border-top: 2px solid $LightestGray;
+				border-right: 2px solid $LightestGray;
+				border-bottom: 2px solid $LightestGray;
+				border-left: 2px solid white;
+			}
+
+			&:hover:before {
+				background: transparent;
+				border-top: 2px solid $LightestGray;
+				border-left: 2px solid $LightestGray;
+			}
+		}
+	}
+}

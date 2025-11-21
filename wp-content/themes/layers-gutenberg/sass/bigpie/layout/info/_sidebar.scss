@@ -1,0 +1,141 @@
+
+.info_sidebar {
+	display: inline-block;
+	width: 27%;
+
+	> div {
+		@include border-radius(5px);
+		margin: 0 0 15px 0;
+		padding: 7px 14px;
+		color: #fff;
+	}
+
+	.support_and_raised {
+		background: #8bc53f;
+		font-size: 18px;
+		line-height: 30px;
+
+		.support {
+			border-bottom: 1px solid #fff;
+			margin: 0 0 7px 0;
+		}
+
+		.number {
+			text-align: center;
+			font-size: 85px;
+			line-height: 100px;
+		}
+	}
+
+	.raised .price {
+		font-size: 50px;
+		line-height: 57px;
+		text-align: center;
+		margin: 8px 0 5px 0;
+	}
+
+	.fundraising {
+		background: #58595b;
+		font-size: 13px;
+		line-height: 18px;
+
+		.title {
+			font-size: 18px;
+			line-height: 24px;
+		}
+
+		.info_icon {
+			display: inline-block;
+			vertical-align: middle;
+			height: 18px;
+			width: 18px;
+			line-height: 1.2;
+			float: right;
+		}
+
+		.upgrade {
+			position: relative;
+			.tooltip {
+				position: absolute;
+				right: 8px;
+				bottom: 36px;
+			}
+		}
+
+		.raised {
+			color: $BPLightGrey;
+			vertical-align: sub;
+
+			.price {
+				font-size: 1.5em;
+				line-height: 1;
+			}
+		}
+
+		meter {
+			width: 50%;
+		}
+	}
+
+	.remaining {
+		border-top: 1px solid #808184;
+		margin: 8px 0 0 0;
+
+		> span {
+			line-height: 39px;
+			display: inline-block;
+			width: 100%;
+			margin: 0 0 -5px 0;
+
+			span {
+				font-size: 26px;
+				vertical-align: middle;
+				float: right;
+				margin: 1px 0 0 0;
+			}
+		}
+
+		> a {
+			display: inline-block;
+			padding: 7px 5px 5px;
+			background: #808184;
+			margin: 0 0 5px 0;
+			color: #fff;
+			width: 100%;
+
+			i {
+				display: inline-block;
+				vertical-align: middle;
+				height: 20px;
+				width: 26px;
+				line-height: 1.2;
+				float: right;
+			}
+		}
+	}
+}
+
+.info_sidebar .donate {
+	background: #f1f1f2;
+	text-align: left;
+	font-size: 13px;
+	color: $Gray;
+
+	a {
+		display: inline-block;
+		padding: 7px 5px 5px;
+		background: #b3b3b3;
+		margin: 10px 0 5px 0;
+		color: #fff;
+		width: 100%;
+
+		i {
+			display: inline-block;
+			vertical-align: middle;
+			height: 20px;
+			width: 26px;
+			line-height: 1.2;
+			float: right;
+		}
+	}
+}

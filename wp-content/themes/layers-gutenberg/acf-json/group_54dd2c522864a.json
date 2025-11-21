@@ -1,0 +1,77 @@
+{
+  "key":"group_54dd2c522864a",
+  "title":"Resources Links to page",
+  "fields":[
+    {
+      "key":"field_54dd2cb7d28b2",
+      "label":"Add Resources",
+      "name":"add_resources",
+      "prefix":"",
+      "type":"true_false",
+      "instructions":" use shortcode [show_resource_accordion] to show the resources in the desired section",
+      "required":0,
+      "conditional_logic":0,
+      "wrapper":{
+        "width":"",
+        "class":"",
+        "id":""
+      },
+      "message":"",
+      "default_value":0
+    },
+    {
+      "key":"field_54dd2cdad28b3",
+      "label":"Resource Links",
+      "name":"resource_links",
+      "prefix":"",
+      "type":"relationship",
+      "instructions":"",
+      "required":0,
+      "conditional_logic":[
+        [
+          {
+            "field":"field_54dd2cb7d28b2",
+            "operator":"==",
+            "value":"1"
+          }
+        ]
+      ],
+      "wrapper":{
+        "width":"",
+        "class":"",
+        "id":""
+      },
+      "post_type":[
+        "hillstone_resources"
+      ],
+      "taxonomy":"",
+      "filters":[
+        "search"
+      ],
+      "elements":"",
+      "max":"",
+      "return_format":"object"
+    }
+  ],
+  "location":[
+    [
+      {
+        "param":"post_type",
+        "operator":"==",
+        "value":"page"
+      },
+      {
+        "param":"page_type",
+        "operator":"!=",
+        "value":"front_page"
+      }
+    ]
+  ],
+  "menu_order":1,
+  "position":"normal",
+  "style":"seamless",
+  "label_placement":"top",
+  "instruction_placement":"label",
+  "hide_on_screen":"",
+  "modified":1424229913
+}

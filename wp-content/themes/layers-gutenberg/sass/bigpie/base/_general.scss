@@ -1,0 +1,51 @@
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300);
+@import url(//fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+
+// ******************************************************************************************************************************
+// General Classes
+// ******************************************************************************************************************************
+body.page {
+	font: 400 14px/1.2 $font;
+}
+
+.full-width { width: 100%; }
+
+.hidden { visibility: hidden; }
+
+.sweet-alert p { font-size: 22px; }
+
+.fa-empty + span {
+	font-size: 0;
+	color: transparent;
+}
+
+.float-right {
+	float: right !important;
+}
+
+.unaproved h1 { text-align: center; }
+
+.align_right { text-align: right !important; }
+
+textarea { line-height: 1.2; }
+
+.error_message {
+	color: red;
+}
+
+input::-ms-clear {
+	display: none !important;
+	width: 0 !important;
+	height: 0 !important;
+}
+
+button[disabled] {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+select:-moz-focusring {
+	color: transparent !important;
+	text-shadow: 0 0 0 #000;
+}

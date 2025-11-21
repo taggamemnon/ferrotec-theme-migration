@@ -1,0 +1,44 @@
+.next_step_info {
+	margin: 70px 0 0 0;
+	a {
+		@include border-radius(10px);
+		width: calc(33.333333% - 10px);
+		display: inline-block;
+		color: #fff;
+		vertical-align: top;
+		float: left;
+		padding: 40px 35px 0;
+		border: 1px solid #fff;
+		text-align: center;
+		font-size: 22px;
+		line-height: 26px;
+		height: 185px;
+		margin: 0 15px 0 0;
+		background: url(../../img/bigpie/down-arrow.png) no-repeat;
+		background-position: center bottom;
+		&:last-child { margin: 0; }
+	}
+	@media (max-width: 1020px) {
+		padding: 0 20px 0;
+		a { padding: 20px 15px 0; }
+	}
+	@media (max-width: 750px) {
+		padding: 0 20px 0;
+		margin: 40px 0 0 0;
+		a {
+			padding: 20px 10px 0;
+			font-size: 18px;
+			line-height: 20px;
+		}
+	}
+	@media (max-width: 550px) {
+		a {
+			padding: 20px 10px 100px;
+			width: 100%;
+			height: 50px;
+			font-size: 18px;
+			line-height: 20px;
+			margin: 0 0 20px 0;
+		}
+	}
+}

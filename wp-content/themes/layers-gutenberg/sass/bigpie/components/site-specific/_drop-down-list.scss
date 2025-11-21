@@ -1,0 +1,60 @@
+.drop_down {
+  @include position(relative, null null null null);
+  
+  &:hover {
+    ul {
+      @include opacity(1);
+      visibility: visible;
+      @include transition(0.1s linear all);
+    }
+  }
+
+  > a {
+    background: $Orange;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    @include border-radius(4px);
+    border: 1px solid #ccc;
+    padding: 7px 10px;
+    margin: 0 0 5px 0;
+    position: relative;
+
+    &:after {
+      content: "";
+      @include position(absolute, 14px 12px null null);
+      width: 0px;
+      height: 0px;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 7px solid #fff;
+    }
+  }
+
+  ul {
+    @include position(absolute, 33px null null null);
+    @include transition(0.1s linear all);
+    @include border-radius(0 0 4px 4px);
+    @include opacity(0);
+    border: 1px solid #ccc;
+    z-index: 9;
+    visibility: hidden;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+
+    li a {
+      padding: 7px 10px;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+      color: $Gray;
+      &:hover {
+        background: $Orange;
+        color: #fff;
+      }
+      &:last-child { border: 0; }
+    }
+  }
+
+}

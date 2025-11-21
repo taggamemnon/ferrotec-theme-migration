@@ -1,0 +1,25 @@
+/* HTML FORMAT:
+<label class="form_checkbox">
+    <input type="checkbox">
+    <i class="fa fa-check"></i>
+    <span>Some Label Text.</span>
+</label>
+*/
+
+@mixin form_checkbox($color: #ccc, $size: 18px, $sign: "\f00c", $fontSize: 13px) {
+  cursor: pointer;
+  input { display: none; }
+  i {
+    @include inline-block($size, $size, center, middle, 16px);
+    border: 1px solid $color;
+    margin-right: 5px;
+    color: $color;
+    &:before { content: ""; }
+  }
+  input:checked + i:before { content: $sign; }
+  span, label {
+    color: $color;
+    vertical-align: middle;
+    font-size: $fontSize;
+  }
+}

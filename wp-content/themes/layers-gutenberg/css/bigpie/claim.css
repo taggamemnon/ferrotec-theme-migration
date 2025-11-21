@@ -1,0 +1,726 @@
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300);
+@import url(//fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+/* line 8, ../../sass/bigpie/base/_general.scss */
+body.page {
+  font: 400 14px/1.2 "Roboto", "Arial", sans-serif;
+}
+
+/* line 12, ../../sass/bigpie/base/_general.scss */
+.full-width {
+  width: 100%;
+}
+
+/* line 14, ../../sass/bigpie/base/_general.scss */
+.hidden {
+  visibility: hidden;
+}
+
+/* line 16, ../../sass/bigpie/base/_general.scss */
+.sweet-alert p {
+  font-size: 22px;
+}
+
+/* line 18, ../../sass/bigpie/base/_general.scss */
+.fa-empty + span {
+  font-size: 0;
+  color: transparent;
+}
+
+/* line 23, ../../sass/bigpie/base/_general.scss */
+.float-right {
+  float: right !important;
+}
+
+/* line 27, ../../sass/bigpie/base/_general.scss */
+.unaproved h1 {
+  text-align: center;
+}
+
+/* line 29, ../../sass/bigpie/base/_general.scss */
+.align_right {
+  text-align: right !important;
+}
+
+/* line 31, ../../sass/bigpie/base/_general.scss */
+textarea {
+  line-height: 1.2;
+}
+
+/* line 33, ../../sass/bigpie/base/_general.scss */
+.error_message {
+  color: red;
+}
+
+/* line 37, ../../sass/bigpie/base/_general.scss */
+input::-ms-clear {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* line 43, ../../sass/bigpie/base/_general.scss */
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* line 48, ../../sass/bigpie/base/_general.scss */
+select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 #000;
+}
+
+/*
+Helper to ease the use of inline-blocks -
+The faster, more usable and more sane use of aligning elements horizontally.
+*/
+/* HTML FORMAT:
+<label class="form_checkbox">
+    <input type="checkbox">
+    <i class="fa fa-check"></i>
+    <span>Some Label Text.</span>
+</label>
+*/
+/* line 1, ../../sass/bigpie/components/globals/_nouislider.scss */
+no-ui-slider {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  min-height: 120px;
+}
+
+/* line 9, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 20, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-target {
+  position: relative;
+  direction: ltr;
+  border-radius: 4px;
+  border: 1px solid #D3D3D3;
+  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+}
+/* line 27, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-target.noUi-connect {
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #BBB;
+}
+
+/* line 33, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-base {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 9;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 45, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+/* line 53, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-stacking + .noUi-origin {
+    /* Fix stacking order in IE7, which incorrectly
+		 creates a new context for the origins. */
+  *z-index: -1;
+}
+/* line 59, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: left 0.3s, top 0.3s;
+  transition: left 0.3s, top 0.3s;
+}
+
+/* line 66, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-handle {
+  position: relative;
+  z-index: 1;
+  border: 1px solid #D9D9D9;
+  border-bottom: 0;
+  border-radius: 5px;
+  background: #FFF;
+  cursor: pointer;
+  z-index: 1;
+}
+/* line 79, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-stacking .noUi-handle {
+  z-index: 10;
+}
+
+/* line 84, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* line 88, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-horizontal {
+  height: 18px;
+}
+/* line 91, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-horizontal .noUi-handle {
+  width: 34px;
+  height: 28px;
+  left: -17px;
+  top: -6px;
+}
+
+/* line 99, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical {
+  width: 18px;
+}
+/* line 102, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 20px;
+  left: -6px;
+  top: -17px;
+}
+
+/* line 110, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-background {
+  background: #FAFAFA;
+  box-shadow: inset 0 1px 1px #f0f0f0;
+}
+
+/* line 115, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-connect {
+  background: #3FB8AF;
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45);
+  -webkit-transition: background 450ms;
+  transition: background 450ms;
+}
+
+/* Handles and cursors;
+ */
+/* line 124, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-dragable {
+  cursor: w-resize;
+}
+/* line 127, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-dragable {
+  cursor: n-resize;
+}
+
+/* line 132, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-active {
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
+}
+
+/* line 136, ../../sass/bigpie/components/globals/_nouislider.scss */
+.caret {
+  position: relative;
+  top: 25px;
+  left: 7px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid rgba(255, 255, 255, 0);
+  border-right: 10px solid transparent;
+  border-top: 10px solid #4d4d4d;
+  z-index: 10;
+}
+
+/* Handle stripes;
+ */
+/* line 150, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-handle:before {
+  content: "||||";
+  display: block;
+  position: absolute;
+  height: 8px;
+  color: #E8E7E6;
+  font-size: 11px;
+  left: 6px;
+  top: 4px;
+  letter-spacing: 4px;
+  font-weight: lighter;
+}
+
+/* line 168, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+  width: 14px;
+  height: 1px;
+  left: 6px;
+  top: 14px;
+}
+
+/* line 176, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-vertical .noUi-handle:after {
+  top: 17px;
+}
+
+/* Disabled state;
+ */
+/* line 182, ../../sass/bigpie/components/globals/_nouislider.scss */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+  background: #B8B8B8;
+}
+
+/* line 187, ../../sass/bigpie/components/globals/_nouislider.scss */
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+
+/* Base;
+ *
+ */
+/* line 194, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips,
+.noUi-pips * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 200, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips {
+  position: absolute;
+  font: 400 12px Arial;
+  color: #999;
+}
+
+/* Values;
+ *
+ */
+/* line 209, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value {
+  width: 40px;
+  position: absolute;
+  text-align: center;
+}
+
+/* line 215, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-sub {
+  color: #ccc;
+  font-size: 10px;
+}
+
+/* Markings;
+ *
+ */
+/* line 223, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker {
+  position: absolute;
+  background: #CCC;
+}
+
+/* line 228, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-sub {
+  background: #AAA;
+}
+
+/* line 232, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-large {
+  background: #AAA;
+}
+
+/* Horizontal layout;
+ *
+ */
+/* line 239, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips-horizontal {
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 10px 0;
+}
+
+/* line 247, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-horizontal {
+  padding-top: 20px;
+  margin-left: -20px;
+}
+
+/* line 252, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-horizontal.noUi-value-sub {
+  padding-top: 15px;
+}
+
+/* line 256, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-horizontal.noUi-marker {
+  width: 2px;
+  height: 5px;
+  margin-left: -1px;
+}
+
+/* line 262, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-horizontal.noUi-marker-sub {
+  height: 10px;
+}
+
+/* line 266, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-horizontal.noUi-marker-large {
+  height: 15px;
+}
+
+/* Vertical layout;
+ *
+ */
+/* line 273, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-pips-vertical {
+  top: 0;
+  left: 100%;
+  height: 100%;
+  padding: 0 10px;
+}
+
+/* line 280, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-value-vertical {
+  width: 15px;
+  margin-top: -5px;
+  margin-left: 20px;
+}
+
+/* line 286, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-vertical.noUi-marker {
+  width: 5px;
+  height: 2px;
+  margin-top: -1px;
+}
+
+/* line 292, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-vertical.noUi-marker-sub {
+  width: 10px;
+}
+
+/* line 296, ../../sass/bigpie/components/globals/_nouislider.scss */
+.noUi-marker-vertical.noUi-marker-large {
+  width: 15px;
+}
+
+/* line 301, ../../sass/bigpie/components/globals/_nouislider.scss */
+.slider_tooltip {
+  position: absolute;
+  top: -60px;
+  left: -12px;
+  line-height: 24px;
+  text-align: center;
+}
+/* line 308, ../../sass/bigpie/components/globals/_nouislider.scss */
+.slider_tooltip small {
+  display: block;
+  text-align: left;
+  font-size: 12px;
+  padding-left: 2px;
+}
+/* line 314, ../../sass/bigpie/components/globals/_nouislider.scss */
+.slider_tooltip small.dollars {
+  text-align: center;
+}
+
+/* line 1, ../../sass/bigpie/layout/claim/_general.scss */
+#claim_form_received {
+  padding: 0 calc((100% - 1000px) / 2) 60px;
+  display: inline-block;
+  background: #ee7600;
+}
+/* line 5, ../../sass/bigpie/layout/claim/_general.scss */
+#claim_form_received .content {
+  padding: 74px 0 0 0;
+  color: #fff;
+}
+/* line 8, ../../sass/bigpie/layout/claim/_general.scss */
+#claim_form_received .content h2 {
+  font-style: italic;
+  margin: 0 0 68px 0;
+  font-size: 62px;
+}
+/* line 13, ../../sass/bigpie/layout/claim/_general.scss */
+#claim_form_received .content p {
+  font-size: 32px;
+  line-height: 34px;
+}
+@media (max-width: 1020px) {
+  /* line 5, ../../sass/bigpie/layout/claim/_general.scss */
+  #claim_form_received .content {
+    padding: 74px 20px 0;
+  }
+}
+@media (max-width: 800px) {
+  /* line 5, ../../sass/bigpie/layout/claim/_general.scss */
+  #claim_form_received .content {
+    padding: 34px 20px 0;
+  }
+  /* line 22, ../../sass/bigpie/layout/claim/_general.scss */
+  #claim_form_received .content h2 {
+    margin: 0 0 28px 0;
+    line-height: 52px;
+    font-size: 52px;
+  }
+  /* line 27, ../../sass/bigpie/layout/claim/_general.scss */
+  #claim_form_received .content p {
+    font-size: 27px;
+    line-height: 34px;
+  }
+}
+
+/* line 1, ../../sass/bigpie/layout/claim/_info_blocks.scss */
+.next_step_info {
+  margin: 70px 0 0 0;
+}
+/* line 3, ../../sass/bigpie/layout/claim/_info_blocks.scss */
+.next_step_info a {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  width: calc(33.333333% - 10px);
+  display: inline-block;
+  color: #fff;
+  vertical-align: top;
+  float: left;
+  padding: 40px 35px 0;
+  border: 1px solid #fff;
+  text-align: center;
+  font-size: 22px;
+  line-height: 26px;
+  height: 185px;
+  margin: 0 15px 0 0;
+  background: url(../../img/bigpie/down-arrow.png) no-repeat;
+  background-position: center bottom;
+}
+/* line 19, ../../sass/bigpie/layout/claim/_info_blocks.scss */
+.next_step_info a:last-child {
+  margin: 0;
+}
+@media (max-width: 1020px) {
+  /* line 1, ../../sass/bigpie/layout/claim/_info_blocks.scss */
+  .next_step_info {
+    padding: 0 20px 0;
+  }
+  /* line 23, ../../sass/bigpie/layout/claim/_info_blocks.scss */
+  .next_step_info a {
+    padding: 20px 15px 0;
+  }
+}
+@media (max-width: 750px) {
+  /* line 1, ../../sass/bigpie/layout/claim/_info_blocks.scss */
+  .next_step_info {
+    padding: 0 20px 0;
+    margin: 40px 0 0 0;
+  }
+  /* line 28, ../../sass/bigpie/layout/claim/_info_blocks.scss */
+  .next_step_info a {
+    padding: 20px 10px 0;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 550px) {
+  /* line 35, ../../sass/bigpie/layout/claim/_info_blocks.scss */
+  .next_step_info a {
+    padding: 20px 10px 100px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0 0 20px 0;
+  }
+}
+
+/* line 8, ../../sass/bigpie/layout/claim/_claim.scss */
+.modal.in .modal-dialog.claim_modal {
+  max-width: 630px;
+  -moz-transform: translateY(3vh);
+  -ms-transform: translateY(3vh);
+  -webkit-transform: translateY(3vh);
+  transform: translateY(3vh);
+}
+
+/* line 15, ../../sass/bigpie/layout/claim/_claim.scss */
+.claim_modal .modal-content {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+  background: #1A4D8A;
+  border: 1px solid #fff;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+}
+/* line 24, ../../sass/bigpie/layout/claim/_claim.scss */
+.claim_modal .modal-content .title {
+  font-size: 60px;
+  font-weight: 100;
+  font-style: italic;
+}
+/* line 30, ../../sass/bigpie/layout/claim/_claim.scss */
+.claim_modal .modal-content .sub_title {
+  font-size: 2em;
+  color: #809CBE;
+  margin: 6px 0 20px 0;
+}
+/* line 36, ../../sass/bigpie/layout/claim/_claim.scss */
+.claim_modal .modal-content label {
+  font-weight: 400;
+  font-size: 18px;
+  display: block;
+  margin: 10px 0;
+}
+/* line 44, ../../sass/bigpie/layout/claim/_claim.scss */
+.claim_modal .modal-content > div {
+  margin: 0 0 20px 0;
+}
+/* line 48, ../../sass/bigpie/layout/claim/_claim.scss */
+.claim_modal .modal-content input {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #ee7600;
+  padding: 14px;
+  width: 100%;
+  color: #ee7600;
+  font-size: 20px;
+}
+/* line 57, ../../sass/bigpie/layout/claim/_claim.scss */
+.claim_modal .modal-content input:focus {
+  outline: none;
+}
+/* line 59, ../../sass/bigpie/layout/claim/_claim.scss */
+.claim_modal .modal-content .submit_btn {
+  display: block;
+  width: 230px;
+  background: #ee7600;
+  height: 77px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  margin: 39px auto 0;
+  font-size: 30px;
+  font-weight: 100;
+}
+/* line 70, ../../sass/bigpie/layout/claim/_claim.scss */
+.claim_modal .modal-content .submit_btn:active, .claim_modal .modal-content .submit_btn:focus, .claim_modal .modal-content .submit_btn:hover {
+  background: #884300;
+}
+/* line 77, ../../sass/bigpie/layout/claim/_claim.scss */
+.claim_modal .modal-content .claim_error {
+  color: red;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+@media (max-width: 550px) {
+  /* line 88, ../../sass/bigpie/layout/claim/_claim.scss */
+  .claim_modal .modal-body {
+    padding: 20px 30px 40px;
+  }
+
+  /* line 91, ../../sass/bigpie/layout/claim/_claim.scss */
+  .claim_modal .modal-content {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  /* line 95, ../../sass/bigpie/layout/claim/_claim.scss */
+  .claim_modal .modal-content .title {
+    font-size: 48px;
+    line-height: 65px;
+  }
+
+  /* line 99, ../../sass/bigpie/layout/claim/_claim.scss */
+  .claim_modal .modal-content .sub_title {
+    font-size: 20px;
+    color: #809CBE;
+    margin: 0 0 20px 0;
+  }
+
+  /* line 104, ../../sass/bigpie/layout/claim/_claim.scss */
+  .claim_modal .modal-content form input {
+    width: 100%;
+    padding: 10px;
+  }
+}
+@media (max-width: 450px) {
+  /* line 111, ../../sass/bigpie/layout/claim/_claim.scss */
+  .claim_modal .modal-content .title {
+    font-size: 34px;
+    line-height: 45px;
+  }
+}
+@media (max-width: 320px) {
+  /* line 118, ../../sass/bigpie/layout/claim/_claim.scss */
+  .claim_modal .modal-content .title {
+    font-size: 27px;
+    line-height: 35px;
+  }
+}
+/* line 1, ../../sass/bigpie/layout/claim/_thankyou.scss */
+.modal.in .modal-dialog.thank_you_modal {
+  max-width: 630px;
+  -moz-transform: translateY(25%);
+  -ms-transform: translateY(25%);
+  -webkit-transform: translateY(25%);
+  transform: translateY(25%);
+}
+
+/* line 6, ../../sass/bigpie/layout/claim/_thankyou.scss */
+.thank_you_modal .modal-content {
+  font: 400 14px/1.2 "Roboto", "Arial", sans-serif;
+  border: 1px solid #fff;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+  background: #EB7723;
+}
+
+/* line 14, ../../sass/bigpie/layout/claim/_thankyou.scss */
+.thank_you_modal .modal-content .title {
+  font-size: 60px;
+  font-weight: 100;
+  font-style: italic;
+  margin: 0 0 8px 0;
+}
+
+/* line 21, ../../sass/bigpie/layout/claim/_thankyou.scss */
+.thank_you_modal .modal-content p {
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 27px;
+  margin: 0 0 27px 0;
+  color: #fff;
+}
+
+/* line 29, ../../sass/bigpie/layout/claim/_thankyou.scss */
+.thank_you_modal .modal-content p:last-child {
+  margin: 0;
+}
+
+@media (max-width: 510px) {
+  /* line 32, ../../sass/bigpie/layout/claim/_thankyou.scss */
+  .thank_you_modal .modal-body {
+    padding: 20px 30px 40px;
+  }
+
+  /* line 35, ../../sass/bigpie/layout/claim/_thankyou.scss */
+  .thank_you_modal .modal-content .title {
+    font-size: 40px;
+  }
+
+  /* line 38, ../../sass/bigpie/layout/claim/_thankyou.scss */
+  .thank_you_modal .modal-content p {
+    font-size: 17px;
+    margin: 0 0 17px 0;
+    line-height: 24px;
+  }
+}

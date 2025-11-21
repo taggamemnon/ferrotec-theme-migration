@@ -1,0 +1,143 @@
+// todo refactor this
+@media (max-width: 1020px) {
+	.filter_search_section {
+		padding: 0;
+	}
+	.filter_search_section .filter_wrapper {
+		padding: 8px 2%;
+		width: 100%;
+		height: auto;
+	}
+	.filter_search_section .filter_wrapper h2 span {
+		font-size: 17px;
+	}
+	.filter_search_section .matching_raised {
+		height: 60px;
+		display: block;
+		width: 100%;
+		float: none;
+		padding: 11px 2%;
+	}
+	.filter_search_section .matching_raised > i {
+		float: left;
+		margin: 8px 0 0 0;
+	}
+
+	.nonprofit_info {
+		padding: 0 2%;
+	}
+
+	.block,
+	.block:nth-of-type(3n+1){
+		margin-left: 1.7%;
+	}
+}
+
+@media (max-width: 688px) {
+	.filter_search_section .filter_wrapper .form_filters select,
+	.filter_search_section .filter_wrapper .form_filters button,
+	.filter_search_section .filter_wrapper .form_filters label,
+	.filter_search_section .filter_wrapper .form_filters .label_select,
+	.filter_search_section .filter_wrapper .form_filters .name_filter {
+		width: 100%;
+		margin: 0 0 5px 0;
+		max-width: initial;
+	}
+	.nonprofit_info .info_header .action_menu { margin: 0 0 15px 0; }
+	.nonprofit_info .info_header .action_menu,
+	.nonprofit_info .info_header .info_title {
+		width: 100%;
+		margin: 0;
+	}
+	.nonprofit_info .info_header .info_title { min-height: inherit }
+}
+
+@media (max-width: 900px) {
+	.nonprofit_info .info_sidebar {
+		width: 100%;
+		display: block;
+		margin: auto;
+	}
+	.nonprofit_info .info_sidebar .fundraising,
+	.nonprofit_info .info_sidebar .support_and_raised {
+		width: 49%;
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 0 5px 0;
+	}
+	.nonprofit_info .info_sidebar .support_and_raised {
+		margin: 0 1% 17px 0;
+	}
+	.nonprofit_info .content_wrapper .content {
+		width: 100%;
+		min-height: inherit;
+		margin: 0 0 15px 0;
+	}
+	.nonprofit_info .content_wrapper .merchant_top_table.half-width {
+		width: 100%;
+		display: table;
+	}
+	.nonprofit_info .info_header .action_menu div:first-child {
+		margin: 0 0 13px 0;
+	}
+	.nonprofit_info .info_header .action_menu div:first-child > span {
+		// position: absolute;
+		// right: 70px;
+	}
+	.nonprofit_info .info_header h2 { margin-top: 0; }
+	.info_header .info_title {
+		min-height: inherit;
+		width: 100%;
+	}
+	.info_header .action_menu {
+		width: 100%;
+		margin: 0;
+	}
+	.nonprofit_info .info_header .action_menu div:first-child {
+		margin: 0;
+	}
+}
+@media (max-width: 520px) {
+	.share_section .web_site {
+		font-weight: 400;
+		font-size: 18px;
+		color: #5e5e5e;
+		display: block;
+		text-align: center;
+		margin: 0 0 14px 0;
+	}
+	.share_section .share_wrapper {
+		float: none;
+	}
+	.share_section .share_wrapper a {
+		color: #5e5e5e;
+		font-weight: 400;
+		font-size: 18px;
+		margin: 0 0 14px 0;
+		display: block;
+		text-align: center;
+	}
+}
+@media (max-width: 400px) {
+	.filter_search_section .matching_raised > div .numbers .num_block { width: 20px; }
+	.nonprofit_info .info_sidebar .fundraising,
+	.nonprofit_info .info_sidebar .support_and_raised {
+		width: 100%;
+		margin: 0 0 5px 0;
+	}
+	.filter_search_section .filter_wrapper h2 span {
+		display: block;
+	}
+}
+
+@media (max-width: 380px) {
+	.filter_search_section .matching_raised > i { font-size: 14px; }
+}
+
+@media (max-width: 320px) {
+	.nonprofit_info .info_header h2 { margin-top: 0; }
+	.matching_raised { display: none !important; }
+	.filter_search_section .filter_wrapper h2 span {
+		font-size: 14px;
+	}
+}

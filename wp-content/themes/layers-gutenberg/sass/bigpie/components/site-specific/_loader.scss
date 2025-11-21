@@ -1,0 +1,40 @@
+.loader_overlay {
+  @include position(fixed, 0 0 0 0);
+  background: rgba(0,0,0,0.5);
+  z-index: 20;
+  overflow-y: auto;
+  &.loader_inner { position: absolute; }
+}
+
+.loader {
+  @include inline-block(1em,1em,auto,auto,auto);
+  @include position(absolute, 50% null null 50%);
+  @include transform(translate(-50%,-50%));
+  font-size: 20px;
+  border-radius: 50%;
+  text-indent: -9999em;
+  -webkit-animation: load 1.3s infinite linear;
+  animation: load 1.3s infinite linear;
+}
+
+@-webkit-keyframes load {
+  0%, 100% { box-shadow: 0em -3em 0em 0.2em #cccccc, 2em -2em 0 0em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 0em #cccccc; }
+  12.5% { box-shadow: 0em -3em 0em 0em #cccccc, 2em -2em 0 0.2em #cccccc, 3em 0em 0 0em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc; }
+  25% { box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 0em #cccccc, 3em 0em 0 0.2em #cccccc, 2em 2em 0 0em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc; }
+  37.5% { box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 0em #cccccc, 2em 2em 0 0.2em #cccccc, 0em 3em 0 0em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc; }
+  50% { box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 0em #cccccc, 0em 3em 0 0.2em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc; }
+  62.5% { box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 0em #cccccc, -2em 2em 0 0.2em #cccccc, -3em 0em 0 0em #cccccc, -2em -2em 0 -0.5em #cccccc; }
+  75% { box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 0.2em #cccccc, -2em -2em 0 0em #cccccc; }
+  87.5% { box-shadow: 0em -3em 0em 0em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 0em #cccccc, -2em -2em 0 0.2em #cccccc; }
+}
+@keyframes load {
+  0%, 100% { box-shadow: 0em -3em 0em 0.2em #cccccc, 2em -2em 0 0em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 0em #cccccc; }
+  12.5% { box-shadow: 0em -3em 0em 0em #cccccc, 2em -2em 0 0.2em #cccccc, 3em 0em 0 0em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc; }
+  25% { box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 0em #cccccc, 3em 0em 0 0.2em #cccccc, 2em 2em 0 0em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc; }
+  37.5% { box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 0em #cccccc, 2em 2em 0 0.2em #cccccc, 0em 3em 0 0em #cccccc, -2em 2em 0 -0.5em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc; }
+  50% { box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 0em #cccccc, 0em 3em 0 0.2em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 -0.5em #cccccc, -2em -2em 0 -0.5em #cccccc; }
+  62.5% { box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 0em #cccccc, -2em 2em 0 0.2em #cccccc, -3em 0em 0 0em #cccccc, -2em -2em 0 -0.5em #cccccc; }
+  75% { box-shadow: 0em -3em 0em -0.5em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 0.2em #cccccc, -2em -2em 0 0em #cccccc; }
+  87.5% { box-shadow: 0em -3em 0em 0em #cccccc, 2em -2em 0 -0.5em #cccccc, 3em 0em 0 -0.5em #cccccc, 2em 2em 0 -0.5em #cccccc, 0em 3em 0 -0.5em #cccccc, -2em 2em 0 0em #cccccc, -3em 0em 0 0em #cccccc, -2em -2em 0 0.2em #cccccc; }
+}
+
